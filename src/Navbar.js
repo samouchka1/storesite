@@ -40,24 +40,30 @@ const navBar = {
   height: 'auto',
   backgroundColor : '#f4f4f4', //background color
   width: '100%',
-  margin: {
-    md: '1rem auto',
-    xs: '.5rem auto'
-  },
+  margin: '1rem 0',
   padding: {
     md: '0 5rem 0 0',
     sm: '0 1.5rem 0 0',
     xs: '0'
   },
-  border: 'solid 1px #b2b2b2'
+  border: 'solid 1px #b2b2b2',
+  boxShadow: 'none'
 }
 
 const navLinks = {
   textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'underline'
+    },
   color: '#171717', //color
   fontSize : {
     xs: '.9rem',
     md: '1rem'
+  },
+  margin: {
+    md: '0 .5rem',
+    sm: '0',
+    xs: '0'
   }
 }
 
