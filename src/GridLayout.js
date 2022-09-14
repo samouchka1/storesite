@@ -19,22 +19,17 @@ const items = [
     {
         name: 'sample item',
         path: '',
-        media: 'simple.jpg',
+        media: 'apple.jpg',
     },
     {
         name: 'sample item',
         path: '',
-        media: 'simple.jpg',
+        media: 'melon.jpg',
     },
     {
         name: 'sample item',
         path: '',
-        media: 'simple.jpg',
-    },
-    {
-        name: 'sample item',
-        path: '',
-        media: 'simple.jpg',
+        media: 'orange.jpg',
     },
     {
         name: 'sample item',
@@ -75,7 +70,7 @@ const GridLayout = () => {
                                 alt="item"
                             />
                             <CardContent>
-                                <Typography  variant="h5">
+                                <Typography variant="h5">
                                     Item
                                 </Typography>
                                 <Typography variant="body2">
