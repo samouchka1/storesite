@@ -14,7 +14,7 @@ const items = [
     {
         name: 'sample item',
         path: '',
-        media: 'simple.jpg',
+        media: 'watermelon.jpg',
     },
     {
         name: 'sample item',
@@ -34,7 +34,7 @@ const items = [
     {
         name: 'sample item',
         path: '',
-        media: 'simple.jpg',
+        media: 'watermelon.jpg',
     },
 ]
 
@@ -45,11 +45,11 @@ const GridLayout = () => {
         justifyContent: 'center',
         gap: '1.1rem',
         margin: '1rem 0',
+        backgroundColor: '#f4f4f4',
         border: 'solid 1px #b2b2b2' //temp
     }
     const cardStyle = {
         width: '100%',
-        backgroundColor: '#f4f4f4',
         // border: 'solid 1px #b2b2b2'
     }
 
@@ -62,10 +62,10 @@ const GridLayout = () => {
 
                     <Grid item xs={8} md={3} key={item}>
                         
-                        <Card sx={cardStyle}>
+                        <Card>
                             <CardMedia
                                 component="img"
-                                height="auto"
+                                height="220px"
                                 image={process.env.PUBLIC_URL + '/images/' + item.media}   
                                 alt="item"
                             />

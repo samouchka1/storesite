@@ -4,23 +4,24 @@ import {
     AccordionSummary,
     AccordionDetails,
     Typography,
+    Box,
+    Container,
  } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Box, Container } from '@mui/system';
 
 function SimpleAccordion() {
 
-    const containerStyles = {
-        margin: '1rem auto'
-    }
-
-    const accordionDetailsStyles = {
-        height: 'auto',
-        width: '100%'
+    const accordionImageStyles = {
+        height: '220px',
+        width: 'auto',
+        borderRadius: '4px',
+        display: 'block',
+        margin: '0 auto 1rem',
     }
 
     return (
-        <Container maxWidth="xs" sx={containerStyles}>
+        <Container maxWidth="sm" sx={{margin: 'auto'}}>
+
             <Accordion>
                 <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <Typography>Item 1</Typography>
@@ -30,7 +31,7 @@ function SimpleAccordion() {
                         component="img"
                         src={process.env.PUBLIC_URL + '/images/orange.jpg'}
                         alt="orange"
-                        sx={accordionDetailsStyles}
+                        sx={accordionImageStyles}
                     />
                 <Typography>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
@@ -48,7 +49,7 @@ function SimpleAccordion() {
                         component="img"
                         src={process.env.PUBLIC_URL + '/images/melon.jpg'}
                         alt="orange"
-                        sx={accordionDetailsStyles}
+                        sx={accordionImageStyles}
                     />
                     <Typography>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
@@ -66,7 +67,7 @@ function SimpleAccordion() {
                         component="img"
                         src={process.env.PUBLIC_URL + '/images/apple.jpg'}
                         alt="orange"
-                        sx={accordionDetailsStyles}
+                        sx={accordionImageStyles}
                     />
                     <Typography>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
