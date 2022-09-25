@@ -51,7 +51,7 @@ const Footer = () => {
             <Toolbar>
                 <List sx={{display: 'flex'}}>
                     {socialMedia.map( link => (
-                        <ListItem key={link} sx={{ margin: '0 1rem'}}>
+                        <ListItem key={link} sx={{ margin: '0 .5rem'}}>
                         <Tooltip title={link.name}>
                             <Link 
                                 alt={link.name}

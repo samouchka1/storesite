@@ -7,7 +7,8 @@ import {
   Typography,
   List,
   ListItem,
-  Link
+  Link,
+  // Box
 } from '@mui/material';
 
 const pages = [
@@ -27,6 +28,11 @@ const pages = [
 
 //===STYLES===
 
+// const logoStyles = {
+//   height: '70px',
+//   width: 'auto'
+// }
+
 const navBar = {
   position: 'relative',
   display: 'flex',
@@ -39,6 +45,7 @@ const navBar = {
   },
   height: 'auto',
   backgroundColor : '#f4f4f4', //background color
+  border: 'solid 1px #b2b2b2',
   width: '100%',
   margin: '1rem 0',
   padding: {
@@ -46,7 +53,6 @@ const navBar = {
     sm: '0 1.5rem 0 0',
     xs: '0'
   },
-  border: 'solid 1px #b2b2b2',
   boxShadow: 'none'
 }
 
@@ -57,8 +63,8 @@ const navLinks = {
     },
   color: '#171717', //color
   fontSize : {
-    xs: '.9rem',
-    md: '1rem'
+    md: '1.15rem',
+    xs: '1.1rem'
   },
   margin: {
     md: '0 .5rem',
@@ -77,6 +83,11 @@ const NavBar = () => {
   <Container maxWidth={false} sx={{justifyContent: 'center'}}>
       <AppBar sx={navBar}>
         <Toolbar disableGutters>
+          {/* <Box
+            component="img"
+            src={process.env.PUBLIC_URL + '/images/modern-logo.png'}
+            sx={logoStyles}
+          /> */}
           <List sx={{ display: 'flex'}}>
 
             {hashLinks.map((page) => ( //hashlinks
