@@ -30,7 +30,7 @@ const pages = [
 
 // const logoStyles = {
 //   height: '70px',
-//   width: 'auto'
+//   width: 'auto',
 // }
 
 const navBar = {
@@ -39,8 +39,8 @@ const navBar = {
   flexDirection: 'row',
   alignItems:'center',
   justifyContent: {
-    md: 'right',
-    sm: 'right',
+    md: 'flex-end',
+    sm: 'flex-end',
     xs: 'space-around'
   },
   height: 'auto',
@@ -80,7 +80,7 @@ const NavBar = () => {
   const links = pages.filter(link => link.path.includes('https'));
   
   return (
-  <Container maxWidth={false} sx={{justifyContent: 'center'}}>
+  <Container maxWidth={false}>
       <AppBar sx={navBar}>
         <Toolbar disableGutters>
           {/* <Box
@@ -90,7 +90,7 @@ const NavBar = () => {
           /> */}
           <List sx={{ display: 'flex'}}>
 
-            {hashLinks.map((page) => ( //hashlinks
+            {hashLinks.map((page) => (    //hashlinks
                 <ListItem key={page} sx={{padding: '0 .55rem'}}>
                   <Typography noWrap>
                       <HashLink
@@ -106,7 +106,7 @@ const NavBar = () => {
                 </ListItem>
               ))}
 
-            {links.map((page) => ( //links
+            {links.map((page) => (    //links
               <ListItem key={page}>
               <Typography noWrap>
                   <Link
