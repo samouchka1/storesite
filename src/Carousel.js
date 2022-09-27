@@ -32,10 +32,16 @@ const photos = [
     }
 ]
 
+const containerStyles = {
+    width: '100%',
+    backgroundColor: '#f4f4f4',
+    border: 'solid 1px #b2b2b2' //temp
+}
+
 const carouselStyles = {
     width: {
-        md: '30vw',
-        xs: '80vw'
+        md: '40vw',
+        xs: '70vw'
     },
     height: 'auto',
     margin: '1rem auto'
@@ -43,7 +49,15 @@ const carouselStyles = {
 
 const photoStyles = {
     height: '100%',
-    width: '100%'
+    width: '100%',
+    borderRadius: '4px'
+}
+
+const buttonStyles = {
+    display: 'flex', 
+    justifyContent: 'center', 
+    margin: '1rem 0', 
+    gap: '2rem'
 }
 
 
@@ -60,7 +74,7 @@ const ImageCarousel = () => {
     };
 
     return (
-        <Container>
+        <Container maxWidth="lg" sx={containerStyles}>
             <Box sx={carouselStyles}>
                 
                 {photos.map((photo) => (
@@ -76,7 +90,7 @@ const ImageCarousel = () => {
                     </Box>
                 ))} 
 
-                <Box component="div" sx={{display: 'flex', justifyContent: 'center', margin: '1rem 0', gap: '1rem'}}>
+                <Box component="div" sx={buttonStyles}>
                     <Button onClick={prev}>
                         <ArrowBackIosIcon />
                     </Button>

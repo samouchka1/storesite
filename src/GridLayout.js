@@ -61,7 +61,7 @@ const GridLayout = () => {
                         <Card>
                             <CardMedia
                                 component="img"
-                                height="220px"
+                                height="auto"
                                 image={process.env.PUBLIC_URL + '/images/' + item.media}   
                                 alt="item"
                             />
