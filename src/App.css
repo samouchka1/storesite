@@ -1,11 +1,19 @@
-.test {
-  color: #f4f4f4;
+
+.slide {
+  display: none;
 }
 
-.test2 {
-  color: #b2b2b2;
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-.test3 {
-  color: #171717;
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
 }

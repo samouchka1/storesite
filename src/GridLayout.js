@@ -38,18 +38,17 @@ const items = [
     },
 ]
 
+const gridStyle = {
+    width: '100%',
+    justifyContent: 'center',
+    gap: '1.1rem',
+    margin: '1rem 0',
+    padding: '1rem 0',
+    backgroundColor: '#f4f4f4',
+    border: 'solid 1px #b2b2b2' //temp
+}
+
 const GridLayout = () => {
-
-    const gridStyle = {
-        width: '100%',
-        justifyContent: 'center',
-        gap: '1.1rem',
-        margin: '1rem 0',
-        padding: '1rem 0',
-        backgroundColor: '#f4f4f4',
-        border: 'solid 1px #b2b2b2' //temp
-    }
-
 
     return (
         <Container maxWidth={false}>

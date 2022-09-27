@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './Navbar';
 import GridLayout from './GridLayout';
-// import Accordion from './Accordion';
+import ImageCarousel from './Carousel';
 import Footer from './Footer.js';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <GridLayout />
-      {/* <Accordion /> */}
+      <ImageCarousel />
       <Footer />
     </div>
   );
