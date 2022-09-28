@@ -39,12 +39,13 @@ const containerStyles = {
 }
 
 const carouselStyles = {
+    display: 'flex',
     width: {
-        md: '40vw',
-        xs: '70vw'
+        md: '45vw',
+        xs: '75vw'
     },
     height: 'auto',
-    margin: '1rem auto'
+    margin: '1rem auto 3rem'
 }
 
 const photoStyles = {
@@ -53,11 +54,14 @@ const photoStyles = {
     borderRadius: '4px'
 }
 
-const buttonStyles = {
-    display: 'flex', 
-    justifyContent: 'center', 
-    margin: '1rem 0', 
-    gap: '2rem'
+const labelStyles = {
+    textAlign: 'center', 
+    position: 'relative', 
+    color: 'white', 
+    fontSize: '17px', 
+    padding: '.25rem', 
+    backgroundColor: '#2e2e2ebc', 
+    borderRadius: '4px'
 }
 
 
@@ -76,6 +80,10 @@ const ImageCarousel = () => {
     return (
         <Container maxWidth="lg" sx={containerStyles}>
             <Box sx={carouselStyles}>
+
+                <Button onClick={prev}>
+                    <ArrowBackIosIcon sx={{color: '#535353'}}/>
+                </Button>
                 
                 {photos.map((photo) => (
                     <Box key={photo.id}
@@ -86,19 +94,13 @@ const ImageCarousel = () => {
                             alt={photo.label}
                             sx={photoStyles}
                         />
-                        <Typography sx={{textAlign: 'center'}}>{photo.label}</Typography>
+                        <Typography sx={labelStyles}>{photo.label}</Typography>
                     </Box>
                 ))} 
 
-                <Box component="div" sx={buttonStyles}>
-                    <Button onClick={prev}>
-                        <ArrowBackIosIcon />
-                    </Button>
-
-                    <Button onClick={next}>
-                        <ArrowForwardIosIcon />
-                    </Button>
-                </Box>
+                <Button onClick={next}>
+                    <ArrowForwardIosIcon sx={{color: '#535353'}} />
+                </Button>
 
             </Box>
             
