@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Navbar';
-import GridLayout from './GridLayout';
-import ImageCarousel from './Carousel';
-import Footer from './Footer.js';
+import Navbar from './components/Navbar';
+import GridLayout from './components/GridLayout';
+import ImageCarousel from './components/Carousel';
+import Footer from './components/Footer.js';
 
 function App() {
   return (

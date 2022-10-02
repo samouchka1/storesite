@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import {
     Box,
     Button,
@@ -42,7 +41,7 @@ const carouselStyles = {
     display: 'flex',
     width: {
         md: '45vw',
-        xs: '75vw'
+        xs: '95vw'
     },
     height: 'auto',
     margin: '1rem auto 3rem'

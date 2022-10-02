@@ -8,30 +8,37 @@ import {
   List,
   ListItem,
   Link,
-  // Box
 } from '@mui/material';
+import PopoverMenu from './PopoverMenu';
 
 const pages = [
   {
-    name: 'About',
-    path: '#about'
+    name: 'What\'s New',
+    path: '#new'
   },
   {
-    name: 'Services',
-    path: '#services'
+    name: 'Men',
+    path: '#men'
   },
   {
-    name: 'Contact',
-    path: '#contact'
+    name: 'Women',
+    path: '#women'
+  },
+  {
+    name: 'Casual',
+    path: '#casual'
+  },
+  {
+    name: 'Outdoor',
+    path: '#outdoor'
+  },
+  {
+    name: 'Athletic',
+    path: '#athletic'
   }
 ]
 
 //===STYLES===
-
-// const logoStyles = {
-//   height: '70px',
-//   width: 'auto',
-// }
 
 const navBar = {
   position: 'relative',
@@ -41,7 +48,7 @@ const navBar = {
   justifyContent: {
     md: 'flex-end',
     sm: 'flex-end',
-    xs: 'space-around'
+    xs: 'flex-start'
   },
   height: 'auto',
   backgroundColor : '#f4f4f4', //background color
@@ -56,16 +63,20 @@ const navBar = {
   boxShadow: 'none'
 }
 
+const navContent = {
+  display: {
+    md: 'flex',
+    xs: 'none'
+  }
+}
+
 const navLinks = {
   textDecoration: 'none',
     '&:hover': {
       textDecoration: 'underline'
     },
   color: '#171717', //color
-  fontSize : {
-    md: '1.15rem',
-    xs: '1.1rem'
-  },
+  fontSize : '1.15rem',
   margin: {
     md: '0 .5rem',
     sm: '0',
@@ -73,22 +84,19 @@ const navLinks = {
   }
 }
 
+const hashLinks = pages.filter(hash => hash.path.includes('#')); //filter hashlinks
+const links = pages.filter(link => link.path.includes('https'));
 
 const NavBar = () => {
 
-  const hashLinks = pages.filter(hash => hash.path.includes('#')); //filter hashlinks
-  const links = pages.filter(link => link.path.includes('https'));
-  
   return (
   <Container maxWidth={false}>
       <AppBar sx={navBar}>
+
+        <PopoverMenu />
+
         <Toolbar disableGutters>
-          {/* <Box
-            component="img"
-            src={process.env.PUBLIC_URL + '/images/modern-logo.png'}
-            sx={logoStyles}
-          /> */}
-          <List sx={{ display: 'flex'}}>
+          <List sx={navContent}>
 
             {hashLinks.map((page) => (    //hashlinks
                 <ListItem key={page} sx={{padding: '0 .55rem'}}>
