@@ -74,7 +74,7 @@ const PopoverMenu = () => {
             onClose={handleClose}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left'}}
             MenuListProps={{
-              'aria-labelledby': 'basic-button',
+              'aria-labelledby': 'basic-button'
             }}
             sx={{display: { md: 'none', xs: 'block'}}}
           >

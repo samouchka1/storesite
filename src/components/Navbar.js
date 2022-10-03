@@ -9,7 +9,8 @@ import {
   ListItem,
   Link,
 } from '@mui/material';
-import PopoverMenu from './PopoverMenu';
+// import PopoverMenu from './PopoverMenu';
+import ModalMenu from './ModalMenu';
 
 const pages = [
   {
@@ -93,7 +94,8 @@ const NavBar = () => {
   <Container maxWidth={false}>
       <AppBar sx={navBar}>
 
-        <PopoverMenu />
+        {/* <PopoverMenu /> */}
+        <ModalMenu />
 
         <Toolbar disableGutters>
           <List sx={navContent}>
@@ -116,18 +118,18 @@ const NavBar = () => {
 
             {links.map((page) => (    //links
               <ListItem key={page}>
-              <Typography noWrap>
-                  <Link
-                    style={{textDecoration: 'none'}}
-                    href={page.path}
-                    target="_blank"
-                  >
-                    <Typography sx={navLinks}>
-                      {page.name}
-                    </Typography>
-                  </Link>
-              </Typography>
-            </ListItem>
+                <Typography noWrap>
+                    <Link
+                      style={{textDecoration: 'none'}}
+                      href={page.path}
+                      target="_blank"
+                    >
+                      <Typography sx={navLinks}>
+                        {page.name}
+                      </Typography>
+                    </Link>
+                </Typography>
+              </ListItem>
             ))}
             
           </List>
