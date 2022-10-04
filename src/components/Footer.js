@@ -53,6 +53,15 @@ const footerTitleStyles = {
     fontWeight: '600'
 }
 
+const footerLinkStyles = {
+    textDecoration: 'none',
+    color: '#464646'
+}
+
+const footerSectionStyles = {
+    padding: '1rem',
+}
+
 const signatureStyles = {
     margin: '3rem 0 1rem',
     fontSize: '12px',
@@ -63,6 +72,7 @@ const Footer = () => {
   return (
     <Container maxWidth={false} sx={{margin: '1rem 0 4rem'}}>
         <Box sx={{backgroundColor : '#f4f4f4', border: 'solid 1px #b2b2b2'}}>
+            <div>
             <AppBar sx={footerStyles}>
                 <Toolbar>
                     <List sx={{display: 'flex'}}>
@@ -82,7 +92,64 @@ const Footer = () => {
                     </List>
                 </Toolbar>
             </AppBar>
-        
+            <Box sx={{display: 'flex', justifyContent: 'center'}}>
+                <Box sx={footerSectionStyles}>
+                    <Typography variant="body1">
+                        Customer Service
+                    </Typography>
+                    <Typography variant="subtitle2">
+                        <List>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Contact Us</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Help</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Shipping Policy</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Return Policy</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Discounts</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Feedback</Link>
+                            </ListItem>
+                        </List>
+                    </Typography>
+                </Box>
+                <Box sx={footerSectionStyles}>
+                    <Typography variant="body1">
+                        Popular Pages
+                    </Typography>
+                    <Typography variant="subtitle2">
+                        <List>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Mens</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Womens</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Childrens</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Ahtletic</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Outdoor</Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link href="#abc" sx={footerLinkStyles}>Casual</Link>
+                            </ListItem>
+                        </List>
+                    </Typography>
+                </Box>
+            </Box>
+            
+            </div>
             <Box sx={{textAlign: 'center', margin: '1rem 0', color: '#2f2f2f'}}>
                 <Typography sx={footerTitleStyles}>StoreSite</Typography>
                 <Typography sx={{fontSize: '15px'}}>1234 Cool St, GreatCity, State</Typography>
