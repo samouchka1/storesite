@@ -17,18 +17,72 @@ import RedditIcon from '@mui/icons-material/Reddit';
 const socialMedia = [
     {
         name: 'Twitter',
-        icon: <TwitterIcon fontSize="large" sx={{color: '#535353'}} />,
+        icon: <TwitterIcon fontSize="large" />,
         url: 'https://twitter.com/i/flow/login'
     },
     {
         name: 'Youtube',
-        icon: <YouTubeIcon fontSize="large" sx={{color: '#535353'}} />,
+        icon: <YouTubeIcon fontSize="large" />,
         url: 'https://www.youtube.com/'
     },
     {
         name: 'Reddit',
-        icon: <RedditIcon fontSize="large" sx={{color: '#535353'}} />,
+        icon: <RedditIcon fontSize="large" />,
         url: 'https://www.reddit.com/'
+    }
+]
+const customerService = [
+    {
+        name: 'Contact Us',
+        href: '#abc'
+    },
+    {
+        name: 'Help',
+        href: '#abc'
+    },
+    {
+        name: 'Shipping Policy',
+        href: '#abc'
+    },
+    {
+        name: 'Return Policy',
+        href: '#abc'
+    },
+    {
+        name: 'Discounts',
+        href: '#abc'
+    },
+    {
+        name: 'Feedback',
+        href: '#abc'
+    }
+    
+]
+
+const popularPages =[
+    {
+        name: 'Mens',
+        href: '#abc'
+    },
+    {
+        name: 'Womens',
+        href: '#abc'
+    },
+    {
+        name: 'Childrens',
+        href: '#abc'
+    },
+    {
+        name: 'Athletic',
+        href: '#abc'
+    },
+    {
+        name: 'Outdoor',
+        href: '#abc'
+    },
+    {
+        name: 'Casual',
+        href: '#abc'
     }
 ]
 
@@ -83,6 +137,7 @@ const Footer = () => {
                                     alt={link.name}
                                     href={link.url}
                                     target="_blank"
+                                    sx={{color: '#535353'}}
                                 >
                                     {link.icon}
                                 </Link>
@@ -99,24 +154,11 @@ const Footer = () => {
                     </Typography>
                     <Typography variant="subtitle2">
                         <List>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Contact Us</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Help</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Shipping Policy</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Return Policy</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Discounts</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Feedback</Link>
-                            </ListItem>
+                            {customerService.map((link) => (
+                                <ListItem key={link}>
+                                    <Link href={link.href} sx={footerLinkStyles}>{link.name}</Link>
+                                </ListItem>
+                            ))}
                         </List>
                     </Typography>
                 </Box>
@@ -126,24 +168,11 @@ const Footer = () => {
                     </Typography>
                     <Typography variant="subtitle2">
                         <List>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Mens</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Womens</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Childrens</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Ahtletic</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Outdoor</Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link href="#abc" sx={footerLinkStyles}>Casual</Link>
-                            </ListItem>
+                            {popularPages.map((link) => (
+                                <ListItem key={link}>
+                                    <Link href={link.href} sx={footerLinkStyles}>{link.name}</Link>
+                                </ListItem>
+                            ))}
                         </List>
                     </Typography>
                 </Box>
@@ -153,6 +182,7 @@ const Footer = () => {
             <Box sx={{textAlign: 'center', margin: '1rem 0', color: '#2f2f2f'}}>
                 <Typography sx={footerTitleStyles}>StoreSite</Typography>
                 <Typography sx={{fontSize: '15px'}}>1234 Cool St, GreatCity, State</Typography>
+                
                 <Typography sx={signatureStyles}>
                     &copy; {new Date().getFullYear()} samouchka
                 </Typography>
