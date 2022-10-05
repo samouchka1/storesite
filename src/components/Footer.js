@@ -108,12 +108,19 @@ const footerTitleStyles = {
 }
 
 const footerLinkStyles = {
+    fontSize: {
+        md: '.9rem',
+        xs: '.8rem'
+    },
+    lineHeight: '.25',
     textDecoration: 'none',
     color: '#464646'
 }
 
 const footerSectionStyles = {
+    // width: '100%',
     padding: '1rem',
+    
 }
 
 const signatureStyles = {
@@ -125,8 +132,7 @@ const signatureStyles = {
 const Footer = () => {
   return (
     <Container maxWidth={false} sx={{margin: '1rem 0 4rem'}}>
-        <Box sx={{backgroundColor : '#f4f4f4', border: 'solid 1px #b2b2b2'}}>
-            <div>
+        <Box sx={{backgroundColor : '#f4f4f4', border: 'solid 1px #b2b2b2', margin: '0 auto'}}>
             <AppBar sx={footerStyles}>
                 <Toolbar>
                     <List sx={{display: 'flex'}}>
@@ -143,13 +149,15 @@ const Footer = () => {
                                 </Link>
                             </Tooltip>
                             </ListItem>
-                        ) )}
+                        ))}
                     </List>
                 </Toolbar>
             </AppBar>
-            <Box sx={{display: 'flex', justifyContent: 'center'}}>
+
+            {/* SECTION */}
+            <Box sx={{display: 'flex', justifyContent: 'space-between', width: {md: '50%', xs:'100%'}, margin: '0 auto'}}>
                 <Box sx={footerSectionStyles}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                         Customer Service
                     </Typography>
                     <Typography variant="subtitle2">
@@ -163,7 +171,7 @@ const Footer = () => {
                     </Typography>
                 </Box>
                 <Box sx={footerSectionStyles}>
-                    <Typography variant="body1">
+                    <Typography variant="body2">
                         Popular Pages
                     </Typography>
                     <Typography variant="subtitle2">
@@ -178,11 +186,10 @@ const Footer = () => {
                 </Box>
             </Box>
             
-            </div>
             <Box sx={{textAlign: 'center', margin: '1rem 0', color: '#2f2f2f'}}>
                 <Typography sx={footerTitleStyles}>StoreSite</Typography>
                 <Typography sx={{fontSize: '15px'}}>1234 Cool St, GreatCity, State</Typography>
-                
+
                 <Typography sx={signatureStyles}>
                     &copy; {new Date().getFullYear()} samouchka
                 </Typography>

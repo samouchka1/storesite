@@ -50,9 +50,6 @@ const ModalMenuStyles = {
 const ModalLinkStyles = {
     fontSize : '1.15rem',
     textDecoration: 'none',
-    '&:hover': {
-        textDecoration: 'underline'
-      }, 
     color: '#171717',
     padding: '2rem 0'
 }
