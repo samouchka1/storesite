@@ -46,11 +46,7 @@ const navBar = {
   display: 'flex',
   flexDirection: 'row',
   alignItems:'center',
-  justifyContent: {
-    md: 'flex-end',
-    sm: 'flex-end',
-    xs: 'flex-start'
-  },
+  justifyContent: 'flex-start',
   height: 'auto',
   backgroundColor : '#f4f4f4', //background color
   border: 'solid 1px #b2b2b2',
@@ -77,7 +73,7 @@ const navLinks = {
       textDecoration: 'underline'
     },
   color: '#171717', //color
-  fontSize : '1.15rem',
+  fontSize : '1rem',
   margin: {
     md: '0 .5rem',
     sm: '0',

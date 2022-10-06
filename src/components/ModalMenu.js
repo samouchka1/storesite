@@ -6,7 +6,8 @@ import {
     ListItem,
     Typography,
     Link,
-    Box
+    Box,
+    // Fade
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -64,9 +65,9 @@ const ModalMenu =() => {
     const handleClose = () => setOpen(false);
 
     return (
-        <div>
-            <Button onClick={handleOpen}>
-                <MenuIcon sx={{display: { md: 'none', xs: 'block'}, color: '#535353'}} />
+        <Box>
+            <Button onClick={handleOpen} sx={{display: { md: 'none', xs: 'block'}}}>
+                <MenuIcon sx={{color: '#535353'}} />
             </Button>
             <Modal
                 open={open}
@@ -75,7 +76,7 @@ const ModalMenu =() => {
                 aria-describedby="modal-modal-description"
                 sx={{display: { md: 'none', xs: 'block'}}}
             >
-            
+            {/* <Fade in={open}> */}
                 <Box sx={ModalMenuStyles}>
                     {hashLinks.map((page) => (    //hashlinks
                         <ListItem key={page}>
@@ -109,8 +110,9 @@ const ModalMenu =() => {
                         </ListItem>
                     ))}
                 </Box>
+            {/* </Fade> */}
             </Modal>
-      </div>
+      </Box>
     )
 }
 
