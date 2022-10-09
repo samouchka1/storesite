@@ -18,6 +18,21 @@
   }
 }
 
+/* slide animation */
+/* .left {
+  animation-name: slide;
+  animation-duration: 1.5s;
+}
+
+@keyframes slide {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%
+  }
+} */
+
 
 .color {
   color: #00000015;

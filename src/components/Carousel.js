@@ -11,23 +11,28 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 const photos = [
     {
         id: 1,
-        image: 'apple.jpg',
-        label: 'apple'
+        image: 'men.jpg',
+        label: 'Men'
     },
     {
         id: 2,
-        image: 'melon.jpg',
-        label: 'melon'
+        image: 'women.jpg',
+        label: 'Women'
     },
     {
         id: 3,
-        image: 'orange.jpg',
-        label: 'orange'
+        image: 'athletic.jpg',
+        label: 'Athletic'
     },
     {
         id: 4,
-        image: 'watermelon.jpg',
-        label: 'watermelon'
+        image: 'outdoor.jpg',
+        label: 'Outdoor'
+    },
+    {
+        id: 5,
+        image: 'casual.jpg',
+        label: 'Casual'
     }
 ]
 
@@ -48,6 +53,7 @@ const carouselStyles = {
 }
 
 const photoStyles = {
+    position: 'relative',
     height: '100%',
     width: '100%',
     borderRadius: '4px'

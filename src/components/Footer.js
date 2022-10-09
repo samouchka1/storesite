@@ -61,15 +61,11 @@ const customerService = [
 
 const popularPages =[
     {
-        name: 'Mens',
+        name: 'Men',
         href: '#abc'
     },
     {
-        name: 'Womens',
-        href: '#abc'
-    },
-    {
-        name: 'Childrens',
+        name: 'Women',
         href: '#abc'
     },
     {

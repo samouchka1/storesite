@@ -12,29 +12,29 @@ import {
 
 const items = [
     {
-        name: 'sample item',
-        path: '',
-        media: 'watermelon.jpg',
+        name: 'Men',
+        path: '#abc',
+        media: 'men.jpg',
     },
     {
-        name: 'sample item',
-        path: '',
-        media: 'apple.jpg',
+        name: 'Women',
+        path: '#abc',
+        media: 'women.jpg',
     },
     {
-        name: 'sample item',
+        name: 'Athletic',
         path: '',
-        media: 'melon.jpg',
+        media: 'athletic.jpg',
     },
     {
-        name: 'sample item',
+        name: 'Outdoor',
         path: '',
-        media: 'orange.jpg',
+        media: 'outdoor.jpg',
     },
     {
-        name: 'sample item',
+        name: 'Casual',
         path: '',
-        media: 'watermelon.jpg',
+        media: 'casual.jpg',
     },
 ]
 
@@ -67,10 +67,10 @@ const GridLayout = () => {
                             />
                             <CardContent>
                                 <Typography variant="h5">
-                                    Item
+                                    {item.name}
                                 </Typography>
                                 <Typography variant="body2">
-                                    This item is was designed to keep the purchaser feeling amazing.
+                                    Browse our styles! We offer only the best quality for the right price!
                                 </Typography>
                             </CardContent>
                             <CardActions>
