@@ -86,7 +86,7 @@ const ImageCarousel = () => {
         <Container maxWidth="lg" sx={containerStyles}>
             <Box sx={carouselStyles}>
 
-                <Button onClick={prev}>
+                <Button onClick={prev} sx={{color: '#535353'}}>
                     <ArrowBackIosIcon sx={{color: '#535353'}}/>
                 </Button>
                 
@@ -103,7 +103,7 @@ const ImageCarousel = () => {
                     </Box>
                 ))} 
 
-                <Button onClick={next}>
+                <Button onClick={next} sx={{color: '#535353'}}>
                     <ArrowForwardIosIcon sx={{color: '#535353'}} />
                 </Button>
 

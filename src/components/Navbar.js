@@ -9,6 +9,7 @@ import {
   ListItem,
   Link,
   Box,
+  Tooltip,
 } from '@mui/material';
 import ModalMenu from './ModalMenu';
 
@@ -129,15 +130,16 @@ const NavBar = () => {
             
           </List>
         </Toolbar>
-
-        <Link href="#abc" sx={{textDecoration: 'none'}}>
-          <Box 
-            component="img"
-            height="2.5rem"
-            src={process.env.PUBLIC_URL + '/images/modern-logo.png'} 
-            alt="StoreSite Logo"
-          />
-        </Link>
+        <Tooltip title="StoreSite">
+          <Link href="#abc" sx={{textDecoration: 'none'}}>
+            <Box 
+              component="img"
+              height="2.5rem"
+              src={process.env.PUBLIC_URL + '/images/modern-logo.png'} 
+              alt="StoreSite Logo"
+            />
+          </Link>
+        </Tooltip>
 
       </AppBar>
     </Container>

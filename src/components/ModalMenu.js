@@ -51,6 +51,9 @@ const ModalMenuStyles = {
 const ModalLinkStyles = {
     fontSize : '1.15rem',
     textDecoration: 'none',
+    '&:hover': {
+        textDecoration: 'underline'
+      },
     color: '#171717',
     padding: '2rem 0'
 }
@@ -66,7 +69,7 @@ const ModalMenu =() => {
 
     return (
         <Box>
-            <Button onClick={handleOpen} sx={{display: { md: 'none', xs: 'block'}}}>
+            <Button onClick={handleOpen} sx={{display: { md: 'none', xs: 'block' }, color: '#535353'}}>
                 <MenuIcon sx={{color: '#535353'}} />
             </Button>
             <Modal
@@ -75,12 +78,13 @@ const ModalMenu =() => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 sx={{display: { md: 'none', xs: 'block'}}}
+                disableScrollLock
             >
             {/* <Fade in={open}> */}
                 <Box sx={ModalMenuStyles}>
                     {hashLinks.map((page) => (    //hashlinks
                         <ListItem key={page}>
-                            <Typography noWrap>
+                            <Typography noWrap sx={{}}>
                                 <HashLink
                                     style={ModalLinkStyles}
                                     scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })} //scroll to view
