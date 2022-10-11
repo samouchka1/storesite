@@ -8,8 +8,8 @@ import {
   List,
   ListItem,
   Link,
+  Box,
 } from '@mui/material';
-// import PopoverMenu from './PopoverMenu';
 import ModalMenu from './ModalMenu';
 
 const pages = [
@@ -46,7 +46,7 @@ const navBar = {
   display: 'flex',
   flexDirection: 'row',
   alignItems:'center',
-  justifyContent: 'flex-start',
+  justifyContent: 'space-between',
   height: 'auto',
   backgroundColor : '#f4f4f4', //background color
   border: 'solid 1px #b2b2b2',
@@ -55,7 +55,7 @@ const navBar = {
   padding: {
     md: '0 5rem 0 0',
     sm: '0 1.5rem 0 0',
-    xs: '0'
+    xs: '0 1rem 0 0'
   },
   boxShadow: 'none'
 }
@@ -89,11 +89,10 @@ const NavBar = () => {
   return (
   <Container maxWidth={false}>
       <AppBar sx={navBar}>
-
-        {/* <PopoverMenu /> */}
-        <ModalMenu />
-
         <Toolbar disableGutters>
+
+          <ModalMenu />  {/*<<<  MODAL MENU */}
+
           <List sx={navContent}>
 
             {hashLinks.map((page) => (    //hashlinks
@@ -116,7 +115,7 @@ const NavBar = () => {
               <ListItem key={page}>
                 <Typography noWrap>
                     <Link
-                      style={{textDecoration: 'none'}}
+                      sx={{textDecoration: 'none'}}
                       href={page.path}
                       target="_blank"
                     >
@@ -130,6 +129,16 @@ const NavBar = () => {
             
           </List>
         </Toolbar>
+
+        <Link href="#abc" sx={{textDecoration: 'none'}}>
+          <Box 
+            component="img"
+            height="2.5rem"
+            src={process.env.PUBLIC_URL + '/images/modern-logo.png'} 
+            alt="StoreSite Logo"
+          />
+        </Link>
+
       </AppBar>
     </Container>
   );

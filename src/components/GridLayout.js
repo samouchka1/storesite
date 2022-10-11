@@ -6,8 +6,9 @@ import {
     CardMedia,
     CardContent,
     CardActions,
+    CardActionArea,
     Typography,
-    Button
+    Button,
 } from '@mui/material';
 
 const items = [
@@ -23,17 +24,17 @@ const items = [
     },
     {
         name: 'Athletic',
-        path: '',
+        path: '#abc',
         media: 'athletic.jpg',
     },
     {
         name: 'Outdoor',
-        path: '',
+        path: '#abc',
         media: 'outdoor.jpg',
     },
     {
         name: 'Casual',
-        path: '',
+        path: '#abc',
         media: 'casual.jpg',
     },
 ]
@@ -59,24 +60,26 @@ const GridLayout = () => {
                     <Grid item xs={8} md={3} key={item}>
                         
                         <Card>
-                            <CardMedia
-                                component="img"
-                                height="auto"
-                                image={process.env.PUBLIC_URL + '/images/' + item.media}   
-                                alt="item"
-                            />
-                            <CardContent>
-                                <Typography variant="h5">
-                                    {item.name}
-                                </Typography>
-                                <Typography variant="body2">
-                                    Browse our styles! We offer only the best quality for the right price!
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Button size="small">Share</Button>
-                                <Button size="small">Learn More</Button>
-                            </CardActions>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="auto"
+                                    image={process.env.PUBLIC_URL + '/images/' + item.media}   
+                                    alt="item"
+                                />
+                                <CardContent>
+                                    <Typography variant="h5">
+                                        {item.name}
+                                    </Typography>
+                                    <Typography variant="body2">
+                                        Browse our styles! We offer only the best quality for the right price!
+                                    </Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <Button size="small">Share</Button>
+                                    <Button size="small">Learn More</Button>
+                                </CardActions>
+                            </CardActionArea>
                         </Card>
 
                     </Grid>
