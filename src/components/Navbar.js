@@ -43,6 +43,21 @@ const pages = [
   }
 ]
 
+const cartItems = [
+  {
+    name: 'Men\'s casual shirt',
+    color: 'Blue',
+    price: '$19.99',
+    thumbnail: 'cart-mens-shirt.jpg'
+  },
+  {
+    name: 'Women\'s outdoor pants',
+    color: 'Green',
+    price: '$24.99',
+    thumbnail: 'cart-womens-pants.jpg'
+  }
+]
+
 //===STYLES===
 
 const navBar = {
@@ -146,31 +161,41 @@ const NavBar = () => {
         </Toolbar>
 
         <Box component="div" sx={{display: 'flex'}}>
-          <Button sx={{color: '#535353'}}
-            id="basic-button"
-            aria-controls={open ? 'basic-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
+          <Button 
+            sx={{color: '#535353'}}
             onClick={handleClick}
           >
             <ShoppingCartIcon fontSize="large" sx={{color: '#535353'}} />
           </Button>
           <Popover
-            id="basic-menu"
             anchorEl={anchorEl}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left'}}
             open={open}
             onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button'
-            }}
-            marginThreshold={0}
           >
             <List>
-              <ListItem>
-                <Typography>TEST</Typography>
-              </ListItem>
+              {cartItems.map((item) => (
+                <ListItem key={item}>
+                  <Box
+                    component="img"
+                    src={process.env.PUBLIC_URL + '/images/' + item.thumbnail}
+                    height="50px"
+                    width="auto"
+                  />
+                  <Box component="div" sx={{display: 'flex', flexDirection: 'column'}}>
+                    <Typography>{item.name}</Typography>
+                    <Typography>{item.color}</Typography>
+                    <Typography>{item.price}</Typography>
+                  </Box>
+                </ListItem>
+              ))}
             </List>
+            <Box component="div" sx={{textAlign: 'center'}}>
+              <Button sx={{color: '#535353'}}>
+                  <Typography variant="subtitle2">Check out</Typography>
+            </Button>
+            </Box>
+
           </Popover>
 
           <Tooltip title="StoreSite">
