@@ -46,7 +46,7 @@ const carouselStyles = {
     display: 'flex',
     width: {
         md: '45vw',
-        xs: '95vw'
+        xs: '90vw'
     },
     height: 'auto',
     margin: '1rem auto 3rem'
