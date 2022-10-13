@@ -15,6 +15,8 @@ import {
 } from '@mui/material';
 import ModalMenu from './ModalMenu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const pages = [
   {
@@ -45,18 +47,23 @@ const pages = [
 
 const cartItems = [
   {
+    id: 1,
     name: 'Men\'s casual shirt',
     color: 'Blue',
-    price: '$19.99',
+    price: 19.99,
+    quantity: 1,
     thumbnail: 'cart-mens-shirt.jpg'
   },
   {
+    id: 2,
     name: 'Women\'s outdoor pants',
     color: 'Green',
-    price: '$24.99',
+    price: 24.99,
+    quantity: 2,
     thumbnail: 'cart-womens-pants.jpg'
   }
 ]
+
 
 //===STYLES===
 
@@ -71,11 +78,11 @@ const navBar = {
   border: 'solid 1px #b2b2b2',
   width: '100%',
   margin: '1rem 0',
-  // padding: {
-  //   md: '0 5rem 0 0',
-  //   sm: '0 1.5rem 0 0',
-  //   xs: '0 1rem 0 0'
-  // },
+  padding: {
+    md: '0 5rem 0 0',
+    sm: '0 1.5rem 0 0',
+    xs: '0 1rem 0 0'
+  },
   boxShadow: 'none'
 }
 
@@ -105,7 +112,6 @@ const links = pages.filter(link => link.path.includes('https'));
 
 const NavBar = () => {
 
-  //TEST
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -114,7 +120,8 @@ const NavBar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  //TEST
+
+  const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
   <Container maxWidth={false}>
@@ -156,7 +163,6 @@ const NavBar = () => {
                 </Typography>
               </ListItem>
             ))}
-            
           </List>
         </Toolbar>
 
@@ -175,7 +181,7 @@ const NavBar = () => {
           >
             <List>
               {cartItems.map((item) => (
-                <ListItem key={item}>
+                <ListItem key={item} sx={{margin: '.5rem 0'}}>
                   <Box
                     component="img"
                     src={process.env.PUBLIC_URL + '/images/' + item.thumbnail}
@@ -185,15 +191,28 @@ const NavBar = () => {
                   <Box component="div" sx={{display: 'flex', flexDirection: 'column'}}>
                     <Typography>{item.name}</Typography>
                     <Typography>{item.color}</Typography>
-                    <Typography>{item.price}</Typography>
+                    <Typography>${item.price}</Typography>
+                    <Box sx={{display: 'flex', alignItems: 'center'}}>
+                        <Button>
+                          <AddIcon sx={{color: '#535353'}} />
+                        </Button>
+                        <div>
+                          <Typography>Qty: {item.quantity}</Typography>
+                        </div>
+                        <Button>
+                          <RemoveIcon sx={{color: '#535353'}} />
+                        </Button>
+                    </Box>
                   </Box>
                 </ListItem>
               ))}
             </List>
-            <Box component="div" sx={{textAlign: 'center'}}>
+            
+            <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
+              <Typography>Total: ${total}</Typography>
               <Button sx={{color: '#535353'}}>
                   <Typography variant="subtitle2">Check out</Typography>
-            </Button>
+              </Button>
             </Box>
 
           </Popover>
