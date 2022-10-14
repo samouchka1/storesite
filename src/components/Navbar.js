@@ -15,8 +15,8 @@ import {
 } from '@mui/material';
 import ModalMenu from './ModalMenu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+// import AddIcon from '@mui/icons-material/Add';
+// import RemoveIcon from '@mui/icons-material/Remove';
 
 const pages = [
   {
@@ -121,7 +121,17 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
+  //SHOPPING CART
   const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  // const [counter, setCounter] = useState(0);
+  // const increase = () => {
+  //   setCounter(count => count + 1);
+  // };
+  // const decrease = () => {
+  //   setCounter(count => count - 1);
+  // };
+ 
+
 
   return (
   <Container maxWidth={false}>
@@ -189,20 +199,22 @@ const NavBar = () => {
                     width="auto"
                   />
                   <Box component="div" sx={{display: 'flex', flexDirection: 'column'}}>
-                    <Typography>{item.name}</Typography>
+                    <Typography sx={{fontWeight: 'bold'}}>{item.name}</Typography>
                     <Typography>{item.color}</Typography>
                     <Typography>${item.price}</Typography>
-                    <Box sx={{display: 'flex', alignItems: 'center'}}>
-                        <Button>
+                    
+                    <Typography>Qty: {item.quantity}</Typography>
+                    {/* <Box sx={{display: 'flex', alignItems: 'center'}}>
+                        <Button onClick={increase} sx={{color: '#535353'}}>
                           <AddIcon sx={{color: '#535353'}} />
                         </Button>
                         <div>
                           <Typography>Qty: {item.quantity}</Typography>
                         </div>
-                        <Button>
+                        <Button onclick={decrease} sx={{color: '#535353'}}>
                           <RemoveIcon sx={{color: '#535353'}} />
                         </Button>
-                    </Box>
+                    </Box> */}
                   </Box>
                 </ListItem>
               ))}
