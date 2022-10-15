@@ -13,37 +13,11 @@ import {
   Button,
   Popover,
 } from '@mui/material';
+import { pages } from '../data/pages';
 import ModalMenu from './ModalMenu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 // import AddIcon from '@mui/icons-material/Add';
 // import RemoveIcon from '@mui/icons-material/Remove';
-
-const pages = [
-  {
-    name: 'What\'s New',
-    path: '#new'
-  },
-  {
-    name: 'Men',
-    path: '#men'
-  },
-  {
-    name: 'Women',
-    path: '#women'
-  },
-  {
-    name: 'Casual',
-    path: '#casual'
-  },
-  {
-    name: 'Outdoor',
-    path: '#outdoor'
-  },
-  {
-    name: 'Athletic',
-    path: '#athletic'
-  }
-]
 
 const cartItems = [
   {

@@ -9,34 +9,8 @@ import {
     Box,
     // Fade
 } from '@mui/material';
+import { pages } from '../data/pages';
 import MenuIcon from '@mui/icons-material/Menu';
-
-const pages = [
-    {
-      name: 'What\'s New',
-      path: '#new'
-    },
-    {
-      name: 'Men',
-      path: '#men'
-    },
-    {
-      name: 'Women',
-      path: '#women'
-    },
-    {
-      name: 'Casual',
-      path: '#casual'
-    },
-    {
-      name: 'Outdoor',
-      path: '#outdoor'
-    },
-    {
-      name: 'Athletic',
-      path: '#athletic'
-    }
-]
 
 const ModalMenuStyles = {
     position: 'absolute',

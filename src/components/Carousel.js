@@ -5,36 +5,9 @@ import {
     Container, 
     Typography,
 } from '@mui/material';
+import { photos } from '../data/photos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
-const photos = [
-    {
-        id: 1,
-        image: 'men.jpg',
-        label: 'Men'
-    },
-    {
-        id: 2,
-        image: 'women.jpg',
-        label: 'Women'
-    },
-    {
-        id: 3,
-        image: 'athletic.jpg',
-        label: 'Athletic'
-    },
-    {
-        id: 4,
-        image: 'outdoor.jpg',
-        label: 'Outdoor'
-    },
-    {
-        id: 5,
-        image: 'casual.jpg',
-        label: 'Casual'
-    }
-]
 
 const containerStyles = {
     width: '100%',

@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import GridLayout from './components/GridLayout';
 import ImageCarousel from './components/Carousel';
 // import CarouselNew from './components/CarouselNew';
-import Footer from './components/Footer.js';
+import Footer from './components/Footer';
 
 function App() {
   return (
