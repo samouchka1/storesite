@@ -2,17 +2,17 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import GridLayout from './components/GridLayout';
-import ImageCarousel from './components/Carousel';
-// import CarouselNew from './components/CarouselNew';
+import CarouselImg from './components/Carousel';
+import CarouselHero from './components/CarouselHero';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
+      <CarouselHero />
       <GridLayout />
-      <ImageCarousel />
-      {/* <CarouselNew /> */}
+      <CarouselImg />
       <Footer />
     </div>
   );

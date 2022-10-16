@@ -43,7 +43,7 @@ const labelStyles = {
 }
 
 
-const ImageCarousel = () => {
+const CarouselImg = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -86,4 +86,4 @@ const ImageCarousel = () => {
     )
 }
 
-export default ImageCarousel;
+export default CarouselImg;
