@@ -12,7 +12,8 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 const containerStyles = {
     width: '100%',
     backgroundColor: '#f4f4f4',
-    border: 'solid 1px #b2b2b2' //temp
+    border: 'solid 1px #b2b2b2', //temp
+    display: { md: 'none', xs: 'block'}
 }
 
 const carouselStyles = {
