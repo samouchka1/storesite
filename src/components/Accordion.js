@@ -35,7 +35,7 @@ function SimpleAccordion() {
                 <AccordionDetails>
                     <Box 
                         component="img"
-                        src={process.env.PUBLIC_URL + '/images/orange.jpg'}
+                        src={process.env.PUBLIC_URL + '/images/men.jpg'}
                         alt="orange"
                         sx={accordionImageStyles}
                     />
@@ -54,7 +54,7 @@ function SimpleAccordion() {
                 <AccordionDetails sx={{justifyContent: 'center'}}>
                     <Box 
                         component="img"
-                        src={process.env.PUBLIC_URL + '/images/melon.jpg'}
+                        src={process.env.PUBLIC_URL + '/images/women.jpg'}
                         alt="orange"
                         sx={accordionImageStyles}
                     />
@@ -73,7 +73,7 @@ function SimpleAccordion() {
                 <AccordionDetails>
                     <Box 
                         component="img"
-                        src={process.env.PUBLIC_URL + '/images/apple.jpg'}
+                        src={process.env.PUBLIC_URL + '/images/outdoor.jpg'}
                         alt="orange"
                         sx={accordionImageStyles}
                     />

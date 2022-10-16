@@ -4,6 +4,7 @@ import { photos } from '../data/photos';
 import { 
     Box, 
     Container,
+    Link,
     Typography, 
 } from '@mui/material';
 
@@ -41,12 +42,14 @@ const CarouselHero = () => {
 
                 {photos.map((photo) => (
                     <Box key={photo.id} component="div" style={{display: 'flex'}}>
-                        <Box component="img"
-                            src={process.env.PUBLIC_URL + '/images/' + photo.image} 
-                            alt={photo.label}
-                            sx={{margin: 'auto'}}
-                        />
-                        <Typography sx={labelStyles}>{photo.label}</Typography>
+                        <Link href="#abc">
+                            <Box component="img"
+                                src={process.env.PUBLIC_URL + '/images/' + photo.image} 
+                                alt={photo.label}
+                                sx={{margin: 'auto'}}
+                            />
+                            <Typography sx={labelStyles}>{photo.label}</Typography>
+                        </Link>
                     </Box>
                 ))}
 

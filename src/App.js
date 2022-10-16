@@ -5,6 +5,7 @@ import GridLayout from './components/GridLayout';
 import CarouselImg from './components/Carousel';
 import CarouselHero from './components/CarouselHero';
 import Footer from './components/Footer';
+import ThreeColumns from './components/ThreeColumns';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <CarouselHero />
       <CarouselImg />
       <GridLayout />
+      <ThreeColumns />
       <Footer />
     </div>
   );

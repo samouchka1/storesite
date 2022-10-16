@@ -128,7 +128,7 @@ const signatureStyles = {
 const Footer = () => {
   return (
     <Container maxWidth={false} sx={{margin: '1rem 0 4rem'}}>
-        <Box sx={{backgroundColor : '#f4f4f4', border: 'solid 1px #b2b2b2', margin: '0 auto'}}>
+        <Box sx={{backgroundColor: '#f4f4f4', border: 'solid 1px #b2b2b2', margin: '0 auto'}}>
             <AppBar sx={footerStyles}>
                 <Toolbar>
                     <List sx={{display: 'flex'}}>
