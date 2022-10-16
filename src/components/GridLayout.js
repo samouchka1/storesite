@@ -76,8 +76,8 @@ const GridLayout = () => {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small">Share</Button>
-                                    <Button size="small">Learn More</Button>
+                                    <Button size="small" sx={{color: '#535353'}}>Learn More</Button>
+                                    <Button size="small" sx={{color: '#535353'}}>Add to Cart</Button>
                                 </CardActions>
                             </CardActionArea>
                         </Card>

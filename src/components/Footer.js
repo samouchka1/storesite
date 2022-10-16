@@ -33,7 +33,7 @@ const socialMedia = [
 ]
 const customerService = [
     {
-        name: 'Contact Us',
+        name: 'Contact\u00A0Us',
         href: '#abc'
     },
     {
@@ -41,11 +41,11 @@ const customerService = [
         href: '#abc'
     },
     {
-        name: 'Shipping Policy',
+        name: 'Shipping\u00A0Policy',
         href: '#abc'
     },
     {
-        name: 'Return Policy',
+        name: 'Return\u00A0Policy',
         href: '#abc'
     },
     {
@@ -115,7 +115,7 @@ const footerLinkStyles = {
 
 const footerSectionStyles = {
     // width: '100%',
-    padding: '1rem',
+    padding: '1rem 3rem 1rem 1rem',
     
 }
 
@@ -152,6 +152,17 @@ const Footer = () => {
 
             {/* SECTION */}
             <Box sx={{display: 'flex', justifyContent: 'space-between', width: {md: '50%', xs:'100%'}, margin: '0 auto'}}>
+
+                <Box sx={{alignSelf: 'center', margin: 'auto', display: {md: 'block', xs: 'none'}}}>
+                    <Tooltip title="StoreSite">
+                        <Box 
+                            component="img" 
+                            alt="someting" 
+                            height="8rem" 
+                            src={process.env.PUBLIC_URL + '/images/modern-logo.png'}
+                        />
+                    </Tooltip>
+                </Box>
                 <Box sx={footerSectionStyles}>
                     <Typography variant="body2">
                         Customer Service
@@ -168,7 +179,7 @@ const Footer = () => {
                 </Box>
                 <Box sx={footerSectionStyles}>
                     <Typography variant="body2">
-                        Popular Pages
+                        Popular&nbsp;Pages
                     </Typography>
                     <Typography variant="subtitle2">
                         <List>
@@ -181,6 +192,16 @@ const Footer = () => {
                     </Typography>
                 </Box>
             </Box>
+
+            <Tooltip title="StoreSite">
+                <Box 
+                    component="img"
+                    alt="StoreSite logo"
+                    src={process.env.PUBLIC_URL + '/images/modern-logo.png'}
+                    height="5rem"
+                    sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
+                />
+            </Tooltip>
             
             <Box sx={{textAlign: 'center', margin: '1rem 0', color: '#2f2f2f'}}>
                 <Typography sx={footerTitleStyles}>StoreSite</Typography>
