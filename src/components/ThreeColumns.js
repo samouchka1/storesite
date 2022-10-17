@@ -11,39 +11,45 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const accordionStyles = {
-    width: {
-        md: '60%',
-        xs: '90%'
-    },
+    width: '100%',
     margin: '0 auto'
 }
 
 const accordionButtonStyles = {
     display: 'block',
-    margin: '0 auto'
+    margin: '0 auto',
+    color: '#535353'
 }
 
 const accordionImageStyles = {
     height: 'auto',
-    width: {
-        md: '80%',
-        xs: '90%'
-    },
+    width: '100%',
     borderRadius: '4px',
     display: 'block',
     margin: '0 auto 1rem',
+    opacity: '.9',
+    '&:hover': {
+        opacity: '1',
+        animationName: 'zoom',
+        animationDuration: '1s',
+        animationFillMode: 'forwards',
+        '@keyframes zoom' : {
+            '0%': { transform: 'scale(1.0035)'},
+            '100%' : { transform: 'scale(1.05)'}
+        }
+    }
 }
 
 
 const ThreeColumns = () => {
   return (
     <Container maxWidth={false}>
-        <Box sx={{display: 'flex', flexDirection: {md: 'row', xs: 'column'}, backgroundColor: '#f4f4f4', border: 'solid 1px #b2b2b2', padding: '1rem 0'}}>
-            <Box sx={{margin: '0 0 1rem 0'}}>
+        <Box sx={{display: 'flex', flexDirection: {md: 'row', xs: 'column'}, gap: '1rem', backgroundColor: '#f4f4f4', border: 'solid 1px #b2b2b2', padding: '1rem'}}>
+            <Box sx={{margin: '0 0 1rem'}}>
                 <Box 
                     component="img"
                     alt="something"
-                    src={process.env.PUBLIC_URL + '/images/men.jpg'}
+                    src={process.env.PUBLIC_URL + '/images/athletic.jpg'}
                     sx={accordionImageStyles}
                 />
                 <Accordion sx={accordionStyles}>
@@ -59,7 +65,7 @@ const ThreeColumns = () => {
                     </AccordionDetails>
                  </Accordion>
             </Box>
-            <Box sx={{margin: '0 0 1rem 0'}}>
+            <Box sx={{margin: '0'}}>
                 <Box 
                     component="img"
                     alt="something"
@@ -79,7 +85,7 @@ const ThreeColumns = () => {
                     </AccordionDetails>
                  </Accordion>
             </Box>
-            <Box sx={{margin: '0 0 1rem 0'}}>
+            <Box sx={{margin: '0'}}>
                 <Box 
                     component="img"
                     alt="something"

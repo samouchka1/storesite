@@ -11,6 +11,7 @@ import {
 const componentStyles ={
     backgroundColor : '#f4f4f4', //background color
     border: 'solid 1px #b2b2b2',
+    margin: '1rem 0'
 }
 
 const labelStyles = {

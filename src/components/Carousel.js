@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
     Box,
-    Button,
     Container, 
     Typography,
 } from '@mui/material';
@@ -60,9 +59,7 @@ const CarouselImg = () => {
         <Container maxWidth="lg" sx={containerStyles}>
             <Box sx={carouselStyles}>
 
-                <Button onClick={prev} sx={{color: '#535353'}}>
-                    <ArrowBackIosIcon sx={{color: '#535353'}}/>
-                </Button>
+                <ArrowBackIosIcon onClick={prev} sx={{color: '#535353', alignSelf: 'center', margin: '0'}}/>
                 
                 {photos.map((photo) => (
                     <Box key={photo.id}
@@ -77,9 +74,7 @@ const CarouselImg = () => {
                     </Box>
                 ))} 
 
-                <Button onClick={next} sx={{color: '#535353'}}>
-                    <ArrowForwardIosIcon sx={{color: '#535353'}} />
-                </Button>
+                <ArrowForwardIosIcon onClick={next} sx={{color: '#535353', alignSelf: 'center', margin: '0'}} />
 
             </Box>
             
