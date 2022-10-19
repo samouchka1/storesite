@@ -7,12 +7,18 @@ import {
 } from '@mui/material';
 import { photos } from '../data/photos';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, FreeMode } from "swiper";
+import '../App.css';
 import 'swiper/css';
+import "swiper/css/navigation";
+import "swiper/css/free-mode";
+
 
 const componentStyles ={
     backgroundColor : '#f4f4f4', //background color
     border: 'solid 1px #b2b2b2',
-    margin: '1rem 0'
+    margin: '1rem 0',
+    padding: '1rem 0'
 }
 
 const labelStyles = {
@@ -30,7 +36,14 @@ const CarouselSwiper = () => {
   return (
     <Container maxWidth={false} sx={{display: { md: 'block', xs: 'none'}}}>
         <Box sx={componentStyles}>
-            <Swiper slidesPerView={2}>
+            <Swiper 
+                slidesPerView={2}
+                spaceBetween={10}
+                loop={true}
+                navigation={true}
+                freeMode={true}
+                modules={[FreeMode, Navigation]}
+            >
                 {photos.map((photo) => (
                     <SwiperSlide key={photo.id} component="div" style={{display: 'flex', margin: 'auto'}}>
                         <Link href="#abc">
