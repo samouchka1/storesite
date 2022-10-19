@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { pages } from '../data/pages';
 import MenuIcon from '@mui/icons-material/Menu';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const ModalMenuStyles = {
     position: 'absolute',
@@ -44,7 +45,7 @@ const ModalMenu =() => {
     return (
         <Box>
             <Button onClick={handleOpen} sx={{display: { md: 'none', xs: 'block' }, color: '#535353'}}>
-                <MenuIcon sx={{color: '#535353'}} />
+                {open ? <ClearIcon sx={{color: '#535353'}} /> : <MenuIcon sx={{color: '#535353'}} />}
             </Button>
             <Modal
                 open={open}

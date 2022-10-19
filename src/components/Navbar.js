@@ -155,7 +155,7 @@ const NavBar = () => {
             sx={{color: '#535353'}}
             onClick={handleClick}
           >
-            <ShoppingCartIcon fontSize="large" sx={{color: '#535353'}} />
+            <ShoppingCartIcon sx={{color: '#535353', fontSize: { md: '2rem', xs: '1.7rem'}, caretColor: 'transparent'}} />
           </Button>
           <Popover
             anchorEl={anchorEl}
