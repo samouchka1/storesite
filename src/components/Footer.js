@@ -13,6 +13,7 @@ import {
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import RedditIcon from '@mui/icons-material/Reddit';
+import '../App.css'; //for logo spin
 
 const socialMedia = [
     {
@@ -193,7 +194,7 @@ const Footer = () => {
                 </Box>
             </Box>
 
-            <Tooltip title="StoreSite">
+            <Tooltip title="StoreSite" className="App-logo" /*not working*/ >
                 <Box 
                     component="img"
                     alt="StoreSite logo"

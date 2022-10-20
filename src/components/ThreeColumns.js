@@ -9,6 +9,16 @@ import {
     AccordionDetails,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Fade } from "react-awesome-reveal";
+
+const containerStyles = {
+    display: 'flex', 
+    flexDirection: {md: 'row', xs: 'column'}, 
+    gap: '1rem', 
+    backgroundColor: '#f4f4f4', 
+    border: 'solid 1px #b2b2b2', 
+    padding: '1rem'
+}
 
 const accordionStyles = {
     width: '100%',
@@ -31,11 +41,11 @@ const accordionImageStyles = {
     '&:hover': {
         opacity: '1',
         animationName: 'zoom',
-        animationDuration: '1s',
+        animationDuration: '.3s',
         animationFillMode: 'forwards',
         '@keyframes zoom' : {
             '0%': { transform: 'scale(1.0035)'},
-            '100%' : { transform: 'scale(1.05)'}
+            '100%' : { transform: 'scale(1.009)'}
         }
     }
 }
@@ -44,67 +54,79 @@ const accordionImageStyles = {
 const ThreeColumns = () => {
   return (
     <Container maxWidth={false}>
-        <Box sx={{display: 'flex', flexDirection: {md: 'row', xs: 'column'}, gap: '1rem', backgroundColor: '#f4f4f4', border: 'solid 1px #b2b2b2', padding: '1rem'}}>
-            <Box sx={{margin: '0 0 1rem'}}>
-                <Box 
-                    component="img"
-                    alt="something"
-                    src={process.env.PUBLIC_URL + '/images/athletic.jpg'}
-                    sx={accordionImageStyles}
-                />
-                <Accordion sx={accordionStyles}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography>Men</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Typography>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                        </Typography>
-                        <Button size="small" sx={accordionButtonStyles}>Learn more</Button>
-                    </AccordionDetails>
-                 </Accordion>
-            </Box>
-            <Box sx={{margin: '0'}}>
-                <Box 
-                    component="img"
-                    alt="something"
-                    src={process.env.PUBLIC_URL + '/images/women.jpg'}
-                    sx={accordionImageStyles}
-                />
-                <Accordion sx={accordionStyles}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography>Women</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Typography>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                        </Typography>
-                        <Button size="small" sx={accordionButtonStyles}>Learn more</Button>
-                    </AccordionDetails>
-                 </Accordion>
-            </Box>
-            <Box sx={{margin: '0'}}>
-                <Box 
-                    component="img"
-                    alt="something"
-                    src={process.env.PUBLIC_URL + '/images/outdoor.jpg'}
-                    sx={accordionImageStyles}
-                />
-                <Accordion sx={accordionStyles}>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography>Outdoor</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Typography>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                        </Typography>
-                        <Button size="small" sx={accordionButtonStyles}>Learn more</Button>
-                    </AccordionDetails>
-                 </Accordion>
-            </Box>
+        <Box sx={containerStyles}>
+
+            <Fade cascade damping={0.15}>
+                <Box sx={{margin: '0 0 1rem'}}>
+                    <Box 
+                        component="img"
+                        alt="something"
+                        src={process.env.PUBLIC_URL + '/images/athletic.jpg'}
+                        sx={accordionImageStyles}
+                    />
+                    <Accordion sx={accordionStyles}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography>Men</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            </Typography>
+                            <Button size="small" sx={accordionButtonStyles}>Learn more</Button>
+                        </AccordionDetails>
+                    </Accordion>
+                </Box>
+            </Fade>
+
+
+            <Fade cascade damping={0.15}>
+                <Box sx={{margin: '0'}}>
+                    <Box 
+                        component="img"
+                        alt="something"
+                        src={process.env.PUBLIC_URL + '/images/women.jpg'}
+                        sx={accordionImageStyles}
+                    />
+                    <Accordion sx={accordionStyles}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography>Women</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            </Typography>
+                            <Button size="small" sx={accordionButtonStyles}>Learn more</Button>
+                        </AccordionDetails>
+                    </Accordion>
+                </Box>
+            </Fade>
+
+
+            <Fade cascade damping={0.15}>
+                <Box sx={{margin: '0'}}>
+                    <Box 
+                        component="img"
+                        alt="something"
+                        src={process.env.PUBLIC_URL + '/images/outdoor.jpg'}
+                        sx={accordionImageStyles}
+                    />
+                    <Accordion sx={accordionStyles}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <Typography>Outdoor</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Typography>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                            </Typography>
+                            <Button size="small" sx={accordionButtonStyles}>Learn more</Button>
+                        </AccordionDetails>
+                    </Accordion>
+                </Box>
+            </Fade>
+
         </Box>
     </Container>
   )

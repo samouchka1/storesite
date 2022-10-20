@@ -8,7 +8,8 @@ import {
 import { photos } from '../data/photos';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode } from "swiper";
-import '../App.css';
+
+import '../App.css'; //for navigation arrow color
 import 'swiper/css';
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
@@ -34,11 +35,21 @@ const labelStyles = {
 
 const CarouselSwiper = () => {
   return (
-    <Container maxWidth={false} sx={{display: { md: 'block', xs: 'none'}}}>
+    <Container maxWidth={false}>
         <Box sx={componentStyles}>
             <Swiper 
-                slidesPerView={2}
-                spaceBetween={10}
+                // slidesPerView={2}
+                // spaceBetween={10}
+                breakpoints={{
+                    600: {
+                      slidesPerView: 1,
+                      spaceBetween: 0,
+                    },
+                    800: {
+                      slidesPerView: 2,
+                      spaceBetween: 10,
+                    },
+                }}
                 loop={true}
                 navigation={true}
                 freeMode={true}
@@ -50,6 +61,7 @@ const CarouselSwiper = () => {
                             <Box component="img"
                                 src={process.env.PUBLIC_URL + '/images/' + photo.image} 
                                 alt={photo.label}
+                                sx={{width: '100%', height: 'auto'}}
                             />
                             <Typography sx={labelStyles}>{photo.label}</Typography>
                         </Link>
