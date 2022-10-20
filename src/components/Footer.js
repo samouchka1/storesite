@@ -158,12 +158,15 @@ const Footer = () => {
 
                 <Box sx={{alignSelf: 'center', margin: 'auto', display: {md: 'block', xs: 'none'}}}>
                     <Tooltip title="StoreSite">
-                        <Box 
-                            component="img" 
-                            alt="someting" 
-                            height="8rem" 
-                            src={process.env.PUBLIC_URL + '/images/modern-logo.png'}
-                        />
+                        <Link href="#abc" sx={{textDecoration: 'none'}}>
+                            <Box 
+                                className="App-logo"
+                                component="img" 
+                                alt="StoreSite logo" 
+                                height="8rem" 
+                                src={process.env.PUBLIC_URL + '/images/modern-logo.png'}
+                            />
+                        </Link>
                     </Tooltip>
                 </Box>
                 <Box sx={footerSectionStyles}>
@@ -210,14 +213,16 @@ const Footer = () => {
             </Box>
 
             <Tooltip title="StoreSite">
-                <Box 
-                    className="App-logo" /*not working*/
-                    component="img"
-                    alt="StoreSite logo"
-                    src={process.env.PUBLIC_URL + '/images/modern-logo.png'}
-                    height="5rem"
-                    sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
-                />
+                <Link href="#abc" sx={{textDecoration: 'none'}}>
+                    <Box 
+                        className="App-logo"
+                        component="img"
+                        alt="StoreSite logo"
+                        src={process.env.PUBLIC_URL + '/images/modern-logo.png'}
+                        height="5rem"
+                        sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
+                    />
+                </Link>
             </Tooltip>
             
             <Box sx={{textAlign: 'center', margin: '1rem 0', color: '#2f2f2f'}}>

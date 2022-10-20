@@ -16,6 +16,7 @@ import {
 import { pages } from '../data/pages';
 import ModalMenu from './ModalMenu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import '../App.css'; //for logo spin
 // import AddIcon from '@mui/icons-material/Add';
 // import RemoveIcon from '@mui/icons-material/Remove';
 
@@ -206,6 +207,7 @@ const NavBar = () => {
           <Tooltip title="StoreSite">
             <Link href="#abc" sx={{textDecoration: 'none'}}>
               <Box 
+                className="App-logo"
                 component="img"
                 height="2.5rem"
                 src={process.env.PUBLIC_URL + '/images/modern-logo.png'} 
