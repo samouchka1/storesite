@@ -17,11 +17,11 @@
 
 /*logo spin  (not working) */
 .App-logo {
-  height: 40vmin;
+  /* height: 40vmin; */
   pointer-events: none;
 }
 
-@media (hover: hover) {
+@media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }

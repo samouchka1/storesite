@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import {
     AppBar,
     Container,
@@ -13,6 +14,7 @@ import {
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import RedditIcon from '@mui/icons-material/Reddit';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import '../App.css'; //for logo spin
 
 const socialMedia = [
@@ -192,10 +194,24 @@ const Footer = () => {
                         </List>
                     </Typography>
                 </Box>
+
+                <Box sx={{alignSelf: 'flex-end', caretColor: 'transparent', margin: '0 0 0 2rem'}}>
+
+                    <HashLink
+                        scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
+                        to="#top"
+                    >
+                        <Tooltip title="Back to top">
+                            <ArrowUpwardIcon fontSize="large" sx={{color: '#464646'}} />
+                        </Tooltip>
+                    </HashLink>
+                </Box>
+
             </Box>
 
-            <Tooltip title="StoreSite" className="App-logo" /*not working*/ >
+            <Tooltip title="StoreSite">
                 <Box 
+                    className="App-logo" /*not working*/
                     component="img"
                     alt="StoreSite logo"
                     src={process.env.PUBLIC_URL + '/images/modern-logo.png'}

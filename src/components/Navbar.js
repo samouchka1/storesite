@@ -109,7 +109,7 @@ const NavBar = () => {
 
   return (
   <Container maxWidth={false}>
-      <AppBar sx={navBar}>
+      <AppBar sx={navBar} id="top">
         <Toolbar disableGutters>
 
           <ModalMenu />  {/*<<<  MODAL MENU */}
