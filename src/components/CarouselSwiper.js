@@ -47,7 +47,7 @@ const CarouselSwiper = () => {
                     },
                     800: {
                       slidesPerView: 2,
-                      spaceBetween: 10,
+                      spaceBetween: 0,
                     },
                 }}
                 loop={true}
@@ -56,7 +56,7 @@ const CarouselSwiper = () => {
                 modules={[FreeMode, Navigation]}
             >
                 {photos.map((photo) => (
-                    <SwiperSlide key={photo.id} component="div" style={{display: 'flex', margin: 'auto'}}>
+                    <SwiperSlide key={photo.id} component="div" style={{display: 'flex'}}>
                         <Link href="#abc">
                             <Box component="img"
                                 src={process.env.PUBLIC_URL + '/images/' + photo.image} 

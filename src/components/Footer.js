@@ -128,6 +128,13 @@ const signatureStyles = {
     caretColor: 'transparent'
 }
 
+const backToTopButtonStyle = {
+    alignSelf: 'flex-end', 
+    caretColor: 'transparent', 
+    margin: '0 0 0 2rem', 
+    display: {md: 'block', xs: 'none'}
+}
+
 const Footer = () => {
   return (
     <Container maxWidth={false} sx={{margin: '1rem 0 4rem'}}>
@@ -198,8 +205,7 @@ const Footer = () => {
                     </Typography>
                 </Box>
 
-                <Box sx={{alignSelf: 'flex-end', caretColor: 'transparent', margin: '0 0 0 2rem'}}>
-
+                <Box sx={backToTopButtonStyle}>
                     <HashLink
                         scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
                         to="#top"
