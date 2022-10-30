@@ -9,16 +9,7 @@
   color: #535353 !important;
 }
 
-
-.colortest1 {
-  color: #808080;
-}
-
-.colortest2 {
-  color: #727d8a;
-}
-
-/*logo spin  (not working) */
+/*logo spin */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -33,4 +24,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/*underline effect */
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #454545;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2.2px;
+  bottom: 0;
+  left: 0;
+  background-color: #454545;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+
+
+
+
+.colortest1 {
+  color: #808080;
+}
+
+.colortest2 {
+  color: #d5d5d5;
 }

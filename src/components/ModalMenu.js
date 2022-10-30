@@ -25,12 +25,8 @@ const ModalMenuStyles = {
 
 const ModalLinkStyles = {
     fontSize : '1.15rem',
-    textDecoration: 'none',
-    '&:hover': {
-        textDecoration: 'underline'
-      },
     color: '#171717',
-    padding: '2rem 0'
+    padding: '.5rem 0'
 }
 
 const hashLinks = pages.filter(hash => hash.path.includes('#')); //filter hashlinks
@@ -61,11 +57,11 @@ const ModalMenu =() => {
                         <ListItem key={page}>
                             <Typography noWrap sx={{}}>
                                 <HashLink
-                                    style={ModalLinkStyles}
+                                    style={{textDecoration: 'none'}}
                                     scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })} //scroll to view
                                     to={page.path}
                                 >
-                                <Typography>
+                                <Typography sx={ModalLinkStyles}>
                                     {page.name}
                                 </Typography>
                                 </HashLink>

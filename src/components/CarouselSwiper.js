@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
     Box, 
+    // Button, 
     Container,
     Link,
     Typography, 
@@ -20,7 +21,7 @@ const componentStyles ={
     backgroundColor : '#f4f4f4', //background color
     border: 'solid 1px #b2b2b2',
     margin: '1rem 0',
-    padding: '1rem 0'
+    padding: '1rem 0 0'
 }
 
 const labelStyles = {
@@ -30,13 +31,35 @@ const labelStyles = {
     '&:hover': {
         textDecoration: 'none'
     },
-    position: 'relative', 
+    position: 'relative',
     color: 'white', 
     fontSize: '17px', 
     padding: '.25rem', 
     backgroundColor: '#2e2e2ebc', 
     borderRadius: '4px'
 }
+
+// const labelButtonStyles = {
+//     position: 'relative',
+//     bottom: '80%',
+//     right: {
+//         md: '25%',
+//         xs: '40%'
+//     },
+//     display: 'inline-block',
+//     margin: '0',
+//     textAlign: 'center',
+//     color: '#535353',
+//     border: '#535353 1px solid',
+//     backgroundColor: '#e4e4e4',
+//     '&:hover': {
+//         backgroundColor: '#d5d5d5'
+//     },
+//     padding: {
+//         md: '20px',
+//         xs: '10px'
+//     },
+// }
 
 const CarouselSwiper = () => {
   return (
@@ -62,13 +85,14 @@ const CarouselSwiper = () => {
             >
                 {swiperImages.map((photo) => (
                     <SwiperSlide key={photo.id} component="div" style={{display: 'flex'}}>
-                        <Link href="#abc">
+                        <Link href="#abc" sx={{textDecoration: 'none'}}>
                             <Box component="img"
                                 src={process.env.PUBLIC_URL + '/images/carouselSwiper/' + photo.image} 
                                 alt={photo.label}
                                 sx={{width: '100%', height: {md:'75vh', xs: '45vh'}}}
                             />
                             <Typography sx={labelStyles}>{photo.label}</Typography>
+                            {/* <Button sx={labelButtonStyles} variant="outlined">Shop&nbsp;Now</Button> */}
                         </Link>
                     </SwiperSlide>
                 ))}

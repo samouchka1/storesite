@@ -16,7 +16,7 @@ import {
 import { pages } from '../data/pages';
 import ModalMenu from './ModalMenu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import '../App.css'; //for logo spin
+import '../App.css'; //for logo spin, underline effect
 
 const cartItems = [
   {
@@ -69,15 +69,12 @@ const navContent = {
 const navLinks = {
   textDecoration: 'none',
   color: '#171717', //color
-  fontSize : '1rem',
+  fontSize : '1.15rem',
   margin: {
     md: '0 .5rem',
     sm: '0',
     xs: '0'
   },
-  '&:hover': {
-    textDecoration: 'underline',
-  }
 }
 
 const hashLinks = pages.filter(hash => hash.path.includes('#')); //filter hashlinks
@@ -114,7 +111,7 @@ const NavBar = () => {
                         scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })} //scroll to view
                         to={page.path}
                       >
-                        <Typography sx={navLinks}>
+                        <Typography sx={navLinks} className="hover-underline-animation">
                           {page.name}
                         </Typography>
                       </HashLink>
@@ -130,7 +127,7 @@ const NavBar = () => {
                       href={page.path}
                       target="_blank"
                     >
-                      <Typography sx={navLinks}>
+                      <Typography sx={navLinks} className="hover-underline-animation">
                         {page.name}
                       </Typography>
                     </Link>
