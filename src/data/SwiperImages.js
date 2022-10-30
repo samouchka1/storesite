@@ -11,13 +11,13 @@ export const swiperImages = [
     },
     {
         id: 3,
-        image: 'city-hat.jpg',
-        label: 'city hat'
+        image: 'business-outfit.jpg',
+        label: 'business outfit'
     },
     {
         id: 4,
-        image: 'casual-shirt.jpg',
-        label: 'casual shirt'
+        image: 'casual-coat.jpg',
+        label: 'casual coat'
     },
     {
         id: 5,

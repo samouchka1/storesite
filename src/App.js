@@ -5,12 +5,14 @@ import GridCardLayout from './components/GridCardLayout';
 import CarouselSwiper from './components/CarouselSwiper';
 import Footer from './components/Footer';
 import ThreeColumns from './components/ThreeColumns';
+// import Parallax from './components/Parallax';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <CarouselSwiper />
+      {/* <Parallax /> */}
       <GridCardLayout />
       <ThreeColumns />
       <Footer />

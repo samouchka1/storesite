@@ -25,7 +25,11 @@ const componentStyles ={
 
 const labelStyles = {
     width: '99%',
-    textAlign: 'center', 
+    textAlign: 'center',
+    textDecoration: 'none', 
+    '&:hover': {
+        textDecoration: 'none'
+    },
     position: 'relative', 
     color: 'white', 
     fontSize: '17px', 
