@@ -5,7 +5,8 @@ import {
     Link,
     Typography, 
 } from '@mui/material';
-import { photos } from '../data/photos';
+import { swiperImages } from '../data/SwiperImages';
+// import { photos } from '../data/photos';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode } from "swiper";
 
@@ -55,13 +56,13 @@ const CarouselSwiper = () => {
                 freeMode={true}
                 modules={[FreeMode, Navigation]}
             >
-                {photos.map((photo) => (
+                {swiperImages.map((photo) => (
                     <SwiperSlide key={photo.id} component="div" style={{display: 'flex'}}>
                         <Link href="#abc">
                             <Box component="img"
-                                src={process.env.PUBLIC_URL + '/images/' + photo.image} 
+                                src={process.env.PUBLIC_URL + '/images/carouselSwiper/' + photo.image} 
                                 alt={photo.label}
-                                sx={{width: '100%', height: 'auto'}}
+                                sx={{width: '100%', height: '75vh'}}
                             />
                             <Typography sx={labelStyles}>{photo.label}</Typography>
                         </Link>
