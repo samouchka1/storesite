@@ -46,8 +46,6 @@ const ModalMenu =() => {
             <Modal
                 open={open}
                 onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
                 sx={{display: { md: 'none', xs: 'block'}}}
                 disableScrollLock
             >

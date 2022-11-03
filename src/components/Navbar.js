@@ -146,6 +146,7 @@ const NavBar = () => {
               <ShoppingCartIcon sx={{color: '#535353', fontSize: { md: '2rem', xs: '1.7rem'}, caretColor: 'transparent'}} />
             </Tooltip>
           </Button>
+          
           <Popover
             anchorEl={anchorEl}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'left'}}

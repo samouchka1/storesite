@@ -82,7 +82,7 @@ const GridCardLayout = () => {
         <Container maxWidth={false}>
             <Grid container sx={gridStyle} id="grid">
                 {items.map((item) => (
-                    <Grid item xs={8} md={3} key={item}>
+                    <Grid item xs={8} md={3} key={item} sx={{maxWidth: '90%', flexGrow: 1}}>
 
                         <Fade cascade damping={0.15}>
                             <Card>
@@ -101,11 +101,11 @@ const GridCardLayout = () => {
                                             Browse our styles! We offer only the best quality for the right price!
                                         </Typography>
                                     </CardContent>
-                                    <CardActions>
-                                        <Button size="small" sx={{color: '#535353', fontSize: {xs: '.70rem'}}}>Learn More</Button>
-                                        <Button size="small" sx={{color: '#535353', fontSize: {xs: '.70rem'}}}>Add to Cart</Button>
-                                    </CardActions>
                                 </CardActionArea>
+                                <CardActions>
+                                    <Button size="small" sx={{color: '#535353', fontSize: {xs: '.70rem'}}}>Learn More</Button>
+                                    <Button size="small" sx={{color: '#535353', fontSize: {xs: '.70rem'}}}>Add to Cart</Button>
+                                </CardActions> 
                             </Card>
                         </Fade>
 

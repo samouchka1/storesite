@@ -89,7 +89,7 @@ const CarouselSwiper = () => {
                             <Box component="img"
                                 src={process.env.PUBLIC_URL + '/images/carouselSwiper/' + photo.image} 
                                 alt={photo.label}
-                                sx={{width: '100%', height: {md:'75vh', xs: '45vh'}}}
+                                sx={{width: '100%', height: {md:'75vh', xs: '40vh'}}}
                             />
                             <Typography sx={labelStyles}>{photo.label}</Typography>
                             {/* <Button sx={labelButtonStyles} variant="outlined">Shop&nbsp;Now</Button> */}
