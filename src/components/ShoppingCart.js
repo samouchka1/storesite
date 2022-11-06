@@ -44,7 +44,8 @@ const componentStyles = {
     border: 'solid 1px #b2b2b2',
     margin: '1rem 0',
     display: 'flex',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    padding: '0 10%'
 }
 
 const ShoppingCart= () =>  {
@@ -58,25 +59,25 @@ const ShoppingCart= () =>  {
         <Box sx={componentStyles}>
             {/* <Box sx={{backgroundColor: 'white'}}> */}
 
-            <Paper sx={{margin: '1rem'}}>
-                <Typography>Shopping Cart</Typography>
-                <List sx={{ display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-between'}}>
+            <Paper sx={{margin: '1rem', flexGrow: 1, padding: '1rem 5%'}}>
+                <Typography>Shopping Cart -under development-</Typography>
+                <List>
                     {items.map((item) => (
-                        <ListItem key={item}>
-                            <Box sx={{ display: 'flex', alignItems: 'center', gap: '1rem'}}>
-                                <div style={{border: '1px solid black', padding: '15px'}}>
+                        <Box key={item}>
+                            <Box sx={{ display: 'flex', alignItems: 'center', gap: '1rem',
+                                justifyContent: 'space-between' //not working
+                            }}>
+                                <Box sx={{border: '1px solid black', padding: '15px'}}>
                                     <Typography variant="h6">{item.name}</Typography>
                                     <Typography variant="subtitle1">{item.description}</Typography>
-                                </div>
-                                <div>
-                                    <Box
-                                        component="img"
-                                        alt={item.name}
-                                        sx={{ height: 'auto', width: '100px', border: 'solid black 1px', padding: '35px'}}
-                                    />
-                                </div>
+                                </Box>
+                                <Box
+                                    component="img"
+                                    alt={item.name}
+                                    sx={{ height: 'auto', width: '100px', border: 'solid black 1px', padding: '35px'}}
+                                />
                             </Box>
-                        </ListItem>
+                        </Box>
                     ))}
                 </List>
             </Paper>
