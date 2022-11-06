@@ -47,7 +47,7 @@ const ModalMenu =() => {
                 open={open}
                 onClose={handleClose}
                 sx={{display: { md: 'none', xs: 'block'}}}
-                disableScrollLock
+                // disableScrollLock
             >
             {/* <Fade in={open}> */}
                 <Box sx={ModalMenuStyles}>

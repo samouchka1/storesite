@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import {
   AppBar,
@@ -7,7 +8,7 @@ import {
   Typography,
   List,
   ListItem,
-  Link,
+  // Link,
   Box,
   Tooltip,
   Button,
@@ -91,6 +92,10 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
+  //SHOPPING CART ROUTE
+  let history = useNavigate();
+  const handleRoute = () => history.push('/cart'); //not workign
+
   //SHOPPING CART
   const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
@@ -122,15 +127,16 @@ const NavBar = () => {
             {links.map((page) => (    //links
               <ListItem key={page}>
                 <Typography noWrap>
-                    <Link
+                    <a
                       sx={{textDecoration: 'none'}}
                       href={page.path}
+                      rel="noreferrer"
                       target="_blank"
                     >
                       <Typography sx={navLinks} className="hover-underline-animation">
                         {page.name}
                       </Typography>
-                    </Link>
+                    </a>
                 </Typography>
               </ListItem>
             ))}
@@ -175,15 +181,20 @@ const NavBar = () => {
             
             <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
               <Typography>Total: ${total}</Typography>
-              <Button sx={{color: '#535353'}}>
-                  <Typography variant="subtitle2">Check out</Typography>
+              <Button 
+                sx={{color: '#535353'}}
+                onClick={handleRoute}  //HANDLEROUTE
+              >
+                  <Link to="/cart" style={{textDecoration: 'none'}}>
+                    <Typography variant="subtitle2">Check out</Typography>
+                  </Link>
               </Button>
             </Box>
 
           </Popover>
 
           <Tooltip title="StoreSite">
-            <Link href="#abc" sx={{textDecoration: 'none'}}>
+            <a href="#abc" sx={{textDecoration: 'none'}}>
               <Box 
                 className="App-logo"
                 component="img"
@@ -191,7 +202,7 @@ const NavBar = () => {
                 src={process.env.PUBLIC_URL + '/images/modern-logo.png'} 
                 alt="StoreSite Logo"
               />
-            </Link>
+            </a>
           </Tooltip>
         </Box>
       </AppBar>
