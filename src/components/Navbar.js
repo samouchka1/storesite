@@ -184,10 +184,17 @@ const NavBar = () => {
               <Button 
                 sx={{color: '#535353'}}
                 onClick={handleRoute}  //HANDLEROUTE
-              >
-                  <Link to="/cart" style={{textDecoration: 'none'}}>
+              >   
+                  {/* <HashLink
+                    style={{textDecoration: 'none'}}
+                    scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
+                    to="#cart"
+                    onClick={handleClose}
+                  > */}
+                  <Link to="/cart" target="_blank" rel="noopener" style={{textDecoration: 'none', color: '#535353'}}>
                     <Typography variant="subtitle2">Check out</Typography>
                   </Link>
+                  {/* </HashLink> */}
               </Button>
             </Box>
 
