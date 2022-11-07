@@ -18,25 +18,7 @@ import { pages } from '../data/pages';
 import ModalMenu from './ModalMenu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import '../App.css'; //for logo spin, underline effect
-
-const cartItems = [
-  {
-    id: 1,
-    name: 'Men\'s casual shirt',
-    color: 'Blue',
-    price: 19.99,
-    quantity: 1,
-    thumbnail: 'cart-mens-shirt.jpg'
-  },
-  {
-    id: 2,
-    name: 'Women\'s outdoor pants',
-    color: 'Green',
-    price: 24.99,
-    quantity: 2,
-    thumbnail: 'cart-womens-pants.jpg'
-  }
-]
+import { cartItems } from '../data/cartItems';
 
 
 //===STYLES===

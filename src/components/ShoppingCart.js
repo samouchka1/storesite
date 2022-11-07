@@ -14,46 +14,24 @@ import {
     Tooltip,
     AppBar
 } from '@mui/material';
-import { faker } from '@faker-js/faker';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Footer from './Footer';
-
-const items = [
-    {
-        image: '',
-        name: faker.commerce.product(),
-        description: faker.lorem.lines(1),
-        order: faker.finance.account(4),
-        price: faker.finance.amount(5, 10, 2, '$') // '$5.85'
-    },
-    {
-        image: '',
-        name: faker.commerce.product(),
-        description: faker.lorem.lines(1),
-        order: faker.finance.account(4),
-        price: faker.finance.amount(5, 10, 2, '$') // '$5.85'
-    },{
-        image: '',
-        name: faker.commerce.product(),
-        description: faker.lorem.lines(1),
-        order: faker.finance.account(4),
-        price: faker.finance.amount(5, 10, 2, '$') // '$5.85'
-    },{
-        image: '',
-        name: faker.commerce.product(),
-        description: faker.lorem.lines(1),
-        order: faker.finance.account(4),
-        price: faker.finance.amount(5, 10, 2, '$') // '$5.85'
-    },
-]
+import { cartItems } from '../data/cartItems';
 
 const componentStyles = {
     backgroundColor : '#f4f4f4', //background color
     border: 'solid 1px #b2b2b2',
     margin: '1rem 0',
     display: 'flex',
+    flexDirection: {
+        md: 'row',
+        xs: 'column'
+    },
     justifyContent: 'center',
-    padding: '0 10%'
+    padding: {
+        md: '0 10%',
+        xs: '0 2%'
+    },
 }
 
 const navBar = {
@@ -117,22 +95,27 @@ const ShoppingCart = () =>  {
                 <ApplicationBar />
 
                 <Box sx={componentStyles}>
-                    <Paper sx={{margin: '1rem', flexGrow: 1, padding: '1rem 5%'}}>
-                        <Typography>Shopping Cart -under development-</Typography>
+                    <Paper sx={{margin: '1rem', flexGrow: 1, padding: { md: '1rem 5%', xs: '1rem'}}}>
+                        <Typography sx={{fontSize: {md: '21px', xs: '19px'}}}>Shopping Cart (under development)</Typography>
                         <List>
-                            {items.map((item) => (
-                                <Box key={item}>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '1rem',
+                            {cartItems.map((item) => (
+                                <Box key={item} sx={{'&:hover': {backgroundColor: '#efefef93'}}}>
+                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '.5rem 0',
                                         justifyContent: 'space-between' //not working
                                     }}>
-                                        <Box sx={{border: '1px solid black', padding: '15px'}}>
-                                            <Typography variant="h6">{item.name}</Typography>
-                                            <Typography variant="subtitle1">{item.description}</Typography>
+                                        <Box>
+                                            <Typography sx={{fontSize: {md: '19px', xs: '17px'}, fontWeight: '600'}}>{item.name}</Typography>
+                                            <Typography sx={{fontSize: {md: '17px', xs: '15px'}}}>{item.color}</Typography>
+                                            <Typography variant="caption"> Item #: {item.product_num}</Typography>
+                                            <div>
+                                                <Typography varant="subtitle2">{item.quantity}</Typography>
+                                            </div>
                                         </Box>
                                         <Box
                                             component="img"
+                                            src={process.env.PUBLIC_URL + '/images/' + item.thumbnail}
                                             alt={item.name}
-                                            sx={{ height: 'auto', width: '100px', border: 'solid black 1px', padding: '35px'}}
+                                            sx={{ height: 'auto', width: { md: '100px', xs: '85px'}}}
                                         />
                                     </Box>
                                 </Box>
@@ -142,18 +125,20 @@ const ShoppingCart = () =>  {
 
                     <Paper sx={{margin: '1rem'}}>
                         <List>
-                            {items.map((item) => (
-                                <ListItem key={item} sx={{display: 'flex', flexDirection: 'column'}}>
+                            {cartItems.map((item) => (
+                                <ListItem key={item} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
                                     <Typography variant="subtitle1">{item.name}</Typography>
                                     <Typography variant="subtitle2">{item.price}</Typography>
-                                    <Typography variant="caption"> Order #: {item.order}</Typography>
+                                    <Typography variant="caption"> Item #: {item.product_num}</Typography>
                                 </ListItem>
                             ))}
                         </List>
-                        <Typography>Totals</Typography>
-                        <Button>
-                            Place Order
-                        </Button>
+                        <Box sx={{margin: '1rem'}}>
+                            <Typography>Totals</Typography>
+                            <Button>
+                                Place Order
+                            </Button>
+                        </Box>
                     </Paper>
                 </Box>
 
