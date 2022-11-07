@@ -191,7 +191,11 @@ const NavBar = () => {
                     to="#cart"
                     onClick={handleClose}
                   > */}
-                  <Link to="/cart" target="_blank" rel="noopener" style={{textDecoration: 'none', color: '#535353'}}>
+                  <Link to="/cart" 
+                    onClick={handleClose} 
+                    target="_blank" rel="noopener" 
+                    style={{textDecoration: 'none', color: '#535353'}}
+                  >
                     <Typography variant="subtitle2">Check out</Typography>
                   </Link>
                   {/* </HashLink> */}
