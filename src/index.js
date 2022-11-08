@@ -17,7 +17,6 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/cart" element={<ShoppingCart />} />
-      {/* <App /> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
