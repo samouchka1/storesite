@@ -20,7 +20,7 @@ import {
 // import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Footer from './Footer';
-import { cartItems } from '../data/cartItems';
+import { cartItems, total } from '../data/cartItems';
 
 const componentStyles = {
     backgroundColor : '#f4f4f4', //background color
@@ -58,12 +58,6 @@ const navBar = {
   }
 
 const ShoppingCart = () =>  {
-
-    // const [total, setTotal] = useState(0)
-
-
-    const total = cartItems.reduce((sum, item) => sum + item.quantity * item.price, 0)
-
 
     const [qty, setQty] = useState(1);
     const handleChange = (event) => {

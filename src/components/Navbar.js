@@ -18,7 +18,7 @@ import { pages } from '../data/pages';
 import ModalMenu from './ModalMenu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import '../App.css'; //for logo spin, underline effect
-import { cartItems } from '../data/cartItems';
+import { cartItems, total } from '../data/cartItems';
 
 
 //===STYLES===
@@ -78,8 +78,6 @@ const NavBar = () => {
   let history = useNavigate();
   const handleRoute = () => history.push('/cart'); //not workign
 
-  //SHOPPING CART
-  const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
   <Container maxWidth={false}>
@@ -162,7 +160,7 @@ const NavBar = () => {
             </List>
             
             <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
-              <Typography>Total: ${total}</Typography>
+              <Typography sx={{fontWeight: '600'}}>Subtotal: ${total}</Typography>
               <Button 
                 sx={{color: '#535353'}}
                 onClick={handleRoute}  //HANDLEROUTE
