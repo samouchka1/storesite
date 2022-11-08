@@ -1,6 +1,4 @@
-import React, { 
-        // useState 
-    } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import {
     Container,
@@ -62,9 +60,12 @@ const navBar = {
 const ShoppingCart = () =>  {
 
     // const [total, setTotal] = useState(0)
-    
-    // const sum =
-    const [qty, setQty] = React.useState(1);
+
+
+    const total = cartItems.reduce((sum, item) => sum + item.quantity * item.price, 0)
+
+
+    const [qty, setQty] = useState(1);
     const handleChange = (event) => {
         setQty(event.target.value);
       };
@@ -106,7 +107,7 @@ const ShoppingCart = () =>  {
 
                 <Box sx={componentStyles}>
                     <Paper sx={{margin: '1rem', flexGrow: 1, padding: { md: '1rem 5%', xs: '1rem'}}}>
-                        <Typography sx={{fontSize: {md: '21px', xs: '19px'}}}>Shopping Cart (under development)</Typography>
+                        <Typography sx={{fontSize: {md: '22px', xs: '19px'}}}>Shopping Cart</Typography><code>(under development)</code>
                         <List>
                             {cartItems.map((item) => (
                                 <Box key={item} sx={{'&:hover': {backgroundColor: '#efefef93'}}}>
@@ -164,16 +165,16 @@ const ShoppingCart = () =>  {
                     <Paper sx={{margin: '1rem'}}>
                         <List>
                             {cartItems.map((item) => (
-                                <ListItem key={item} sx={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
+                                <ListItem key={item} sx={{display: 'flex', flexDirection: 'column'}}>
                                     <Typography variant="subtitle1">{item.name}</Typography>
-                                    <Typography variant="subtitle2">{item.price}</Typography>
+                                    <Typography variant="subtitle2">${item.price}</Typography>
                                     <Typography variant="caption"> Item #: {item.product_num}</Typography>
                                 </ListItem>
                             ))}
                         </List>
-                        <Box sx={{margin: '1rem'}}>
-                            <Typography>Totals</Typography>
-                            <Button>
+                        <Box sx={{margin: '1rem', textAlign: 'left'}}>
+                            <Typography sx={{marginLeft: '.5rem', fontWeight: '600'}}>Subtotal: ${total}</Typography>
+                            <Button sx={{textDecoration: 'none', color: '#535353', margin: '1rem 0'}}>
                                 Place Order
                             </Button>
                         </Box>
