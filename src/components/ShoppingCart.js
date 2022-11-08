@@ -12,8 +12,14 @@ import {
     Button,
     Toolbar,
     Tooltip,
-    AppBar
+    AppBar,
+    FormControl,
+    InputLabel,
+    Select,
+    MenuItem
 } from '@mui/material';
+// import AddIcon from '@mui/icons-material/Add';
+// import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Footer from './Footer';
 import { cartItems } from '../data/cartItems';
@@ -58,6 +64,10 @@ const ShoppingCart = () =>  {
     // const [total, setTotal] = useState(0)
     
     // const sum =
+    const [qty, setQty] = React.useState(1);
+    const handleChange = (event) => {
+        setQty(event.target.value);
+      };
 
     const ApplicationBar = () => {
 
@@ -100,23 +110,51 @@ const ShoppingCart = () =>  {
                         <List>
                             {cartItems.map((item) => (
                                 <Box key={item} sx={{'&:hover': {backgroundColor: '#efefef93'}}}>
-                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: '1rem', margin: '.5rem 0',
-                                        justifyContent: 'space-between' //not working
+                                    <Box sx={{ display: 'flex', flexDirection: {md: 'row', xs: 'column'}, alignItems: 'center', gap: '1rem', margin: '1.5rem 0',
+                                        // justifyContent: 'space-between' //not working
                                     }}>
-                                        <Box>
-                                            <Typography sx={{fontSize: {md: '19px', xs: '17px'}, fontWeight: '600'}}>{item.name}</Typography>
-                                            <Typography sx={{fontSize: {md: '17px', xs: '15px'}}}>{item.color}</Typography>
-                                            <Typography variant="caption"> Item #: {item.product_num}</Typography>
-                                            <div>
-                                                <Typography varant="subtitle2">{item.quantity}</Typography>
-                                            </div>
-                                        </Box>
                                         <Box
                                             component="img"
                                             src={process.env.PUBLIC_URL + '/images/' + item.thumbnail}
                                             alt={item.name}
                                             sx={{ height: 'auto', width: { md: '100px', xs: '85px'}}}
                                         />
+                                        <Box sx={{textAlign: 'left', flexGrow: 1}}>
+                                            <Typography sx={{fontSize: {md: '19px', xs: '17px'}, fontWeight: '600'}}>{item.name}</Typography>
+                                            <Typography sx={{fontSize: {md: '17px', xs: '15px'}}}>Color: {item.color}</Typography>
+                                            <Typography sx={{fontSize: {md: '17px', xs: '15px'}}}>Size: {item.size}</Typography>
+
+                                        </Box>
+                                        <Box sx={{ borderBottom: { md: 'none', xs: 'solid 1px #ccccccd8'}, margin: {md: '0', xs:'1rem 0'}}}>
+                                            <Typography variant="caption"> Item #: {item.product_num}</Typography>
+                                            <Box sx={{marginBottom: { md: '0', xs: '1rem'}}}>
+                                                {/* <Typography varant="subtitle2">{item.quantity}</Typography>
+                                                <Box sx={{display: 'flex', margin: 'auto'}}>
+                                                    <Button variant="outlined"><AddIcon /></Button> 
+                                                    <Button variant="outlined"><RemoveIcon /></Button>
+                                                </Box> */}
+                                                <FormControl sx={{ m: 1, minWidth: 80 }} size="small">
+                                                    <InputLabel id="demo-select-small">Qty</InputLabel>
+                                                    <Select
+                                                        labelId="demo-select-small"
+                                                        id="demo-select-small"
+                                                        value={qty}
+                                                        label="Qty"
+                                                        onChange={handleChange}
+                                                    >   
+                                                        <MenuItem value={1}>1</MenuItem>
+                                                        <MenuItem value={2}>2</MenuItem>
+                                                        <MenuItem value={3}>3</MenuItem>
+                                                        <MenuItem value={4}>4</MenuItem>
+                                                        <MenuItem value={5}>5</MenuItem>
+                                                        <MenuItem value={6}>6</MenuItem>
+                                                        <MenuItem value={7}>7</MenuItem>
+                                                        <MenuItem value={8}>8</MenuItem>
+                                                        <MenuItem value={9}>9</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </Box>
+                                        </Box>
                                     </Box>
                                 </Box>
                             ))}
