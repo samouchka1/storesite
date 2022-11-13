@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     Container,
-    // Box,
+    Box,
     // Typography
 } from '@mui/material';
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
@@ -9,15 +9,17 @@ import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 
 const Parallax = () => {
   return (
-    <Container maxWidth={false}>
+    <Container maxWidth={false} sx={{marginBottom: '1rem'}}>
         <ParallaxBanner style={{ aspectRatio: '2 / 1' }}>
-            <ParallaxBannerLayer image={process.env.PUBLIC_URL + '/images/carouselSwiper/casual-coat.jpg'} speed={-40} />
-            
-            {/* <ParallaxBannerLayer speed={10}>
+            <ParallaxBannerLayer speed={-20}>
                 <Box
-                    sx={{backgroundColor: '#727d8a', borderRadius: '50%', height: '100px', width: '100px'}}
+                    component="img"
+                    alt="parallax"
+                    src={process.env.PUBLIC_URL + '/images/carouselSwiper/casual-coat.jpg'}
+                    // height="100vh"
+                    // width="auto"
                 />
-            </ParallaxBannerLayer> */}
+            </ParallaxBannerLayer>
         </ParallaxBanner>
     </Container>
   )

@@ -4,7 +4,8 @@ import {
     // Button, 
     Container,
     Link,
-    Typography, 
+    Typography,
+    Paper, 
 } from '@mui/material';
 import { swiperImages } from '../data/SwiperImages';
 // import { photos } from '../data/photos';
@@ -22,22 +23,7 @@ const componentStyles ={
     backgroundColor : '#f4f4f4', //background color
     border: 'solid 1px #b2b2b2',
     margin: '1rem 0',
-    padding: '1rem 0 0'
-}
-
-const labelStyles = {
-    width: '99%',
-    textAlign: 'center',
-    textDecoration: 'none', 
-    '&:hover': {
-        textDecoration: 'none'
-    },
-    position: 'relative',
-    color: 'white', 
-    fontSize: '17px', 
-    padding: '.25rem', 
-    backgroundColor: '#2e2e2ebc', 
-    borderRadius: '4px'
+    padding: '1rem 0'
 }
 
 // const labelButtonStyles = {
@@ -93,7 +79,11 @@ const CarouselSwiper = () => {
                                 alt={photo.label}
                                 sx={{width: '100%', height: {md:'75vh', xs: '40vh'}}}
                             />
-                            <Typography sx={labelStyles}>{photo.label}</Typography>
+                            <Paper elevation={2} sx={{textAlign: 'center'}}>
+                                <Typography variant="h6">
+                                    {photo.label}
+                                </Typography>
+                            </Paper>
                             {/* <Button sx={labelButtonStyles} variant="outlined">Shop&nbsp;Now</Button> */}
                         </Link>
                     </SwiperSlide>
