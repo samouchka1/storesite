@@ -19,7 +19,6 @@ import {
 // import AddIcon from '@mui/icons-material/Add';
 // import RemoveIcon from '@mui/icons-material/Remove';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import Footer from './Footer';
 import { cartItems, total } from '../data/cartItems';
 
 const componentStyles = {
@@ -176,9 +175,6 @@ const ShoppingCart = () =>  {
                 </Box>
 
             </Container>
-
-            <Footer />
-
         </>
 
         )

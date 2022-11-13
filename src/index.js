@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { 
-  BrowserRouter, 
+  BrowserRouter as Router, 
   Routes, 
   Route 
 } from 'react-router-dom';
@@ -10,17 +10,19 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import App from './App';
 import ShoppingCart from './components/ShoppingCart';
+import Footer from './components/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ParallaxProvider>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/cart" element={<ShoppingCart />} />
         </Routes>
-      </BrowserRouter>
+        <Footer />
+      </Router>
     </ParallaxProvider>
   </React.StrictMode>
 );
