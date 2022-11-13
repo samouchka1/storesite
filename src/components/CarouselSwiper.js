@@ -9,12 +9,13 @@ import {
 import { swiperImages } from '../data/SwiperImages';
 // import { photos } from '../data/photos';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, FreeMode } from "swiper";
+import { Navigation, FreeMode, Autoplay } from "swiper";
 
 import '../App.css'; //for navigation arrow color
 import 'swiper/css';
-import "swiper/css/navigation";
-import "swiper/css/free-mode";
+import 'swiper/css/navigation';
+import 'swiper/css/free-mode';
+import 'swiper/css/autoplay';
 
 
 const componentStyles ={
@@ -81,7 +82,8 @@ const CarouselSwiper = () => {
                 loop={true}
                 navigation={true}
                 freeMode={true}
-                modules={[FreeMode, Navigation]}
+                autoplay={{ delay : 2600, disableOnInteraction: false }}
+                modules={[FreeMode, Navigation, Autoplay]}
             >
                 {swiperImages.map((photo) => (
                     <SwiperSlide key={photo.id} component="div" style={{display: 'flex'}}>

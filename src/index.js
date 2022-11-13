@@ -5,6 +5,7 @@ import {
   Routes, 
   Route 
 } from 'react-router-dom';
+// import { ParallaxProvider } from 'react-scroll-parallax';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import App from './App';
