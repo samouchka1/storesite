@@ -11,7 +11,7 @@ import '../App.css';
 
 const parallaxImage = process.env.PUBLIC_URL + '/images/parallax/parallax-image.jpg'
 const parallaxImageTablet = process.env.PUBLIC_URL + '/images/parallax/parallax-image-tablet.jpg'
-const parallaxImageMobile = process.env.PUBLIC_URL + '/images/parallax/parallax-image-mobile-test.jpg'
+const parallaxImageMobile = process.env.PUBLIC_URL + '/images/parallax/parallax-image-mobile.jpg'
 
 const parallaxTextStyle = {
     position: 'relative',
