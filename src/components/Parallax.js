@@ -9,20 +9,28 @@ import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax';
 // import { Slide } from "react-awesome-reveal";
 import '../App.css';
 
-// const parallaxImage = process.env.PUBLIC_URL + '/images/parallax/parallax-image.jpg'
-// const parallaxImageTablet = process.env.PUBLIC_URL + '/images/parallax/parallax-image-tablet.jpg'
-// const parallaxImageMobile = process.env.PUBLIC_URL + '/images/parallax/parallax-image-mobile.jpg'
+const parallaxImage = process.env.PUBLIC_URL + '/images/parallax/parallax-image.jpg'
+const parallaxImageTablet = process.env.PUBLIC_URL + '/images/parallax/parallax-image-tablet.jpg'
+const parallaxImageMobile = process.env.PUBLIC_URL + '/images/parallax/parallax-image-mobile-test.jpg'
 
 const parallaxTextStyle = {
     position: 'relative',
-    top: '46%',
+    top: {
+        md: '46%',
+        sm: '30%',
+        xs: '40%'
+    },
     left: {
         md: '10%',
         xs: '0%'
     },
     backgroundColor:'#1f1f1f42',  
     fontWeight: '700', 
-    width: '36rem',
+    width: {
+        md: '36rem',
+        sm: '25rem',
+        xs: '17rem'
+    },
     borderRadius: '4px'
 }
 
@@ -37,17 +45,11 @@ const Parallax = () => {
                 <Box
                     component="img"
                     alt="parallax"
-                    src={process.env.PUBLIC_URL + '/images/parallax/parallax-image.jpg'}
-                    // src={{
-                    //     md: process.env.PUBLIC_URL + '/images/parallax/parallax-image.jpg',
-                    //     sm: process.env.PUBLIC_URL + '/images/parallax/parallax-image-tablet.jpg',
-                    //     xs: process.env.PUBLIC_URL + '/images/parallax/parallax-image.jpg-mobile'
-                    // }}
-                    // sx={{backgroundImage: {
-                    //     md: `url(${parallaxImage})`,
-                    //     sm: `url(${parallaxImageTablet})`,
-                    //     xs: `url(${parallaxImageMobile})`
-                    // }}}
+                    sx={{content: {
+                        md: `url(${parallaxImage})`,
+                        sm: `url(${parallaxImageTablet})`,
+                        xs: `url(${parallaxImageMobile})`
+                    }}}
                 />
             </ParallaxBannerLayer>
             <ParallaxBannerLayer speed={-10}>
