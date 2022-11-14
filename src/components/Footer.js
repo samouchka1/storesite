@@ -15,7 +15,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import RedditIcon from '@mui/icons-material/Reddit';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import '../App.css'; //for logo spin
+import '../App.css'; //for logo spin, underline effect
 
 const socialMedia = [
     {
@@ -184,7 +184,13 @@ const Footer = () => {
                         <List>
                             {customerService.map((link) => (
                                 <ListItem key={link} sx={{margin: {md: '.5rem', xs: '.3rem'}}}>
-                                    <Link href={link.href} sx={footerLinkStyles}>{link.name}</Link>
+                                    <Link 
+                                        href={link.href} 
+                                        sx={footerLinkStyles}
+                                        // className="hover-underline-animation"
+                                    >
+                                        {link.name}
+                                    </Link>
                                 </ListItem>
                             ))}
                         </List>
@@ -198,7 +204,13 @@ const Footer = () => {
                         <List>
                             {popularPages.map((link) => (
                                 <ListItem key={link} sx={{margin: {md: '.5rem', xs: '.3rem'}}}>
-                                    <Link href={link.href} sx={footerLinkStyles}>{link.name}</Link>
+                                    <Link 
+                                        href={link.href} 
+                                        sx={footerLinkStyles}
+                                        // className="hover-underline-animation"
+                                    >
+                                        {link.name}
+                                    </Link>
                                 </ListItem>
                             ))}
                         </List>

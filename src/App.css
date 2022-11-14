@@ -53,15 +53,21 @@
 }
 
 
-
-
-
+/* parallax image */
+.parallax-image {
+  aspect-ratio: 2/1;
+}
+@media (max-width: 900px) {
+  .parallax-image {
+    aspect-ratio: 1/2;
+  }
+}
 
 
 .colortest1 {
-  color: #1f1f1f;
+  color: #1f1f1f42;
 }
 
 .colortest2 {
-  color: #3c3c3cdd;
+  color: #cacaca;
 }
