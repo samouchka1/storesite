@@ -38,6 +38,11 @@ const Parallax = () => {
                     component="img"
                     alt="parallax"
                     src={process.env.PUBLIC_URL + '/images/parallax/parallax-image.jpg'}
+                    // src={{
+                    //     md: process.env.PUBLIC_URL + '/images/parallax/parallax-image.jpg',
+                    //     sm: process.env.PUBLIC_URL + '/images/parallax/parallax-image-tablet.jpg',
+                    //     xs: process.env.PUBLIC_URL + '/images/parallax/parallax-image.jpg-mobile'
+                    // }}
                     // sx={{backgroundImage: {
                     //     md: `url(${parallaxImage})`,
                     //     sm: `url(${parallaxImageTablet})`,
