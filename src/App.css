@@ -10,7 +10,6 @@
 }
 
 /*logo spin */
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -27,7 +26,6 @@
 }
 
 /*underline effect */
-
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -64,10 +62,20 @@
 }
 
 
+/* dark mode */
+.dark {
+  background-color: #424242;
+  border: 'solid 1px #b2b2b2';
+  color: 'white'
+}
+
+
+
+/* color testing */
 .colortest1 {
-  color: #1f1f1f42;
+  color: #b2b2b2;
 }
 
 .colortest2 {
-  color: #cacaca;
+  color: #f4f4f4;
 }

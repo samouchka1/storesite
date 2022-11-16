@@ -15,8 +15,8 @@ const containerStyles = {
     display: 'flex', 
     flexDirection: {md: 'row', xs: 'column'}, 
     gap: '1rem', 
-    backgroundColor: '#f4f4f4', 
-    border: 'solid 1px #b2b2b2', 
+    backgroundColor: 'primary.main', //bg color
+    border: 'solid 1px #b2b2b2', //border color
     padding: '1rem'
 }
 
@@ -28,7 +28,7 @@ const accordionStyles = {
 const accordionButtonStyles = {
     display: 'block',
     margin: '0 auto',
-    color: '#535353'
+    color: 'text.primary'
 }
 
 const accordionImageStyles = {

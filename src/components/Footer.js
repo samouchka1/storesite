@@ -87,14 +87,20 @@ const popularPages =[
 
 //STYLES
 
+const componentStyles = {
+    backgroundColor: 'primary.main', //bgolor
+    border: 'solid 1px #b2b2b2', //border color
+    margin: '0 auto'
+}
+
 const footerStyles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
     width: '100%',
-    backgroundColor : '#f4f4f4',
     boxShadow: 'none',
+    backgroundColor: 'primary.main' //bgcolor
 }
 
 const footerTitleStyles = {
@@ -113,7 +119,7 @@ const footerLinkStyles = {
     },
     lineHeight: '.25',
     textDecoration: 'none',
-    color: '#464646'
+    color: 'text.primary'
 }
 
 const footerSectionStyles = {
@@ -138,7 +144,7 @@ const backToTopButtonStyle = {
 const Footer = () => {
   return (
     <Container maxWidth={false} sx={{margin: '1rem 0 4rem'}}>
-        <Box sx={{backgroundColor: '#f4f4f4', border: 'solid 1px #b2b2b2', margin: '0 auto'}}>
+        <Box sx={componentStyles}>
             <AppBar sx={footerStyles}>
                 <Toolbar>
                     <List sx={{display: 'flex'}}>
@@ -149,7 +155,7 @@ const Footer = () => {
                                     alt={link.name}
                                     href={link.url}
                                     target="_blank"
-                                    sx={{color: '#535353'}}
+                                    sx={{color: 'common.black'}}
                                 >
                                     {link.icon}
                                 </Link>
@@ -223,7 +229,7 @@ const Footer = () => {
                         to="#top"
                     >
                         <Tooltip title="Back to top">
-                            <ArrowUpwardIcon fontSize="large" sx={{color: '#464646'}} />
+                            <ArrowUpwardIcon fontSize="large" sx={{color: 'common.black'}} />
                         </Tooltip>
                     </HashLink>
                 </Box>
@@ -231,7 +237,7 @@ const Footer = () => {
             </Box>
 
             <Tooltip title="StoreSite">
-                <Link href="#abc" sx={{textDecoration: 'none'}}>
+                <Link href="#abc" sx={{textDecoration: 'none', color: 'common.black'}}>
                     <Box 
                         className="App-logo"
                         component="img"

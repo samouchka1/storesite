@@ -30,8 +30,8 @@ const navBar = {
   alignItems:'center',
   justifyContent: 'space-between',
   height: 'auto',
-  backgroundColor : '#f4f4f4', //background color
-  border: 'solid 1px #b2b2b2',
+  backgroundColor : 'primary.main', //background color
+  border: 'solid 1px #b2b2b2', //border color
   width: '100%',
   margin: '1rem 0',
   padding: {
@@ -51,7 +51,7 @@ const navContent = {
 
 const navLinks = {
   textDecoration: 'none',
-  color: '#171717', //color
+  color: 'text.primary', //color
   fontSize : '1.15rem',
   margin: {
     md: '0 .5rem',
@@ -129,7 +129,7 @@ const NavBar = () => {
             onClick={handleClick}
           >
             <Tooltip title="Shopping Cart">
-              <ShoppingCartIcon sx={{color: '#535353', fontSize: { md: '2rem', xs: '1.7rem'}, caretColor: 'transparent'}} />
+              <ShoppingCartIcon sx={{color: 'common.black' /*UNIQUE COLOR*/, fontSize: { md: '2rem', xs: '1.7rem'}, caretColor: 'transparent'}} />
             </Tooltip>
           </Button>
           
@@ -162,7 +162,7 @@ const NavBar = () => {
             <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
               <Typography sx={{fontWeight: '600'}}>Subtotal: ${total}</Typography>
               <Button 
-                sx={{color: '#535353'}}
+                sx={{color: '#535353' /*UNIQUE COLOR*/}}
                 onClick={handleRoute}  //HANDLEROUTE
               >   
                   {/* <HashLink
@@ -174,7 +174,7 @@ const NavBar = () => {
                   <Link to="/cart" 
                     onClick={handleClose} 
                     target="_blank" rel="noopener" 
-                    style={{textDecoration: 'none', color: '#535353'}}
+                    style={{textDecoration: 'none', color: '#535353' /*UNIQUE COLOR*/}}
                   >
                     <Typography variant="subtitle2">Check out</Typography>
                   </Link>
@@ -185,7 +185,7 @@ const NavBar = () => {
           </Popover>
 
           <Tooltip title="StoreSite">
-            <a href="#abc" sx={{textDecoration: 'none'}}>
+            <a href="#abc" sx={{textDecoration: 'none', color: 'common.black'}}>
               <Box 
                 className="App-logo"
                 component="img"

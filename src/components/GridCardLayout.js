@@ -72,8 +72,8 @@ const gridStyle = {
     gap: '1.1rem',
     margin: '1rem 0',
     padding: '1rem 0',
-    backgroundColor: '#f4f4f4',
-    border: 'solid 1px #b2b2b2' //temp
+    backgroundColor: 'primary.main', //bgcolor
+    border: 'solid 1px #b2b2b2' //color
 }
 
 const GridCardLayout = () => {
@@ -103,8 +103,8 @@ const GridCardLayout = () => {
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
-                                    <Button size="small" sx={{color: '#535353', fontSize: {xs: '.70rem'}}}>Learn More</Button>
-                                    <Button size="small" sx={{color: '#535353', fontSize: {xs: '.70rem'}}}>Add to Cart</Button>
+                                    <Button size="small" sx={{color: 'text.primary', fontSize: {xs: '.70rem'}}}>Learn More</Button>
+                                    <Button size="small" sx={{color: 'text.primary', fontSize: {xs: '.70rem'}}}>Add to Cart</Button>
                                 </CardActions> 
                             </Card>
                         </Fade>

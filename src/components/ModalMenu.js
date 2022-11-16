@@ -17,15 +17,15 @@ const ModalMenuStyles = {
     position: 'absolute',
     top: '10%',
     width: '100%',
-    bgcolor: 'background.paper',
-    border: 'solid 1px #b2b2b2',
+    bgcolor: 'background.paper', //bgcolor
+    border: 'solid 1px #b2b2b2', //border color
     boxShadow: 24,
     padding: '1rem'
   };
 
 const ModalLinkStyles = {
     fontSize : '1.15rem',
-    color: '#171717',
+    color: 'text.primary',
     padding: '.5rem 0'
 }
 

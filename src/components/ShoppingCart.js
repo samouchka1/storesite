@@ -22,8 +22,8 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { cartItems, total } from '../data/cartItems';
 
 const componentStyles = {
-    backgroundColor : '#f4f4f4', //background color
-    border: 'solid 1px #b2b2b2',
+    backgroundColor : 'primary.main', //background color
+    border: 'solid 1px #b2b2b2', //border color
     margin: '1rem 0',
     display: 'flex',
     flexDirection: {
@@ -44,8 +44,8 @@ const navBar = {
     alignItems:'center',
     justifyContent: 'space-between',
     height: 'auto',
-    backgroundColor : '#f4f4f4', //background color
-    border: 'solid 1px #b2b2b2',
+    backgroundColor : 'primary.main', //background color
+    border: 'solid 1px #b2b2b2', //border color
     width: '100%',
     margin: '1rem 0',
     padding: {
@@ -69,7 +69,7 @@ const ShoppingCart = () =>  {
             <AppBar sx={navBar} id="top">
                 <Toolbar disableGutters>
                     <Button sx={{margin: {md: '0 1.5rem', xs: '0 .5rem'}}}>
-                        <Link to="/" style={{textDecoration: 'none', color: '#535353', display: 'flex', alignItems: 'center'}}>
+                        <Link to="/" style={{textDecoration: 'none', color: '#535353' /*UNIQUE COLOR */, display: 'flex', alignItems: 'center'}}>
                             <ArrowBackIosNewIcon />go back
                         </Link>
                     </Button>
@@ -77,7 +77,7 @@ const ShoppingCart = () =>  {
 
                 <Box component="div" sx={{display: 'flex'}}>
                     <Tooltip title="StoreSite">
-                        <a href="#abc" sx={{textDecoration: 'none'}}>
+                        <a href="#abc" sx={{textDecoration: 'none', color: 'common.black'}}>
                         <Box 
                             className="App-logo"
                             component="img"
@@ -103,7 +103,7 @@ const ShoppingCart = () =>  {
                         <Typography sx={{fontSize: {md: '22px', xs: '19px'}}}>Shopping Cart</Typography><code>(under development)</code>
                         <List>
                             {cartItems.map((item) => (
-                                <Box key={item} sx={{'&:hover': {backgroundColor: '#efefef93'}}}>
+                                <Box key={item} sx={{'&:hover': {backgroundColor: 'primary.main' /*bg color*/}}}>
                                     <Box sx={{ display: 'flex', flexDirection: {md: 'row', xs: 'column'}, alignItems: 'center', gap: '1rem', margin: '1.5rem 0',
                                         // justifyContent: 'space-between' //not working
                                     }}>

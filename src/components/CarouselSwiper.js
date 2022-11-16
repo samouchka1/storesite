@@ -20,7 +20,7 @@ import 'swiper/css/autoplay';
 
 
 const componentStyles ={
-    backgroundColor : '#f4f4f4', //background color
+    backgroundColor : 'primary.main', //background color
     border: 'solid 1px #b2b2b2',
     margin: '1rem 0',
     padding: '1rem 0'
