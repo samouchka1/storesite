@@ -20,7 +20,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import '../App.css'; //for logo spin, underline effect
 import { cartItems, total } from '../data/cartItems';
 
-
 //===STYLES===
 
 const navBar = {
@@ -63,7 +62,7 @@ const navLinks = {
 const hashLinks = pages.filter(hash => hash.path.includes('#')); //filter hashlinks
 const links = pages.filter(link => link.path.includes('https'));
 
-const NavBar = () => {
+const NavBar = () => {  
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -129,7 +128,7 @@ const NavBar = () => {
             onClick={handleClick}
           >
             <Tooltip title="Shopping Cart">
-              <ShoppingCartIcon sx={{color: 'common.black' /*UNIQUE COLOR*/, fontSize: { md: '2rem', xs: '1.7rem'}, caretColor: 'transparent'}} />
+              <ShoppingCartIcon sx={{color: 'common.black', fontSize: { md: '2rem', xs: '1.7rem'}, caretColor: 'transparent'}} />
             </Tooltip>
           </Button>
           
@@ -162,7 +161,7 @@ const NavBar = () => {
             <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
               <Typography sx={{fontWeight: '600'}}>Subtotal: ${total}</Typography>
               <Button 
-                sx={{color: '#535353' /*UNIQUE COLOR*/}}
+                sx={{color: 'common.black'}}
                 onClick={handleRoute}  //HANDLEROUTE
               >   
                   {/* <HashLink

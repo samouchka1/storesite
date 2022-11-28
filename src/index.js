@@ -24,7 +24,6 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: grey[100],
-      dark: grey[800]
     },
     secondary: {
       main: '#11cb5f',
@@ -37,6 +36,7 @@ export const theme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <ParallaxProvider>

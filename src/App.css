@@ -8,6 +8,11 @@
 .swiper-button-prev, .swiper-button-next {
   color: #535353 !important;
 }
+@media (max-width: 600px) {
+  .swiper-button-prev, .swiper-button-next {
+    --swiper-navigation-size: 30px;
+  }
+}
 
 /*logo spin */
 @media (prefers-reduced-motion: no-preference) {
@@ -73,9 +78,9 @@
 
 /* color testing */
 .colortest1 {
-  color: #b2b2b2;
+  color: #808080;
 }
 
 .colortest2 {
-  color: #f4f4f4;
+  color: #535353;
 }
