@@ -178,7 +178,7 @@ const GridCardLayout = ({navigation}) => {
                                         <List>
                                             <ListItem>Size: {item.size}</ListItem>
                                             {/* <ListItem>{item.color}</ListItem> */}
-                                            <ListItem>${item.price}</ListItem>
+                                            <ListItem sx={{fontSize: '1.3rem'}}>${item.price}</ListItem>
                                         </List>
                                         <Typography variant="h6">
                                             Product Details
