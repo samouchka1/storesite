@@ -239,7 +239,7 @@ const NavBar = ({DarkMode, setNavigation}) => {
 
             </Popover>
 
-          <Typography sx={{fontFamily: 'DM Serif Display', fontSize: '1.15rem', margin: '0 1rem 0 0'}}>
+          <Typography sx={{fontFamily: 'DM Serif Display', fontSize: { md: '1.15rem', xs:'1rem'}, margin: '0 1rem 0 0'}}>
             StoreSite
           </Typography>
 
