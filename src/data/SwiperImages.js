@@ -2,27 +2,27 @@ export const swiperImages = [
     {
         id: 1,
         image: 'casual-sweater.jpg',
-        label: 'casual sweater',
+        label: 'Casual Sweater',
     },
     {
         id: 2,
         image: 'business-suit.jpg',
-        label: 'business suit'
+        label: 'Business Suit'
     },
     {
         id: 3,
         image: 'business-outfit.jpg',
-        label: 'business outfit'
+        label: 'Business Outfit'
     },
     {
         id: 4,
         image: 'casual-coat.jpg',
-        label: 'casual coat'
+        label: 'Casual Coat'
     },
     {
         id: 5,
         image: 'business-blazer.jpg',
-        label: 'business blazer'
+        label: 'Business Blazer'
     },
 ]
 
