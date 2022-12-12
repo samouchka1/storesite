@@ -5,11 +5,9 @@ import {
     Modal,
     ListItem,
     Typography,
-    Link,
     Box,
     // Fade
 } from '@mui/material';
-import { pages } from '../data/pages';
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
 
@@ -29,10 +27,40 @@ const ModalLinkStyles = {
     padding: '.5rem 0'
 }
 
-const hashLinks = pages.filter(hash => hash.path.includes('#')); //filter hashlinks
-const links = pages.filter(link => link.path.includes('https'));
+const ModalMenu =({setNavigation}) => {
 
-const ModalMenu =() => {
+    const pages = [
+        {
+          name: 'What\'s New',
+          path: '#grid',
+          method: () => setNavigation('new')
+        },
+        {
+          name: 'Men',
+          path: '#grid',
+          method: () => setNavigation('men')
+        },
+        {
+          name: 'Women',
+          path: '#grid',
+          method: () => setNavigation('women')
+        },
+        {
+          name: 'Casual',
+          path: '#grid',
+          method: () => setNavigation('casual')
+        },
+        {
+          name: 'Outdoor',
+          path: '#grid',
+          method: () => setNavigation('outdoor')
+        },
+        {
+          name: 'Athletic',
+          path: '#grid',
+          method: () => setNavigation('athletic')
+        }
+      ]
 
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -51,7 +79,7 @@ const ModalMenu =() => {
             >
             {/* <Fade in={open}> */}
                 <Box sx={ModalMenuStyles}>
-                    {hashLinks.map((page) => (    //hashlinks
+                    {pages.map((page) => (    //hashlinks
                         <ListItem key={page}>
                             <Typography noWrap sx={{}}>
                                 <HashLink
@@ -64,22 +92,6 @@ const ModalMenu =() => {
                                 </Typography>
                                 </HashLink>
                             </Typography>
-                        </ListItem>
-                    ))}
-
-                    {links.map((page) => (    //links
-                        <ListItem key={page}>
-                        <Typography noWrap>
-                            <Link
-                                style={ModalLinkStyles}
-                                href={page.path}
-                                target="_blank"
-                            >
-                                <Typography>
-                                {page.name}
-                                </Typography>
-                            </Link>
-                        </Typography>
                         </ListItem>
                     ))}
                 </Box>

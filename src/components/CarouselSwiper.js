@@ -8,7 +8,6 @@ import {
     Paper, 
 } from '@mui/material';
 import { swiperImages } from '../data/SwiperImages';
-// import { photos } from '../data/photos';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode, Autoplay } from "swiper";
 
@@ -84,7 +83,7 @@ const CarouselSwiper = () => {
                                     {photo.label}
                                 </Typography>
                             </Paper>
-                            {/* <Button sx={labelButtonStyles} variant="outlined">Shop&nbsp;Now</Button> */}
+                            {/* <Button sx={labelButtonStyles} variant="outlined">Add&nbsp;to&nbsp;Cart</Button> */}
                         </Link>
                     </SwiperSlide>
                 ))}

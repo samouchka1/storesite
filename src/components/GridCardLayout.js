@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { HashLink } from 'react-router-hash-link';
 import { 
     Container,
     Grid,
@@ -8,63 +9,25 @@ import {
     CardActions,
     CardActionArea,
     Typography,
+    Tooltip,
     Button,
+    List,
+    ListItem,
+    Box,
 } from '@mui/material';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import { Fade } from "react-awesome-reveal";
 
-const items = [
-    {
-        name: 'Men',
-        path: '#abc',
-        media: 'men.jpg',
-    },
-    {
-        name: 'Women',
-        path: '#abc',
-        media: 'women.jpg',
-    },
-    {
-        name: 'Athletic',
-        path: '#abc',
-        media: 'athletic.jpg',
-    },
-    {
-        name: 'Outdoor',
-        path: '#abc',
-        media: 'outdoor.jpg',
-    },
-    {
-        name: 'Casual',
-        path: '#abc',
-        media: 'casual.jpg',
-    },
-    //copy
-    {
-        name: 'Men',
-        path: '#abc',
-        media: 'men.jpg',
-    },
-    {
-        name: 'Women',
-        path: '#abc',
-        media: 'women.jpg',
-    },
-    {
-        name: 'Athletic',
-        path: '#abc',
-        media: 'athletic.jpg',
-    },
-    {
-        name: 'Outdoor',
-        path: '#abc',
-        media: 'outdoor.jpg',
-    },
-    // {
-    //     name: 'Casual',
-    //     path: '#abc',
-    //     media: 'casual.jpg',
-    // },
-]
+import '../App.css';
+
+import { 
+    New, 
+    Men, 
+    Women, 
+    Casual, 
+    Outdoor, 
+    Athletic 
+} from '../data/navigation/Navigator';
 
 const gridStyle = {
     width: '100%',
@@ -76,12 +39,92 @@ const gridStyle = {
     border: 'solid 1px #b2b2b2' //color
 }
 
-const GridCardLayout = () => {
+const backToTopButtonStyle = {
+    position: 'fixed',
+    bottom: '100px',
+    right: '80px',
+    padding: '.25rem',
+    backgroundColor: '#ffffff50',
+    borderRadius: '4px',
+    boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)',
+    display: {
+        sm: 'block',
+        xs: 'none'
+    }
+}
+
+// const backToTopMobileStyle = {
+//     position: 'fixed',
+//     bottom: '10px',
+//     right: '5px',
+//     padding: '.25rem',
+//     backgroundColor: 'gray',
+//     display: {
+//         sm: 'none',
+//         xs: 'block'
+//     }
+// }
+
+const GridCardLayout = ({navigation}) => {
+
+    const [showButton, setShowButton] = useState(false);
+
+    // const [mobileScroll, setMobileScroll] = useState(false)
+
+    // if (window.innerWidth < 600) {
+    //     setMobileScroll(true)
+    // } else {
+    //     setMobileScroll(false)
+    // }
+
+    // const [showButtonMobile, setShowButtonMobile] = useState(false);
+
+    React.useEffect(() => {
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 450 && window.pageYOffset < 1500) {
+          setShowButton(true);
+        } else {
+          setShowButton(false);
+        }
+      });
+    }, []);
+
+    // React.useEffect(() => {
+    //     mobileScroll =  window.addEventListener("scroll", () => {
+    //       if (window.pageYOffset > 1000 && window.pageYOffset < 2700) {
+    //         setShowButtonMobile(true);
+    //       } else {
+    //         setShowButtonMobile(false);
+    //       }
+    //     });
+    //   }, []);
+
+    let items;
+
+    switch(navigation) {
+        case 'new': items = New;
+        break;
+        case 'men': items = Men;
+        break;
+        case 'women': items = Women;
+        break;
+        case 'casual': items = Casual;
+        break;
+        case 'outdoor': items = Outdoor;
+        break;
+        case 'athletic': items = Athletic;
+        break;
+        default:
+            items = New;
+    }
 
     return (
         <Container maxWidth={false}>
+            
             <Grid container sx={gridStyle} id="grid">
+                
                 {items.map((item) => (
+
                     <Grid item xs={8} md={3} key={item} sx={{maxWidth: '90%', flexGrow: 1}}>
 
                         <Fade cascade damping={0.15}>
@@ -90,20 +133,27 @@ const GridCardLayout = () => {
                                     <CardMedia
                                         component="img"
                                         height="auto"
-                                        image={process.env.PUBLIC_URL + '/images/' + item.media}   
-                                        alt="item"
+                                        image={process.env.PUBLIC_URL + '/images/products/' + item.image}   
+                                        alt={item.name}
                                     />
                                     <CardContent>
                                         <Typography variant="h5">
                                             {item.name}
                                         </Typography>
+                                        <List>
+                                            <ListItem>Size: {item.size}</ListItem>
+                                            {/* <ListItem>{item.color}</ListItem> */}
+                                            <ListItem>${item.price}</ListItem>
+                                        </List>
+                                        <Typography variant="h6">
+                                            Product Details
+                                        </Typography>
                                         <Typography variant="body2">
-                                            Browse our styles! We offer only the best quality for the right price!
+                                            {item.description}
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
-                                    <Button size="small" sx={{color: 'text.primary', fontSize: {xs: '.70rem'}}}>Learn More</Button>
                                     <Button size="small" sx={{color: 'text.primary', fontSize: {xs: '.70rem'}}}>Add to Cart</Button>
                                 </CardActions> 
                             </Card>
@@ -112,6 +162,34 @@ const GridCardLayout = () => {
                     </Grid>
                 ))}
             </Grid>
+
+            {showButton && (
+                <Box sx={backToTopButtonStyle} className="fade-in">
+                    <HashLink
+                        scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
+                        to="#top"
+                    >
+                        <Tooltip title="Back to top">
+                            <ArrowUpwardIcon fontSize="large" sx={{color: 'text.primary'}} />
+                        </Tooltip>
+                    </HashLink>
+                </Box>
+            )}
+
+            {/* {showButtonMobile && (
+                <Box sx={backToTopMobileStyle}>
+                    <HashLink
+                        scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
+                        to="#top"
+                    >
+                        <Tooltip title="Back to top">
+                            <ArrowUpwardIcon fontSize="medium" sx={{color: 'text.primary'}} />
+                        </Tooltip>
+                    </HashLink>
+                </Box>
+            )} */}
+
+            
             
         </Container>
 )}

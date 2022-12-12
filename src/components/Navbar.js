@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import {
   AppBar,
@@ -14,11 +14,14 @@ import {
   Button,
   Popover,
 } from '@mui/material';
-import { pages } from '../data/pages';
-import ModalMenu from './ModalMenu';
+// import { pages } from '../data/pages';
+// import ModalMenu from './ModalMenu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import MenuIcon from '@mui/icons-material/Menu';
+import ClearIcon from '@mui/icons-material/Clear';
 import '../App.css'; //for logo spin, underline effect
 import { cartItems, total } from '../data/cartItems';
+import { Fade } from "react-awesome-reveal";
 
 //===STYLES===
 
@@ -59,10 +62,41 @@ const navLinks = {
   },
 }
 
-const hashLinks = pages.filter(hash => hash.path.includes('#')); //filter hashlinks
-const links = pages.filter(link => link.path.includes('https'));
+const NavBar = ({DarkMode, setNavigation}) => {  
 
-const NavBar = () => {  
+  const pages = [
+    {
+      name: 'What\'s\u00A0New',
+      path: '#grid',
+      method: () => setNavigation('new')
+    },
+    {
+      name: 'Men',
+      path: '#grid',
+      method: () => setNavigation('men')
+    },
+    {
+      name: 'Women',
+      path: '#grid',
+      method: () => setNavigation('women')
+    },
+    {
+      name: 'Casual',
+      path: '#grid',
+      method: () => setNavigation('casual')
+    },
+    {
+      name: 'Outdoor',
+      path: '#grid',
+      method: () => setNavigation('outdoor')
+    },
+    {
+      name: 'Athletic',
+      path: '#grid',
+      method: () => setNavigation('athletic')
+    }
+  ]
+  
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -73,62 +107,92 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
-  //SHOPPING CART ROUTE
-  let history = useNavigate();
-  const handleRoute = () => history.push('/cart'); //not workign
+  const [anchorEl2, setAnchorEl2] = useState(null);
+  const openNav = Boolean(anchorEl2);
+  const handleClickNav = (event) => {
+    setAnchorEl2(event.currentTarget);
+  };
+  const handleCloseNav = () => {
+    setAnchorEl2(null);
+  };
 
 
   return (
-  <Container maxWidth={false}>
+  <Container maxWidth={false} id="#top">
       <AppBar sx={navBar} id="top">
         <Toolbar disableGutters>
 
-          <ModalMenu />  {/*<<<  MODAL MENU */}
+          {/* ==== NAVIGATION ON MOBILE === */}
+          <Button 
+            sx={{color: 'text.primary', display:{md: 'none', xs: 'block'}}}
+            onClick={handleClickNav}
+          >
+            {openNav ? <ClearIcon sx={{color: '#535353'}} /> : <MenuIcon sx={{color: '#535353'}} />}
+          </Button>
+          <Popover
+            anchorEl={anchorEl2}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'left'}}
+            open={openNav}
+            onClose={handleCloseNav}
+          >
+            <Box sx={{ padding: '1.75rem'}}>
+                {pages.map((page) => (    //hashlinks
+                    <ListItem key={page} sx={{padding: '1rem 0'}}>
+                      <Fade cascade delay={50} damping={0.15}>
+                        <Box>
+                            <HashLink
+                                style={{textDecoration: 'none'}}
+                                scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })} //scroll to view
+                                to={page.path}
+                                onClick={page.method} //testing for ON CLICK CLOSE!
+                            >
+                              <Typography 
+                                className="hover-underline-animation" //optional on mobile
+                                sx={{
+                                  color: 'text.primary',
+                                  fontSize: '1.1rem'
+                                }}
+                                onClick={handleCloseNav}
+                              >
+                                  {page.name}
+                              </Typography>
+                            </HashLink>
+                        </Box>
+                      </Fade>
+                    </ListItem>
+                ))}
+            </Box>
+          </Popover>
+        {/* === END  NAVIGATION ON MOBILE === */}
 
           <List sx={navContent}>
 
-            {hashLinks.map((page) => (    //hashlinks
+            {pages.map((page) => (    //hashlinks
                 <ListItem key={page} sx={{padding: '0 .55rem'}}>
-                  <Typography noWrap>
+                  <Box>
                       <HashLink
                         style={{textDecoration: 'none'}}
                         scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })} //scroll to view
                         to={page.path}
+                        onClick={page.method}
                       >
                         <Typography sx={navLinks} className="hover-underline-animation">
                           {page.name}
                         </Typography>
                       </HashLink>
-                  </Typography>
+                  </Box>
                 </ListItem>
               ))}
-
-            {links.map((page) => (    //links
-              <ListItem key={page}>
-                <Typography noWrap>
-                    <a
-                      sx={{textDecoration: 'none'}}
-                      href={page.path}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      <Typography sx={navLinks} className="hover-underline-animation">
-                        {page.name}
-                      </Typography>
-                    </a>
-                </Typography>
-              </ListItem>
-            ))}
           </List>
         </Toolbar>
 
         <Box component="div" sx={{display: 'flex'}}>
           <Button 
-            sx={{color: '#535353'}}
+            sx={{color: 'text.primary'}}
             onClick={handleClick}
           >
             <Tooltip title="Shopping Cart">
-              <ShoppingCartIcon sx={{color: 'common.black', fontSize: { md: '2rem', xs: '1.7rem'}, caretColor: 'transparent'}} />
+              <ShoppingCartIcon sx={{color: 'text.primary', fontSize: { md: '2rem', xs: '1.7rem'}, caretColor: 'transparent'}} />
             </Tooltip>
           </Button>
           
@@ -160,31 +224,21 @@ const NavBar = () => {
             
             <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
               <Typography sx={{fontWeight: '600'}}>Subtotal: ${total}</Typography>
-              <Button 
-                sx={{color: 'common.black'}}
-                onClick={handleRoute}  //HANDLEROUTE
-              >   
-                  {/* <HashLink
-                    style={{textDecoration: 'none'}}
-                    scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
-                    to="#cart"
-                    onClick={handleClose}
-                  > */}
+              <Button sx={{color: 'text.primary'}}>  
                   <Link to="/cart" 
                     onClick={handleClose} 
                     target="_blank" rel="noopener" 
                     style={{textDecoration: 'none', color: '#535353' /*UNIQUE COLOR*/}}
                   >
-                    <Typography variant="subtitle2">Check out</Typography>
+                    <Typography>Check out</Typography>
                   </Link>
-                  {/* </HashLink> */}
               </Button>
             </Box>
 
           </Popover>
 
           <Tooltip title="StoreSite">
-            <a href="#abc" sx={{textDecoration: 'none', color: 'common.black'}}>
+            <a href="#abc" sx={{textDecoration: 'none', color: 'primary.text'}}>
               <Box 
                 className="App-logo"
                 component="img"
@@ -194,6 +248,8 @@ const NavBar = () => {
               />
             </a>
           </Tooltip>
+          
+          {/* <DarkMode /> */}
         </Box>
       </AppBar>
     </Container>

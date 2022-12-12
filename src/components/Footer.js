@@ -156,7 +156,7 @@ const Footer = () => {
                                     alt={link.name}
                                     href={link.url}
                                     target="_blank"
-                                    sx={{color: 'common.black'}}
+                                    sx={{color: 'text.primary'}}
                                 >
                                     {link.icon}
                                 </Link>
@@ -230,7 +230,7 @@ const Footer = () => {
                         to="#top"
                     >
                         <Tooltip title="Back to top">
-                            <ArrowUpwardIcon fontSize="large" sx={{color: 'common.black'}} />
+                            <ArrowUpwardIcon fontSize="large" sx={{color: 'text.primary'}} />
                         </Tooltip>
                     </HashLink>
                 </Box>
@@ -238,7 +238,7 @@ const Footer = () => {
             </Box>
 
             <Tooltip title="StoreSite">
-                <Link href="#abc" sx={{textDecoration: 'none', color: 'common.black'}}>
+                <Link href="#abc" sx={{textDecoration: 'none', color: 'text.primary'}}>
                     <Box 
                         className="App-logo"
                         component="img"
