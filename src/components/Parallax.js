@@ -41,7 +41,7 @@ const Parallax = () => {
             // style={{ aspectRatio: '2 / 1' }}
             className="parallax-image"
         >
-            <ParallaxBannerLayer speed={-20}>
+            <ParallaxBannerLayer speed={-30}>
                 <Box
                     component="img"
                     alt="parallax"
@@ -52,7 +52,7 @@ const Parallax = () => {
                     }}}
                 />
             </ParallaxBannerLayer>
-            <ParallaxBannerLayer speed={-10}>
+            <ParallaxBannerLayer speed={-20}>
                 <Box component="div" sx={parallaxTextStyle}>
                     <Link href="#styles" sx={{textDecoration: 'none', color: '#cacaca'}}>
                         <Typography 
@@ -60,7 +60,7 @@ const Parallax = () => {
                         >
                             Browse our
                         </Typography>
-                        <Typography sx={{fontSize: { md: '4.2rem', sm:'3rem',  xs: '2rem'}}}>
+                        <Typography sx={{fontSize: { md: '4.2rem', sm:'3rem',  xs: '2rem'}, fontFamily: 'DM Serif Display'}}>
                             Seasonal Styles
                         </Typography>
                     </Link>

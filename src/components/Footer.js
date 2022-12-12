@@ -108,7 +108,7 @@ const footerTitleStyles = {
         md: '28px',
         xs: '25px'
     },
-    fontFamily: '\'Noto Sans Display\', sans-serif',
+    fontFamily: 'DM Serif Display',
     fontWeight: '600'
 }
 

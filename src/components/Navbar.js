@@ -55,6 +55,7 @@ const navLinks = {
   textDecoration: 'none',
   color: 'text.primary', //color
   fontSize : '1.15rem',
+  fontFamily: 'DM Serif Display',
   margin: {
     md: '0 .5rem',
     sm: '0',
@@ -150,7 +151,8 @@ const NavBar = ({DarkMode, setNavigation}) => {
                                 className="hover-underline-animation" //optional on mobile
                                 sx={{
                                   color: 'text.primary',
-                                  fontSize: '1.1rem'
+                                  fontSize: '1.1rem',
+                                  fontFamily: 'DM Serif Display'
                                 }}
                                 onClick={handleCloseNav}
                               >
@@ -186,7 +188,7 @@ const NavBar = ({DarkMode, setNavigation}) => {
           </List>
         </Toolbar>
 
-        <Box component="div" sx={{display: 'flex'}}>
+        <Box component="div" sx={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
           <Button 
             sx={{color: 'text.primary'}}
             onClick={handleClick}
@@ -196,46 +198,50 @@ const NavBar = ({DarkMode, setNavigation}) => {
             </Tooltip>
           </Button>
           
-          <Popover
-            anchorEl={anchorEl}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'left'}}
-            open={open}
-            onClose={handleClose}
-          >
-            <List>
-              {cartItems.map((item) => (
-                <ListItem key={item} sx={{margin: '.5rem 0'}}>
-                  <Box
-                    component="img"
-                    src={process.env.PUBLIC_URL + '/images/' + item.thumbnail}
-                    height="50px"
-                    width="auto"
-                  />
-                  <Box component="div" sx={{display: 'flex', flexDirection: 'column'}}>
-                    <Typography sx={{fontWeight: 'bold'}}>{item.name}</Typography>
-                    <Typography>{item.color}</Typography>
-                    <Typography>${item.price}</Typography>
-                    
-                    <Typography>Qty: {item.quantity}</Typography>
-                  </Box>
-                </ListItem>
-              ))}
-            </List>
-            
-            <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
-              <Typography sx={{fontWeight: '600'}}>Subtotal: ${total}</Typography>
-              <Button sx={{color: 'text.primary'}}>  
-                  <Link to="/cart" 
-                    onClick={handleClose} 
-                    target="_blank" rel="noopener" 
-                    style={{textDecoration: 'none', color: '#535353' /*UNIQUE COLOR*/}}
-                  >
-                    <Typography>Check out</Typography>
-                  </Link>
-              </Button>
-            </Box>
+            <Popover
+              anchorEl={anchorEl}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left'}}
+              open={open}
+              onClose={handleClose}
+            >
+              <List>
+                {cartItems.map((item) => (
+                  <ListItem key={item} sx={{margin: '.5rem 0'}}>
+                    <Box
+                      component="img"
+                      src={process.env.PUBLIC_URL + '/images/' + item.thumbnail}
+                      height="50px"
+                      width="auto"
+                    />
+                    <Box component="div" sx={{display: 'flex', flexDirection: 'column'}}>
+                      <Typography sx={{fontWeight: 'bold'}}>{item.name}</Typography>
+                      <Typography>{item.color}</Typography>
+                      <Typography>${item.price}</Typography>
+                      
+                      <Typography>Qty: {item.quantity}</Typography>
+                    </Box>
+                  </ListItem>
+                ))}
+              </List>
+              
+              <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
+                <Typography sx={{fontWeight: '600'}}>Subtotal: ${total}</Typography>
+                <Button sx={{color: 'text.primary'}}>  
+                    <Link to="/cart" 
+                      onClick={handleClose} 
+                      target="_blank" rel="noopener" 
+                      style={{textDecoration: 'none', color: '#535353' /*UNIQUE COLOR*/}}
+                    >
+                      <Typography>Check out</Typography>
+                    </Link>
+                </Button>
+              </Box>
 
-          </Popover>
+            </Popover>
+
+          <Typography sx={{fontFamily: 'DM Serif Display', fontSize: '1.15rem', margin: '0 1rem 0 0'}}>
+            StoreSite
+          </Typography>
 
           <Tooltip title="StoreSite">
             <a href="#abc" sx={{textDecoration: 'none', color: 'primary.text'}}>

@@ -14,6 +14,7 @@ import {
     List,
     ListItem,
     Box,
+    Paper,
 } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import { Fade } from "react-awesome-reveal";
@@ -33,10 +34,9 @@ const gridStyle = {
     width: '100%',
     justifyContent: 'center',
     gap: '1.1rem',
-    margin: '1rem 0',
     padding: '1rem 0',
-    backgroundColor: 'primary.main', //bgcolor
-    border: 'solid 1px #b2b2b2' //color
+    // backgroundColor: 'primary.main', //bgcolor
+    // border: 'solid 1px #b2b2b2' //color
 }
 
 const backToTopButtonStyle = {
@@ -100,28 +100,63 @@ const GridCardLayout = ({navigation}) => {
     //   }, []);
 
     let items;
+    let title;
 
     switch(navigation) {
-        case 'new': items = New;
+        case 'new': 
+            items = New; 
+            title = "See What's New!";
         break;
-        case 'men': items = Men;
+        case 'men': 
+            items = Men; 
+            title = "Men's";
         break;
-        case 'women': items = Women;
+        case 'women': 
+            items = Women;
+            title = "Women's";
         break;
-        case 'casual': items = Casual;
+        case 'casual': 
+            items = Casual;
+            title = "Casual"
         break;
-        case 'outdoor': items = Outdoor;
+        case 'outdoor': 
+            items = Outdoor;
+            title = "Outdoor";
         break;
-        case 'athletic': items = Athletic;
+        case 'athletic': 
+            items = Athletic;
+            title = "Athletic";
         break;
         default:
             items = New;
     }
 
     return (
-        <Container maxWidth={false}>
-            
-            <Grid container sx={gridStyle} id="grid">
+
+        <Container maxWidth={false} 
+            sx={{
+                backgroundColor: 'primary.main',  
+                border: 'solid 1px #b2b2b2', 
+                margin: '1rem 0' 
+            }}
+        >
+            <Paper id="grid" 
+                sx={{
+                    margin: '0 auto', 
+                    width: { md: '15%', xs: '55%'},
+                }}
+            >
+                <Typography variant="h5"  
+                    sx={{
+                        textAlign: 'center', 
+                        margin: '1rem 0 .25rem',
+                        fontFamily: 'DM Serif Display'
+                    }}
+                >
+                    {title}
+                </Typography>
+            </Paper>
+            <Grid container sx={gridStyle} >
                 
                 {items.map((item) => (
 
