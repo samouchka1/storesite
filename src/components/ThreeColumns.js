@@ -60,7 +60,7 @@ const ThreeColumns = () => {
                     <Box 
                         component="img"
                         alt="something"
-                        src={process.env.PUBLIC_URL + '/images/athletic.jpg'}
+                        src={process.env.PUBLIC_URL + '/images/winter.jpg'}
                         sx={accordionImageStyles}
                     />
                     <Accordion sx={accordionStyles}>
@@ -82,7 +82,7 @@ const ThreeColumns = () => {
                     <Box 
                         component="img"
                         alt="something"
-                        src={process.env.PUBLIC_URL + '/images/women.jpg'}
+                        src={process.env.PUBLIC_URL + '/images/summer.jpg'}
                         sx={accordionImageStyles}
                     />
                     <Accordion sx={accordionStyles}>
@@ -104,7 +104,7 @@ const ThreeColumns = () => {
                     <Box 
                         component="img"
                         alt="something"
-                        src={process.env.PUBLIC_URL + '/images/casual.jpg'}
+                        src={process.env.PUBLIC_URL + '/images/spring.jpg'}
                         sx={accordionImageStyles}
                     />
                     <Accordion sx={accordionStyles}>
