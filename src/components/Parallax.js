@@ -24,7 +24,7 @@ const parallaxTextStyle = {
         md: '10%',
         xs: '0%'
     },
-    backgroundColor:'#1f1f1f42',  
+    backgroundColor:'#00000043',  
     fontWeight: '700', 
     width: {
         md: '36rem',
@@ -54,7 +54,7 @@ const Parallax = () => {
             </ParallaxBannerLayer>
             <ParallaxBannerLayer speed={-20}>
                 <Box component="div" sx={parallaxTextStyle}>
-                    <Link href="#styles" sx={{textDecoration: 'none', color: '#cacaca'}}>
+                    <Link href="#styles" sx={{textDecoration: 'none', color: 'common.white'}}>
                         <Typography 
                             sx={{fontSize: { md: '1.5rem', xs: '1rem'}, margin: { md: '0 1rem', xs: '0 .5rem'}}}
                         >

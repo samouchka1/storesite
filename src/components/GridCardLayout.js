@@ -81,7 +81,7 @@ const GridCardLayout = ({navigation}) => {
 
     React.useEffect(() => {
       window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 450 && window.pageYOffset < 1500) {
+        if (window.pageYOffset > 450 && window.pageYOffset < 1700) {
           setShowButton(true);
         } else {
           setShowButton(false);

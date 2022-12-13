@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
     Box, 
-    // Button, 
+    Button, 
     Container,
     Link,
     Typography,
@@ -25,27 +25,6 @@ const componentStyles ={
     padding: '1rem 0'
 }
 
-// const labelButtonStyles = {
-//     position: 'relative',
-//     bottom: '80%',
-//     right: {
-//         md: '25%',
-//         xs: '40%'
-//     },
-//     display: 'inline-block',
-//     margin: '0',
-//     textAlign: 'center',
-//     color: '#535353',
-//     border: '#535353 1px solid',
-//     backgroundColor: '#e4e4e4',
-//     '&:hover': {
-//         backgroundColor: '#d5d5d5'
-//     },
-//     padding: {
-//         md: '20px',
-//         xs: '10px'
-//     },
-// }
 
 const CarouselSwiper = () => {
   return (
@@ -67,7 +46,7 @@ const CarouselSwiper = () => {
                 loop={true}
                 navigation={true}
                 freeMode={true}
-                autoplay={{ delay : 2600, disableOnInteraction: false }}
+                // autoplay={{ delay : 2600, disableOnInteraction: false }}
                 modules={[FreeMode, Navigation, Autoplay]}
             >
                 {swiperImages.map((photo) => (
@@ -83,7 +62,58 @@ const CarouselSwiper = () => {
                                     {photo.label}
                                 </Typography>
                             </Paper>
-                            {/* <Button sx={labelButtonStyles} variant="outlined">Add&nbsp;to&nbsp;Cart</Button> */}
+
+                            <Paper
+                                elevation={4}
+                                sx={{
+                                    position: 'absolute',
+                                        bottom: '75%',
+                                        right: {
+                                            md: '20%',
+                                            sm: '15%',
+                                            xs: '10%'
+                                        },
+                                    width: {
+                                        md: '8rem',
+                                        xs: '8rem'
+                                    },
+                                    textAlign: 'center',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                }}
+                            >
+                                <Typography 
+                                    variant="outlined"
+                                    sx={{
+                                        fontSize: {
+                                            md: '1.3rem',
+                                            xs: '.85rem'
+                                        },
+                                        color: 'text.primary',
+                                        fontWeight: 600,
+                                    }}
+                                >
+                                    ${photo.price}
+                                </Typography>
+                                <Button 
+                                    sx={{
+                                        margin: '0',
+                                        textAlign: 'center',
+                                        color: 'text.primary',
+                                        backgroundColor: '#e4e4e4',
+                                        '&:hover': {
+                                            backgroundColor: '#d5d5d5'
+                                        },
+                                        padding: '10px 5px',
+                                        fontSize: {
+                                            md: '.85rem',
+                                            xs: '.75rem'
+                                        }
+                                    }} 
+                                >
+                                    Add&nbsp;to&nbsp;Cart
+                                </Button>
+                            </Paper>
                         </Link>
                     </SwiperSlide>
                 ))}

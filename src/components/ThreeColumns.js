@@ -3,7 +3,6 @@ import {
     Container,
     Box,
     Typography,
-    Button,
     Accordion,
     AccordionSummary,
     AccordionDetails,
@@ -14,21 +13,21 @@ import { Fade } from "react-awesome-reveal";
 const containerStyles = {
     display: 'flex', 
     flexDirection: {md: 'row', xs: 'column'}, 
+    justifyContent: { md: 'space-between', xs: 'center'},
     gap: '1rem', 
     backgroundColor: 'primary.main', //bg color
     border: 'solid 1px #b2b2b2', //border color
     padding: '1rem'
 }
 
+const columnStyles = {
+    margin: '0', 
+    width: '100%'
+}
+
 const accordionStyles = {
     width: '100%',
     margin: '0 auto'
-}
-
-const accordionButtonStyles = {
-    display: 'block',
-    margin: '0 auto',
-    color: 'text.primary'
 }
 
 const accordionImageStyles = {
@@ -57,7 +56,7 @@ const ThreeColumns = () => {
         <Box sx={containerStyles}>
 
             <Fade cascade damping={0.15}>
-                <Box sx={{margin: '0 0 1rem'}}>
+                <Box marginBottom="1rem" sx={columnStyles}>
                     <Box 
                         component="img"
                         alt="something"
@@ -66,14 +65,12 @@ const ThreeColumns = () => {
                     />
                     <Accordion sx={accordionStyles}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography>Men</Typography>
+                            <Typography>Winter</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque molestiae omnis adipisci a aspernatur quos. Ad deleniti officiis cum officia nihil?
                             </Typography>
-                            <Button size="small" sx={accordionButtonStyles}>Learn more</Button>
                         </AccordionDetails>
                     </Accordion>
                 </Box>
@@ -81,7 +78,7 @@ const ThreeColumns = () => {
 
 
             <Fade cascade damping={0.15}>
-                <Box sx={{margin: '0'}}>
+                <Box sx={columnStyles}>
                     <Box 
                         component="img"
                         alt="something"
@@ -90,14 +87,12 @@ const ThreeColumns = () => {
                     />
                     <Accordion sx={accordionStyles}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography>Women</Typography>
+                            <Typography>Summer</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque molestiae omnis adipisci a aspernatur quos. Ad deleniti officiis cum officia nihil?
                             </Typography>
-                            <Button size="small" sx={accordionButtonStyles}>Learn more</Button>
                         </AccordionDetails>
                     </Accordion>
                 </Box>
@@ -105,23 +100,21 @@ const ThreeColumns = () => {
 
 
             <Fade cascade damping={0.15}>
-                <Box sx={{margin: '0'}}>
+                <Box sx={columnStyles}>
                     <Box 
                         component="img"
                         alt="something"
-                        src={process.env.PUBLIC_URL + '/images/outdoor.jpg'}
+                        src={process.env.PUBLIC_URL + '/images/casual.jpg'}
                         sx={accordionImageStyles}
                     />
                     <Accordion sx={accordionStyles}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography>Outdoor</Typography>
+                            <Typography>Spring</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque molestiae omnis adipisci a aspernatur quos. Ad deleniti officiis cum officia nihil?
                             </Typography>
-                            <Button size="small" sx={accordionButtonStyles}>Learn more</Button>
                         </AccordionDetails>
                     </Accordion>
                 </Box>
