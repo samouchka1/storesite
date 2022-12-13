@@ -109,7 +109,7 @@ const ThreeColumns = () => {
                     />
                     <Accordion sx={accordionStyles}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography>Spring</Typography>
+                            <Typography>Spring/Fall</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
