@@ -63,7 +63,7 @@ const navLinks = {
   },
 }
 
-const NavBar = ({DarkMode, setNavigation}) => {  
+const NavBar = ({DarkMode, setNavigation, mode}) => {  
 
   const pages = [
     {
@@ -128,7 +128,7 @@ const NavBar = ({DarkMode, setNavigation}) => {
             sx={{color: 'text.primary', display:{md: 'none', xs: 'block'}}}
             onClick={handleClickNav}
           >
-            {openNav ? <ClearIcon sx={{color: '#535353'}} /> : <MenuIcon sx={{color: '#535353'}} />}
+            {openNav ? <ClearIcon sx={{color: 'text.primary'}} /> : <MenuIcon sx={{color: 'text.primary'}} />}
           </Button>
           <Popover
             anchorEl={anchorEl2}
@@ -244,7 +244,7 @@ const NavBar = ({DarkMode, setNavigation}) => {
           </Typography>
 
           <Tooltip title="StoreSite">
-            <a href="#abc" sx={{textDecoration: 'none', color: 'primary.text'}}>
+            <a href="#abc" sx={{textDecoration: 'none', color: `${ mode === 'light' ? '#000000de' : '#fff'}`}}>
               <Box 
                 className="App-logo"
                 component="img"

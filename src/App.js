@@ -80,7 +80,7 @@ const App = () => {
     <div className="App">
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
-          <Navbar DarkMode={DarkMode} setNavigation={setNavigation} />
+          <Navbar DarkMode={DarkMode} setNavigation={setNavigation} mode={mode} />
           <CarouselSwiper />
           <GridCardLayout navigation={navigation}/>
           <Parallax />

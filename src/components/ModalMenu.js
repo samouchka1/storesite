@@ -68,8 +68,8 @@ const ModalMenu =({setNavigation}) => {
 
     return (
         <Box>
-            <Button onClick={handleOpen} sx={{display: { md: 'none', xs: 'block' }, color: '#535353'}}>
-                {open ? <ClearIcon sx={{color: '#535353'}} /> : <MenuIcon sx={{color: '#535353'}} />}
+            <Button onClick={handleOpen} sx={{display: { md: 'none', xs: 'block' }, color: 'text.primary'}}>
+                {open ? <ClearIcon sx={{color: 'text.primary'}} /> : <MenuIcon sx={{color: 'text.primary'}} />}
             </Button>
             <Modal
                 open={open}

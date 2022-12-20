@@ -46,7 +46,7 @@ const CarouselSwiper = () => {
                 loop={true}
                 navigation={true}
                 freeMode={true}
-                // autoplay={{ delay : 2600, disableOnInteraction: false }}
+                autoplay={{ delay : 2600, disableOnInteraction: false }}
                 modules={[FreeMode, Navigation, Autoplay]}
             >
                 {swiperImages.map((photo) => (
