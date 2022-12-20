@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import {
   AppBar,
@@ -14,7 +14,6 @@ import {
   Button,
   Popover,
 } from '@mui/material';
-// import { pages } from '../data/pages';
 // import ModalMenu from './ModalMenu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -63,7 +62,7 @@ const navLinks = {
   },
 }
 
-const NavBar = ({DarkMode, setNavigation, mode}) => {  
+const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart}) => {  
 
   const pages = [
     {
@@ -117,10 +116,9 @@ const NavBar = ({DarkMode, setNavigation, mode}) => {
     setAnchorEl2(null);
   };
 
-
   return (
   <Container maxWidth={false} id="#top">
-      <AppBar sx={navBar} id="top">
+      <AppBar sx={navBar}>
         <Toolbar disableGutters>
 
           {/* ==== NAVIGATION ON MOBILE === */}
@@ -145,7 +143,7 @@ const NavBar = ({DarkMode, setNavigation, mode}) => {
                                 style={{textDecoration: 'none'}}
                                 scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })} //scroll to view
                                 to={page.path}
-                                onClick={page.method} //testing for ON CLICK CLOSE!
+                                onClick={page.method}
                             >
                               <Typography 
                                 className="hover-underline-animation" //optional on mobile
@@ -227,13 +225,19 @@ const NavBar = ({DarkMode, setNavigation, mode}) => {
               <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
                 <Typography sx={{fontWeight: '600'}}>Subtotal: ${total}</Typography>
                 <Button sx={{color: 'text.primary'}}>  
-                    <Link to="/cart" 
+                    {/* <Link to="/cart" 
                       onClick={handleClose} 
                       target="_blank" rel="noopener" 
-                      style={{textDecoration: 'none', color: '#535353' /*UNIQUE COLOR*/}}
-                    >
-                      <Typography>Check out</Typography>
-                    </Link>
+                      style={{textDecoration: 'none', color: '#535353'}}> */}
+                      <HashLink
+                        style={{textDecoration: 'none'}}
+                        scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })} //scroll to view
+                        to='#cart'
+                        onClick={()=> { handleClose(); setShoppingCart(true)}}
+                      >
+                        <Typography sx={{color: 'text.primary'}}>Check out</Typography>
+                      </HashLink>
+                    {/* </Link> */}
                 </Button>
               </Box>
 

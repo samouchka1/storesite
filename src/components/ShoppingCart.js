@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {
     Container,
     Box,
@@ -8,18 +8,14 @@ import {
     ListItem,
     Paper,
     Button,
-    Toolbar,
-    Tooltip,
-    AppBar,
     FormControl,
     InputLabel,
     Select,
     MenuItem
 } from '@mui/material';
-// import AddIcon from '@mui/icons-material/Add';
-// import RemoveIcon from '@mui/icons-material/Remove';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { cartItems, total } from '../data/cartItems';
+import { Fade } from "react-awesome-reveal";
+import '../App.css';
 
 const componentStyles = {
     backgroundColor : 'primary.main', //background color
@@ -37,70 +33,31 @@ const componentStyles = {
     },
 }
 
-const navBar = {
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems:'center',
-    justifyContent: 'space-between',
-    height: 'auto',
-    backgroundColor : 'primary.main', //background color
-    border: 'solid 1px #b2b2b2', //border color
-    width: '100%',
-    margin: '1rem 0',
-    padding: {
-      md: '0 5rem 0 0',
-      sm: '0 1.5rem 0 0',
-      xs: '0 1rem 0 0'
-    },
-    boxShadow: 'none'
-  }
 
-const ShoppingCart = () =>  {
+const ShoppingCart = ({shoppingCart, setShoppingCart}) =>  {
 
     const [qty, setQty] = useState(1);
     const handleChange = (event) => {
         setQty(event.target.value);
       };
 
-    const ApplicationBar = () => {
-
-        return (
-            <AppBar sx={navBar} id="top">
-                <Toolbar disableGutters>
-                    <Button sx={{margin: {md: '0 1.5rem', xs: '0 .5rem'}}}>
-                        <Link to="/" style={{textDecoration: 'none', color: '#535353' /*UNIQUE COLOR */, display: 'flex', alignItems: 'center'}}>
-                            <ArrowBackIosNewIcon />go back
-                        </Link>
-                    </Button>
-                </Toolbar>
-
-                <Box component="div" sx={{display: 'flex'}}>
-                    <Tooltip title="StoreSite">
-                        <a href="#abc" sx={{textDecoration: 'none', color: 'common.black'}}>
-                        <Box 
-                            className="App-logo"
-                            component="img"
-                            height="2.5rem"
-                            src={process.env.PUBLIC_URL + '/images/modern-logo.png'} 
-                            alt="StoreSite Logo"
-                        />
-                        </a>
-                    </Tooltip>
-                </Box>
-            </AppBar>
-        )
+    const handleClose = () => {
+        setShoppingCart(!shoppingCart)
     }
 
     return (
         <>
+
+            {shoppingCart ? (
+
             <Container maxWidth={false} id="cart">
-
-                <ApplicationBar />
-
+                <Fade>
                 <Box sx={componentStyles}>
                     <Paper sx={{margin: '1rem', flexGrow: 1, padding: { md: '1rem 5%', xs: '1rem'}}}>
-                        <Typography sx={{fontSize: {md: '22px', xs: '19px'}}}>Shopping Cart</Typography><code>(under development)</code>
+                        <Box sx={{textAlign: 'center'}}>
+                            <Typography sx={{fontSize: {md: '22px', xs: '19px'}, fontFamily: 'DM Serif Display'}}>Shopping Cart</Typography>
+                            <code>(under development)</code>
+                        </Box>
                         <List>
                             {cartItems.map((item) => (
                                 <Box key={item} sx={{'&:hover': {backgroundColor: 'primary.main' /*bg color*/}}}>
@@ -128,10 +85,10 @@ const ShoppingCart = () =>  {
                                                     <Button variant="outlined"><RemoveIcon /></Button>
                                                 </Box> */}
                                                 <FormControl sx={{ m: 1, minWidth: 80 }} size="small">
-                                                    <InputLabel id="demo-select-small">Qty</InputLabel>
+                                                    <InputLabel id="select">Qty</InputLabel>
                                                     <Select
-                                                        labelId="demo-select-small"
-                                                        id="demo-select-small"
+                                                        labelId="select"
+                                                        id="select"
                                                         value={qty}
                                                         label="Qty"
                                                         onChange={handleChange}
@@ -165,16 +122,26 @@ const ShoppingCart = () =>  {
                                 </ListItem>
                             ))}
                         </List>
-                        <Box sx={{margin: '1rem', textAlign: 'left'}}>
+                        <Box sx={{display: 'flex', flexDirection: 'column', margin: '1rem', textAlign: 'center'}}>
                             <Typography sx={{marginLeft: '.5rem', fontWeight: '600'}}>Subtotal: ${total}</Typography>
-                            <Button sx={{textDecoration: 'none', color: '#535353', margin: '1rem 0'}}>
+                            <Button variant="outlined" sx={{textDecoration: 'none', color: 'text.primary', margin: '1rem 0 .5rem'}}>
                                 Place Order
+                            </Button>
+                            <Button 
+                                variant="outlined"
+                                sx={{textDecoration: 'none', color: 'text.primary', margin: '.5rem 0'}}
+                                onClick={handleClose}
+                            >
+                                Cancel
                             </Button>
                         </Box>
                     </Paper>
                 </Box>
+                </Fade>
 
             </Container>
+
+            ) : null }
         </>
 
         )

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import GridCardLayout from './components/GridCardLayout';
 import CarouselSwiper from './components/CarouselSwiper';
 import ThreeColumns from './components/ThreeColumns';
 import Parallax from './components/Parallax';
+import ShoppingCart from './components/ShoppingCart';
+import Footer from './components/Footer';
 import {
   ThemeProvider,
   // useTheme,
@@ -14,6 +16,7 @@ import { IconButton, Tooltip } from '@mui/material';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 
+
 const ColorModeContext = React.createContext({
   toggleColorMode: () => {} 
 });
@@ -21,9 +24,11 @@ const ColorModeContext = React.createContext({
 
 const App = () => {
 
-  const [mode, setMode] = React.useState('light');
+  const [mode, setMode] = useState('light');
 
-  const [navigation, setNavigation] = React.useState('new');
+  const [navigation, setNavigation] = useState('new');
+
+  const [shoppingCart, setShoppingCart] = useState(false)
 
 
   const colorMode = React.useMemo(
@@ -80,11 +85,13 @@ const App = () => {
     <div className="App">
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
-          <Navbar DarkMode={DarkMode} setNavigation={setNavigation} mode={mode} />
+          <Navbar DarkMode={DarkMode} setNavigation={setNavigation} setShoppingCart={setShoppingCart} mode={mode} />
           <CarouselSwiper />
           <GridCardLayout navigation={navigation}/>
           <Parallax />
           <ThreeColumns />
+          <ShoppingCart mode={mode} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />
+          <Footer />
         </ThemeProvider>
       </ColorModeContext.Provider>
     </div>
