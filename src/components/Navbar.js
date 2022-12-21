@@ -18,7 +18,7 @@ import {
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
-import '../App.css'; //for logo spin, underline effect
+import '../App.css';
 import { cartItems, total } from '../data/cartItems';
 import { Fade } from "react-awesome-reveal";
 
