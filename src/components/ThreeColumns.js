@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { 
+    // useState 
+} from 'react'
 import {
     Container,
     Box,
@@ -7,10 +9,15 @@ import {
     AccordionSummary,
     AccordionDetails,
     Paper,
+    // Dialog,
+    // DialogContent,
+    Link,
+    Button,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Slide, Fade } from "react-awesome-reveal";
 import '../App.css';
+import { listings } from '../data/seasonalPhotos';
 
 const containerStyles = {
     display: 'flex', 
@@ -53,13 +60,47 @@ const accordionImageStyles = {
 
 const itemStyles = {
     height: 'auto',
-    width: '50%',
+    width: {
+        md: '100%',
+        xs: '100%'
+    },
+    margin: {
+        md: '0 .5rem 0 1rem',
+        xs: '0'
+    },
 }
 
-const detailsSectionStyles = {
+const itemPriceStyles = {
+    fontSize: '1.3rem',
+    margin: '.5rem'
+}
+
+const itemInfoStyles = {
+    margin:'1rem 0'
+}
+
+const itemButtonStyles = {
+    color: 'text.primary',
+    diplay: 'inline',
+    textAlign: 'center',
+    margin: '.75rem 0 0'
+}
+
+const itemSectiondetailsStyles = {
     display: 'flex', 
-    flexDirection: 'row', 
-    justifyContent: 'space-between', 
+    flexDirection: {
+        md: 'row',
+        xs: 'column'
+    }, 
+    justifyContent: {
+        md: 'space-between',
+        xs: 'center',
+    }, 
+    textAlign: 'center',
+}
+
+const itemSectionStyles = {
+    textAlign: 'center',
     margin: '.75rem 0', 
     padding: '.5rem',
     '&:hover': {
@@ -74,48 +115,36 @@ const detailsSectionStyles = {
     }
 }
 
-const Listings = [
-    {
-        name: 'Winter',
-        image: 'winter.jpg',
-        items: {
-            item1: '',
-            item2: '',
-            item3: '',
-        }
-    },
-    {
-        name: 'Summer',
-        image: 'summer.jpg',
-        items: {
-            item1: '',
-            item2: '',
-            item3: '',
-        }
-    } ,
-    {
-        name: 'Fall/Spring',
-        image: 'spring.jpg',
-        items: {
-            item1: '',
-            item2: '',
-            item3: '',
-        }
-    }
-];
-
 const ThreeColumns = () => {
+
+// const [open, setOpen] = useState(false);
+
+// const handleClickOpen = () => {
+//     setOpen(true);
+// };
+
+// const handleClose = () => {
+//     setOpen(!open);
+// };
+
+// const [ value, setValue ] = useState('');
+
+// const selectValue = (str) => {
+//     setValue(str);
+// }
+
+
   return (
     <Container maxWidth={false}>
         <Box sx={containerStyles}>
 
-            {Listings.map((list) =>(
+            {listings.map((list) =>(
             <Fade cascade damping={0.15} key={list}>
                 <Box marginBottom="1rem" sx={columnStyles}>
                     <Box 
                         component="img"
                         alt="something"
-                        src={process.env.PUBLIC_URL + '/images/' + list.image}
+                        src={process.env.PUBLIC_URL + '/images/seasonal/' + list.image}
                         sx={accordionImageStyles}
                     />
                     <Accordion sx={accordionStyles}>
@@ -127,38 +156,78 @@ const ThreeColumns = () => {
                             <Box sx={{display: 'flex', flexDirection: 'column'}}>
                                 <Slide direction="down" cascade triggerOnce>
                                     <Fade cascade duration={400} triggerOnce>
-                                        <Paper sx={detailsSectionStyles}>
-                                            <Typography>
-                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque molestiae omnis adipisci a aspernatur quos. Ad deleniti officiis cum officia nihil?
-                                            </Typography>
-                                            <Box 
-                                                component="img"
-                                                alt={list.name}
-                                                src={process.env.PUBLIC_URL + '/images/' + list.items.item1}
-                                                sx={itemStyles}
-                                            />
+                                        <Link 
+                                            sx={{
+                                                textDecoration: 'none', 
+                                                color: 'text.primary', 
+                                                '&:hover': {cursor: 'pointer'} //had to manually add feature
+                                            }}
+                                        >
+                                            <Paper 
+                                                sx={itemSectionStyles}
+                                                // onClick={()=> {
+                                                //     handleClickOpen(); 
+                                                //     selectValue(list.items.item1.name);
+                                                // }}
+                                            >
+                                                <Box sx={itemSectiondetailsStyles}>
+                                                    <Box 
+                                                        component="img"
+                                                        alt={list.name}
+                                                        src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item1.name}
+                                                        sx={itemStyles}
+                                                    />
+                                                    <Box sx={itemInfoStyles}>
+                                                        <Typography sx={itemPriceStyles}>{list.items.item1.price}</Typography>
+                                                        <Typography>
+                                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque.
+                                                        </Typography>
+                                                    </Box>
+                                                </Box>
+                                                <Button variant="outlined" sx={itemButtonStyles}>
+                                                    Add to Cart
+                                                </Button>
+                                                
+                                            </Paper>
+                                        </Link>
+                                            
+                                        <Paper sx={itemSectionStyles}>
+                                            <Box sx={itemSectiondetailsStyles}>
+                                                <Box 
+                                                    component="img"
+                                                    alt={list.name}
+                                                    src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item2.name}
+                                                    sx={itemStyles}
+                                                />
+                                                <Box sx={itemInfoStyles}>
+                                                    <Typography sx={itemPriceStyles}>{list.items.item2.price}</Typography>
+                                                    <Typography>
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque.
+                                                    </Typography>
+                                                </Box>
+                                            </Box>
+                                            <Button variant="outlined" sx={itemButtonStyles}>
+                                                Add to Cart
+                                            </Button>
                                         </Paper>
-                                        <Paper sx={detailsSectionStyles}>
-                                            <Typography>
-                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque molestiae omnis adipisci a aspernatur quos. Ad deleniti officiis cum officia nihil?
-                                            </Typography>
-                                            <Box 
-                                                component="img"
-                                                alt={list.name}
-                                                src={process.env.PUBLIC_URL + '/images/' + list.items.item2}
-                                                sx={itemStyles}
-                                            />
-                                        </Paper>
-                                        <Paper sx={detailsSectionStyles}>
-                                            <Typography>
-                                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque molestiae omnis adipisci a aspernatur quos. Ad deleniti officiis cum officia nihil?
-                                            </Typography>
-                                            <Box 
-                                                component="img"
-                                                alt={list.name}
-                                                src={process.env.PUBLIC_URL + '/images/' + list.items.item3}
-                                                sx={itemStyles}
-                                            />
+                                        <Paper sx={itemSectionStyles}>
+                                            <Box sx={itemSectiondetailsStyles}>
+                                                <Box 
+                                                    component="img"
+                                                    alt={list.name}
+                                                    src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item3.name}
+                                                    sx={itemStyles}
+                                                />
+                                                <Box sx={itemInfoStyles}>
+                                                    <Typography sx={itemPriceStyles}>{list.items.item3.price}</Typography>
+                                                    <Typography>
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque.
+                                                    </Typography>
+                                                </Box>
+                                            </Box>
+                                            <Button variant="outlined" sx={itemButtonStyles}>
+                                                Add to Cart
+                                            </Button>
                                         </Paper>
                                     </Fade>
                                 </Slide>
@@ -167,6 +236,28 @@ const ThreeColumns = () => {
                             
                         </AccordionDetails>
                     </Accordion>
+
+                    {/* <Dialog
+                        open={open}
+                        onClose={handleClose}
+                        disableScrollLock
+                        // component="div"
+                    >
+                        {value === `${list.items.item1.name}` ? 
+                            <DialogContent sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
+                                <Box
+                                    component="img"
+                                    alt={list.items.item1.name}
+                                    src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item1}
+                                    sx={{height: 'auto', width: '100%'}}
+                                />
+                                <Typography>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque molestiae omnis adipisci a aspernatur quos. Ad deleniti officiis cum officia nihil?
+                                </Typography>
+                            </DialogContent>
+                         : undefined }
+                    </Dialog> */}
+
                 </Box>
             </Fade>
             ))}
