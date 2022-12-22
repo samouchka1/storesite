@@ -79,6 +79,11 @@ const itemInfoStyles = {
     margin:'1rem 0'
 }
 
+const itemInfoTitleStyles = {
+    fontFamily: 'DM Serif Display',
+    fontSize: '1.1rem'
+}
+
 const itemButtonStyles = {
     color: 'text.primary',
     diplay: 'inline',
@@ -143,13 +148,13 @@ const ThreeColumns = () => {
                 <Box marginBottom="1rem" sx={columnStyles}>
                     <Box 
                         component="img"
-                        alt="something"
+                        alt={list.section}
                         src={process.env.PUBLIC_URL + '/images/seasonal/' + list.image}
                         sx={accordionImageStyles}
                     />
                     <Accordion sx={accordionStyles}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            <Typography sx={{fontSize: '1.35rem', fontFamily: 'DM Serif Display'}}>{list.name}</Typography>
+                            <Typography sx={{fontSize: '1.35rem', fontFamily: 'DM Serif Display'}}>{list.section}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
 
@@ -167,17 +172,18 @@ const ThreeColumns = () => {
                                                 sx={itemSectionStyles}
                                                 // onClick={()=> {
                                                 //     handleClickOpen(); 
-                                                //     selectValue(list.items.item1.name);
+                                                //     selectValue(list.items.item1.img);
                                                 // }}
                                             >
                                                 <Box sx={itemSectiondetailsStyles}>
                                                     <Box 
                                                         component="img"
-                                                        alt={list.name}
-                                                        src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item1.name}
+                                                        alt={list.section}
+                                                        src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item1.img}
                                                         sx={itemStyles}
                                                     />
                                                     <Box sx={itemInfoStyles}>
+                                                        <Typography sx={itemInfoTitleStyles}>{list.items.item1.name}</Typography>
                                                         <Typography sx={itemPriceStyles}>{list.items.item1.price}</Typography>
                                                         <Typography>
                                                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque.
@@ -195,11 +201,12 @@ const ThreeColumns = () => {
                                             <Box sx={itemSectiondetailsStyles}>
                                                 <Box 
                                                     component="img"
-                                                    alt={list.name}
-                                                    src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item2.name}
+                                                    alt={list.section}
+                                                    src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item2.img}
                                                     sx={itemStyles}
                                                 />
                                                 <Box sx={itemInfoStyles}>
+                                                    <Typography sx={itemInfoTitleStyles}>{list.items.item2.name}</Typography>
                                                     <Typography sx={itemPriceStyles}>{list.items.item2.price}</Typography>
                                                     <Typography>
                                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque.
@@ -214,11 +221,12 @@ const ThreeColumns = () => {
                                             <Box sx={itemSectiondetailsStyles}>
                                                 <Box 
                                                     component="img"
-                                                    alt={list.name}
-                                                    src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item3.name}
+                                                    alt={list.section}
+                                                    src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item3.img}
                                                     sx={itemStyles}
                                                 />
                                                 <Box sx={itemInfoStyles}>
+                                                    <Typography sx={itemInfoTitleStyles}>{list.items.item3.name}</Typography>
                                                     <Typography sx={itemPriceStyles}>{list.items.item3.price}</Typography>
                                                     <Typography>
                                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima velit vel cum doloremque.
@@ -243,11 +251,11 @@ const ThreeColumns = () => {
                         disableScrollLock
                         // component="div"
                     >
-                        {value === `${list.items.item1.name}` ? 
+                        {value === `${list.items.item1.img}` ? 
                             <DialogContent sx={{height: 'contain', width: 'auto', textAlign: 'center'}}>
                                 <Box
                                     component="img"
-                                    alt={list.items.item1.name}
+                                    alt={list.items.item1.img}
                                     src={process.env.PUBLIC_URL + '/images/seasonal/' + list.items.item1}
                                     sx={{height: 'auto', width: '100%'}}
                                 />

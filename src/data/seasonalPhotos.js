@@ -1,54 +1,63 @@
 export const listings = [
     {
-        name: 'Winter',
+        section: 'Winter',
         image: 'winter.jpg',
         items: {
             item1: {
-                name: 'winter-beanie.JPG',
+                name: 'Brimmer Hat',
+                img: 'winter-beanie.JPG',
                 price: 23.99
             },
             item2: {
-                name: 'winter-knitsweater.JPG',
-                price: 37.99,
+                name: 'Knit Hoodie Sweater',
+                img: 'winter-knitsweater.JPG',
+                price: 37.99
             },
             item3: {
-                name: 'winter-hoodedcoat.JPG',
+                name: 'Hooded Coat',
+                img: 'winter-hoodedcoat.JPG',
                 price: 127.99
             }
         }
     },
     {
-        name: 'Summer',
+        section: 'Summer',
         image: 'summer.jpg',
         items: {
             item1: {
-                name: 'summer-buttondownshirt.JPG',
-                price: 26.99,
+                name: 'Button Down Shirt',
+                img: 'summer-buttondownshirt.JPG',
+                price: 26.99
             },
             item2: {
-                name: 'summer-sunhat.JPG',
+                name: 'Sun Hat',
+                img: 'summer-sunhat.JPG',
                 price: 34.99
             },
             item3: {
-                name: 'summer-mididress.JPG',
+                name: 'Midi Dress',
+                img: 'summer-mididress.JPG',
                 price: 48.99
             }
         }
     } ,
     {
-        name: 'Fall/Spring',
+        section: 'Fall/Spring',
         image: 'spring.jpg',
         items: {
             item1: {
-                name: 'spring-flannelshirt.JPG',
+                name: 'Flannel Shirt',
+                img: 'spring-flannelshirt.JPG',
                 price: 32.99
             },
             item2: {
-                name: 'spring-jeanshorts.JPG',
+                name: 'Jean Shorts',
+                img: 'spring-jeanshorts.JPG',
                 price: 24.99
             },
             item3: {
-                name: 'spring-greendress.JPG',
+                name: 'Green Dress',
+                img: 'spring-greendress.JPG',
                 price: 56.99
             }
         }
