@@ -36,7 +36,7 @@ const parallaxTextStyle = {
 
 const Parallax = () => {
   return (
-    <Container maxWidth={false} sx={{marginBottom: '1rem'}}>
+    <Container maxWidth={false} sx={{marginBottom: '1rem'}} id="seasonal">
         <ParallaxBanner 
             // style={{ aspectRatio: '2 / 1' }}
             className="parallax-image"

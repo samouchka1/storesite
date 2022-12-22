@@ -94,6 +94,11 @@ const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart}) => {
       name: 'Athletic',
       path: '#grid',
       method: () => setNavigation('athletic')
+    },
+    {
+      name: 'Seasonal\u00A0Styles',
+      path: '#seasonal',
+      method: null
     }
   ]
   
