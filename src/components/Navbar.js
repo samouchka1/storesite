@@ -221,7 +221,7 @@ const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart}) => {
                       <Typography>{item.color}</Typography>
                       <Typography>${item.price}</Typography>
                       
-                      <Typography>Qty: {item.quantity}</Typography>
+                      {/* <Typography>Qty: {item.quantity}</Typography> */}
                     </Box>
                   </ListItem>
                 ))}
@@ -230,19 +230,14 @@ const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart}) => {
               <Box component="div" sx={{textAlign: 'center', borderTop: 'solid 1px #808080'}}>
                 <Typography sx={{fontWeight: '600'}}>Subtotal: ${total}</Typography>
                 <Button sx={{color: 'text.primary'}}>  
-                    {/* <Link to="/cart" 
-                      onClick={handleClose} 
-                      target="_blank" rel="noopener" 
-                      style={{textDecoration: 'none', color: '#535353'}}> */}
-                      <HashLink
-                        style={{textDecoration: 'none'}}
-                        scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })} //scroll to view
-                        to='#cart'
-                        onClick={()=> { handleClose(); setShoppingCart(true)}}
-                      >
-                        <Typography sx={{color: 'text.primary'}}>Check out</Typography>
-                      </HashLink>
-                    {/* </Link> */}
+                  <HashLink
+                    style={{textDecoration: 'none'}}
+                    scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })} //scroll to view
+                    to='#cart'
+                    onClick={()=> { handleClose(); setShoppingCart(true)}}
+                  >
+                    <Typography sx={{color: 'text.primary'}}>Check out</Typography>
+                  </HashLink>
                 </Button>
               </Box>
 

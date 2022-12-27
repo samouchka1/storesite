@@ -8,13 +8,15 @@ import {
     ListItem,
     Paper,
     Button,
-    FormControl,
-    InputLabel,
-    Select,
-    MenuItem
+    // FormControl,
+    // InputLabel,
+    // Select,
+    // MenuItem
 } from '@mui/material';
 import { cartItems, total } from '../data/cartItems';
 import { Fade } from "react-awesome-reveal";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import '../App.css';
 
 const componentStyles = {
@@ -37,9 +39,19 @@ const componentStyles = {
 const ShoppingCart = ({shoppingCart, setShoppingCart}) =>  {
 
     const [qty, setQty] = useState(1);
-    const handleChange = (event) => {
-        setQty(event.target.value);
-      };
+
+    const handleAdd = () => {
+        setQty( qty + 1)
+    };
+
+    const handleRemove = () => {
+        setQty( qty - 1)
+    };
+
+
+    // const handleChange = (event) => {
+    //     setQty(event.target.value);
+    //   };
 
     const handleClose = () => {
         setShoppingCart(!shoppingCart)
@@ -61,9 +73,15 @@ const ShoppingCart = ({shoppingCart, setShoppingCart}) =>  {
                         <List>
                             {cartItems.map((item) => (
                                 <Box key={item} sx={{'&:hover': {backgroundColor: 'primary.main' /*bg color*/}}}>
-                                    <Box sx={{ display: 'flex', flexDirection: {md: 'row', xs: 'column'}, alignItems: 'center', gap: '1rem', margin: '1.5rem 0',
-                                        // justifyContent: 'space-between' //not working
-                                    }}>
+                                    <Box 
+                                        sx={{ 
+                                            display: 'flex', 
+                                            flexDirection: {md: 'row', xs: 'column'}, 
+                                            alignItems: 'center', 
+                                            gap: '1rem', 
+                                            margin: '1.5rem 0',
+                                        }}
+                                    >
                                         <Box
                                             component="img"
                                             src={process.env.PUBLIC_URL + '/images/' + item.thumbnail}
@@ -76,15 +94,33 @@ const ShoppingCart = ({shoppingCart, setShoppingCart}) =>  {
                                             <Typography sx={{fontSize: {md: '17px', xs: '15px'}}}>Size: {item.size}</Typography>
 
                                         </Box>
-                                        <Box sx={{ borderBottom: { md: 'none', xs: 'solid 1px #ccccccd8'}, margin: {md: '0', xs:'1rem 0'}}}>
+                                        <Box 
+                                            sx={{ 
+                                                borderBottom: { md: 'none', xs: 'solid 1px #ccccccd8'}, 
+                                                margin: {md: '0', xs:'1rem 0'},
+                                                textAlign: 'center'
+                                            }}
+                                        >
                                             <Typography variant="caption"> Item #: {item.product_num}</Typography>
                                             <Box sx={{marginBottom: { md: '0', xs: '1rem'}}}>
-                                                {/* <Typography varant="subtitle2">{item.quantity}</Typography>
+                                                <Typography varant="subtitle2">{qty}</Typography>
                                                 <Box sx={{display: 'flex', margin: 'auto'}}>
-                                                    <Button variant="outlined"><AddIcon /></Button> 
-                                                    <Button variant="outlined"><RemoveIcon /></Button>
-                                                </Box> */}
-                                                <FormControl sx={{ m: 1, minWidth: 80 }} size="small">
+
+                                                    <Button variant="outlined"
+                                                        sx={{color: 'text.primary', textAlign: 'left'}}
+                                                        onClick={handleAdd}
+                                                    >
+                                                        <AddIcon />
+                                                    </Button> 
+
+                                                    <Button variant="outlined"
+                                                        sx={{color: 'text.primary', textAlign: 'left'}}
+                                                        onClick={handleRemove}
+                                                    >
+                                                        <RemoveIcon />
+                                                    </Button>
+                                                </Box>
+                                                {/* <FormControl sx={{ m: 1, minWidth: 80 }} size="small">
                                                     <InputLabel id="select">Qty</InputLabel>
                                                     <Select
                                                         labelId="select"
@@ -103,7 +139,7 @@ const ShoppingCart = ({shoppingCart, setShoppingCart}) =>  {
                                                         <MenuItem value={8}>8</MenuItem>
                                                         <MenuItem value={9}>9</MenuItem>
                                                     </Select>
-                                                </FormControl>
+                                                </FormControl> */}
                                             </Box>
                                         </Box>
                                     </Box>

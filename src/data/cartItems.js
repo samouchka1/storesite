@@ -17,7 +17,7 @@ export const cartItems = [
       color: 'Green',
       size: 'Medium',
       price: 24.99,
-      quantity: 2,
+      quantity: 1,
       thumbnail: 'cart-womens-pants.jpg',
       product_num: faker.finance.account(4),
     }
