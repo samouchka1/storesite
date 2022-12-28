@@ -17,7 +17,7 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Slide, Fade } from "react-awesome-reveal";
 import '../App.css';
-import { listings } from '../data/seasonalPhotos';
+import { listings } from '../data/seasonalProducts';
 
 const containerStyles = {
     display: 'flex', 

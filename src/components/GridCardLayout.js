@@ -28,7 +28,7 @@ import {
     Casual, 
     Outdoor, 
     Athletic 
-} from '../data/navigation/Navigator';
+} from '../data/navigation/Products';
 
 const gridStyle = {
     width: '100%',
@@ -189,7 +189,14 @@ const GridCardLayout = ({navigation}) => {
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
-                                    <Button size="small" sx={{color: 'text.primary', fontSize: {xs: '.70rem'}}}>Add to Cart</Button>
+                                    <Button size="small" 
+                                        sx={{
+                                            color: 'text.primary', 
+                                            fontSize: {xs: '.70rem'}}}
+                                            // onClick={}
+                                        >
+                                            Add to Cart
+                                        </Button>
                                 </CardActions> 
                             </Card>
                         </Fade>

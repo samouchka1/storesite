@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 // import { Link } from 'react-router-dom';
 import {
     Container,
@@ -8,10 +8,6 @@ import {
     ListItem,
     Paper,
     Button,
-    // FormControl,
-    // InputLabel,
-    // Select,
-    // MenuItem
 } from '@mui/material';
 import { cartItems, total } from '../data/cartItems';
 import { Fade } from "react-awesome-reveal";
@@ -36,22 +32,16 @@ const componentStyles = {
 }
 
 
-const ShoppingCart = ({shoppingCart, setShoppingCart}) =>  {
+const ShoppingCart = ({shoppingCart, setShoppingCart, qty, setQty}) =>  {
 
-    const [qty, setQty] = useState(1);
 
     const handleAdd = () => {
-        setQty( qty + 1)
+        setQty(qty + 1)
     };
 
     const handleRemove = () => {
-        setQty( qty - 1)
+        setQty(qty - 1)
     };
-
-
-    // const handleChange = (event) => {
-    //     setQty(event.target.value);
-    //   };
 
     const handleClose = () => {
         setShoppingCart(!shoppingCart)
@@ -84,7 +74,7 @@ const ShoppingCart = ({shoppingCart, setShoppingCart}) =>  {
                                     >
                                         <Box
                                             component="img"
-                                            src={process.env.PUBLIC_URL + '/images/' + item.thumbnail}
+                                            src={process.env.PUBLIC_URL + '/images/products/' + item.image}
                                             alt={item.name}
                                             sx={{ height: 'auto', width: { md: '100px', xs: '85px'}}}
                                         />
@@ -120,26 +110,6 @@ const ShoppingCart = ({shoppingCart, setShoppingCart}) =>  {
                                                         <RemoveIcon />
                                                     </Button>
                                                 </Box>
-                                                {/* <FormControl sx={{ m: 1, minWidth: 80 }} size="small">
-                                                    <InputLabel id="select">Qty</InputLabel>
-                                                    <Select
-                                                        labelId="select"
-                                                        id="select"
-                                                        value={qty}
-                                                        label="Qty"
-                                                        onChange={handleChange}
-                                                    >   
-                                                        <MenuItem value={1}>1</MenuItem>
-                                                        <MenuItem value={2}>2</MenuItem>
-                                                        <MenuItem value={3}>3</MenuItem>
-                                                        <MenuItem value={4}>4</MenuItem>
-                                                        <MenuItem value={5}>5</MenuItem>
-                                                        <MenuItem value={6}>6</MenuItem>
-                                                        <MenuItem value={7}>7</MenuItem>
-                                                        <MenuItem value={8}>8</MenuItem>
-                                                        <MenuItem value={9}>9</MenuItem>
-                                                    </Select>
-                                                </FormControl> */}
                                             </Box>
                                         </Box>
                                     </Box>

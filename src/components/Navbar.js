@@ -18,6 +18,8 @@ import {
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import ClearIcon from '@mui/icons-material/Clear';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import '../App.css';
 import { cartItems, total } from '../data/cartItems';
 import { Fade } from "react-awesome-reveal";
@@ -62,7 +64,7 @@ const navLinks = {
   },
 }
 
-const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart}) => {  
+const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart, qty, setQty}) => {  
 
   const pages = [
     {
@@ -120,6 +122,14 @@ const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart}) => {
   const handleCloseNav = () => {
     setAnchorEl2(null);
   };
+
+  const handleAdd = () => {
+    setQty(qty + 1)
+};
+
+const handleRemove = () => {
+    setQty(qty - 1)
+};
 
   return (
   <Container maxWidth={false} id="#top">
@@ -212,16 +222,32 @@ const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart}) => {
                   <ListItem key={item} sx={{margin: '.5rem 0'}}>
                     <Box
                       component="img"
-                      src={process.env.PUBLIC_URL + '/images/' + item.thumbnail}
-                      height="50px"
+                      src={process.env.PUBLIC_URL + '/images/products/' + item.image}
+                      height="60px"
                       width="auto"
                     />
-                    <Box component="div" sx={{display: 'flex', flexDirection: 'column'}}>
-                      <Typography sx={{fontWeight: 'bold'}}>{item.name}</Typography>
+                    <Box component="div" sx={{display: 'flex', flexDirection: 'column', textAlign: 'center'}}>
+                      <Typography sx={{fontWeight: 'bold', width: '200px'}}>{item.name}</Typography>
                       <Typography>{item.color}</Typography>
                       <Typography>${item.price}</Typography>
+                      <Typography>{qty}</Typography>
                       
-                      {/* <Typography>Qty: {item.quantity}</Typography> */}
+                      <Box sx={{display: 'flex', margin: '0 auto'}}>
+
+                          <Button variant="outlined"
+                              sx={{color: 'text.primary'}}
+                              onClick={handleAdd}
+                          >
+                              <AddIcon />
+                          </Button> 
+
+                          <Button variant="outlined"
+                              sx={{color: 'text.primary'}}
+                              onClick={handleRemove}
+                          >
+                              <RemoveIcon />
+                          </Button>
+                      </Box>
                     </Box>
                   </ListItem>
                 ))}
@@ -242,7 +268,7 @@ const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart}) => {
               </Box>
 
             </Popover>
-
+          
           <Typography sx={{fontFamily: 'DM Serif Display', fontSize: { md: '1.15rem', xs:'1rem'}, margin: '0 1rem 0 0'}}>
             StoreSite
           </Typography>

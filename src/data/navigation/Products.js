@@ -11,7 +11,7 @@ export const New = [
         size: 'Large',
         description: faker.lorem.lines(2),
         price: 19.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
     },
       {
@@ -22,7 +22,7 @@ export const New = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 24.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -33,7 +33,7 @@ export const New = [
         size: 'One size fits all',
         description: faker.lorem.lines(2),
         price: 69.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -44,7 +44,7 @@ export const New = [
         size: 'One size fits all',
         description: faker.lorem.lines(2),
         price: 54.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -55,7 +55,7 @@ export const New = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 24.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -66,7 +66,7 @@ export const New = [
         size: '9',
         description: faker.lorem.lines(2),
         price: 39.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       }
 ]
@@ -83,7 +83,7 @@ export const Men = [
         size: 'Large',
         description: faker.lorem.lines(2),
         price: 99.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
     },
       {
@@ -94,7 +94,7 @@ export const Men = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 24.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -105,7 +105,7 @@ export const Men = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 24.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -116,7 +116,7 @@ export const Men = [
         size: 'Large',
         description: faker.lorem.lines(2),
         price: 69.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -127,7 +127,7 @@ export const Men = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 24.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -138,7 +138,7 @@ export const Men = [
         size: '9',
         description: faker.lorem.lines(2),
         price: 79.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       }
 ]
@@ -155,7 +155,7 @@ export const Women = [
         size: 'Small',
         description: faker.lorem.lines(2),
         price: 21.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
     },
       {
@@ -166,7 +166,7 @@ export const Women = [
         size: 10,
         description: faker.lorem.lines(2),
         price: 129.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
 
@@ -178,7 +178,7 @@ export const Women = [
         size: 'Small',
         description: faker.lorem.lines(2),
         price: 22.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -189,7 +189,7 @@ export const Women = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 34.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -200,7 +200,7 @@ export const Women = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 49.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -211,7 +211,7 @@ export const Women = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 43.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       }
 ]
@@ -228,7 +228,7 @@ export const Casual = [
       size: 'Medium',
       description: faker.lorem.lines(2),
       price: 29.99,
-      quantity: Number,
+      quantity: 1,
       product_num: faker.finance.account(4),
     },
     {
@@ -239,7 +239,7 @@ export const Casual = [
       size: 'Medium',
       description: faker.lorem.lines(2),
       price: 32.99,
-      quantity: Number,
+      quantity: 1,
       product_num: faker.finance.account(4),
     },
     {
@@ -250,7 +250,7 @@ export const Casual = [
       size: 'Small',
       description: faker.lorem.lines(2),
       price: 34.99,
-      quantity: Number,
+      quantity: 1,
       product_num: faker.finance.account(4),
     },
     {
@@ -261,7 +261,7 @@ export const Casual = [
       size: 'Small',
       description: faker.lorem.lines(2),
       price: 35.99,
-      quantity: Number,
+      quantity: 1,
       product_num: faker.finance.account(4),
     },
     {
@@ -272,7 +272,7 @@ export const Casual = [
       size: 'Large',
       description: faker.lorem.lines(2),
       price: 28.99,
-      quantity: Number,
+      quantity: 1,
       product_num: faker.finance.account(4),
     },
     {
@@ -283,7 +283,7 @@ export const Casual = [
       size: 'Large',
       description: faker.lorem.lines(2),
       price: 44.99,
-      quantity: Number,
+      quantity: 1,
       product_num: faker.finance.account(4),
     }
 ]
@@ -300,7 +300,7 @@ export const Outdoor = [
         size: 11,
         description: faker.lorem.lines(2),
         price: 109.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
     },
     {
@@ -311,7 +311,7 @@ export const Outdoor = [
       size: 'Large',
       description: faker.lorem.lines(2),
       price: 23.99,
-      quantity: Number,
+      quantity: 1,
       product_num: faker.finance.account(4),
     },
       {
@@ -322,7 +322,7 @@ export const Outdoor = [
         size: 'Large',
         description: faker.lorem.lines(2),
         price: 99.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -333,7 +333,7 @@ export const Outdoor = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 89.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -344,7 +344,7 @@ export const Outdoor = [
         size: 'Large',
         description: faker.lorem.lines(2),
         price: 29.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -355,7 +355,7 @@ export const Outdoor = [
         size: '8',
         description: faker.lorem.lines(2),
         price: 112.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       }
 ]
@@ -372,7 +372,7 @@ export const Athletic = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 14.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -383,7 +383,7 @@ export const Athletic = [
         size: 'Small',
         description: faker.lorem.lines(2),
         price: 34.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -394,7 +394,7 @@ export const Athletic = [
         size: 'Large',
         description: faker.lorem.lines(2),
         price: 24.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -405,7 +405,7 @@ export const Athletic = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 39.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -416,7 +416,7 @@ export const Athletic = [
         size: 'Medium',
         description: faker.lorem.lines(2),
         price: 32.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       },
       {
@@ -427,7 +427,7 @@ export const Athletic = [
         size: '9',
         description: faker.lorem.lines(2),
         price: 69.99,
-        quantity: Number,
+        quantity: 1,
         product_num: faker.finance.account(4),
       }
 ]

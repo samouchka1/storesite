@@ -4,21 +4,23 @@ export const cartItems = [
     {
       id: 1,
       name: 'Men\'s casual shirt',
-      color: 'Blue',
+      image: 'cart-mens-shirt.jpg',
+      // color: 'Blue',
       size: 'Large',
+      description: faker.lorem.lines(2),
       price: 19.99,
       quantity: 1,
-      thumbnail: 'cart-mens-shirt.jpg',
       product_num: faker.finance.account(4),
     },
     {
       id: 2,
       name: 'Women\'s outdoor pants',
-      color: 'Green',
+      image: 'cart-womens-pants.jpg',
+      // color: 'Green',
       size: 'Medium',
+      description: faker.lorem.lines(2),
       price: 24.99,
       quantity: 1,
-      thumbnail: 'cart-womens-pants.jpg',
       product_num: faker.finance.account(4),
     }
   ]

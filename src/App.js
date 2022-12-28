@@ -30,6 +30,8 @@ const App = () => {
 
   const [shoppingCart, setShoppingCart] = useState(false)
 
+  const [qty, setQty] = useState(1);
+
 
   const colorMode = React.useMemo(
     () => ({
@@ -85,12 +87,12 @@ const App = () => {
     <div className="App">
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
-          <Navbar DarkMode={DarkMode} setNavigation={setNavigation} setShoppingCart={setShoppingCart} mode={mode} />
+          <Navbar DarkMode={DarkMode} setNavigation={setNavigation} setShoppingCart={setShoppingCart} mode={mode} qty={qty} setQty={setQty} />
           <CarouselSwiper />
           <GridCardLayout navigation={navigation}/>
           <Parallax />
           <ThreeColumns />
-          <ShoppingCart mode={mode} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />
+          <ShoppingCart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} qty={qty} setQty={setQty} mode={mode}/>
           <Footer />
         </ThemeProvider>
       </ColorModeContext.Provider>
