@@ -41,7 +41,6 @@ const ShoppingCart = ({shoppingCart, setShoppingCart, qty, setQty}) =>  {
 
     const handleRemove = () => {
         if (qty <= 0) {
-            qty = 0;
             setQty(0)
         } else {
             setQty( qty - 1)
