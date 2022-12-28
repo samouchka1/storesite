@@ -128,7 +128,12 @@ const NavBar = ({DarkMode, setNavigation, mode, setShoppingCart, qty, setQty}) =
 };
 
 const handleRemove = () => {
-    setQty(qty - 1)
+    if (qty <= 0) {
+      qty = 0;
+      setQty(0)
+  } else {
+      setQty( qty - 1)
+  }
 };
 
   return (
