@@ -9,7 +9,7 @@ import {
     Paper,
     Button,
 } from '@mui/material';
-import { cartItems, total } from '../data/cartItems';
+import { cartItems } from '../data/cartItems';
 import { Fade } from "react-awesome-reveal";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -46,6 +46,8 @@ const ShoppingCart = ({shoppingCart, setShoppingCart, qty, setQty}) =>  {
             setQty( qty - 1)
         }
     };
+
+    const total = cartItems.reduce((total, item) => total + item.price * qty, 0).toFixed(2);
 
     const handleClose = () => {
         setShoppingCart(!shoppingCart)

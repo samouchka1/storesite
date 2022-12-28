@@ -24,5 +24,3 @@ export const cartItems = [
       product_num: faker.finance.account(4),
     }
   ]
-
-export const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);

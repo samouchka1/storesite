@@ -21,7 +21,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import '../App.css';
-import { cartItems, total } from '../data/cartItems';
+import { cartItems } from '../data/cartItems';
 import { Fade } from "react-awesome-reveal";
 
 //===STYLES===
@@ -134,6 +134,8 @@ const handleRemove = () => {
       setQty( qty - 1)
   }
 };
+
+const total = cartItems.reduce((total, item) => total + item.price * qty, 0).toFixed(2);
 
   return (
   <Container maxWidth={false} id="#top">
