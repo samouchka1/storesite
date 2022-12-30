@@ -12,15 +12,15 @@ export const cartItems = [
       quantity: 1,
       product_num: faker.finance.account(4),
     },
-    {
-      id: 2,
-      name: 'Women\'s outdoor pants',
-      image: 'cart-womens-pants.jpg',
-      // color: 'Green',
-      size: 'Medium',
-      description: faker.lorem.lines(2),
-      price: 24.99,
-      quantity: 1,
-      product_num: faker.finance.account(4),
-    }
+    // {
+    //   id: 2,
+    //   name: 'Women\'s outdoor pants',
+    //   image: 'cart-womens-pants.jpg',
+    //   // color: 'Green',
+    //   size: 'Medium',
+    //   description: faker.lorem.lines(2),
+    //   price: 24.99,
+    //   quantity: 1,
+    //   product_num: faker.finance.account(4),
+    // }
   ]

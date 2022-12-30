@@ -34,16 +34,16 @@ const componentStyles = {
 
 const ShoppingCart = ({shoppingCart, setShoppingCart, qty, setQty}) =>  {
 
-
     const handleAdd = () => {
-        setQty(qty + 1)
-    };
+        setQty((qty) => qty + 1)
+    }
 
+    
     const handleRemove = () => {
         if (qty <= 0) {
             setQty(0)
         } else {
-            setQty( qty - 1)
+            setQty((qty) => qty - 1)
         }
     };
 
@@ -99,7 +99,7 @@ const ShoppingCart = ({shoppingCart, setShoppingCart, qty, setQty}) =>  {
                                         >
                                             <Typography variant="caption"> Item #: {item.product_num}</Typography>
                                             <Box sx={{marginBottom: { md: '0', xs: '1rem'}}}>
-                                                <Typography varant="subtitle2">{qty}</Typography>
+                                                <Typography varant="subtitle2" id={item.id}>{qty}</Typography>
                                                 <Box sx={{display: 'flex', margin: 'auto'}}>
 
                                                     <Button variant="outlined"
