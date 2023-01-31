@@ -19,15 +19,15 @@ export const swiperImages = [
     },
     {
         id: 4,
-        image: 'casual-coat.jpg',
-        label: 'Casual Coat',
-        price: 56.99
+        image: 'hitop-boots.jpg',
+        label: 'HiTop Boots',
+        price: 96.99
     },
     {
         id: 5,
-        image: 'business-blazer.jpg',
-        label: 'Business Blazer',
-        price: 74.99
+        image: 'sun-dress.jpg',
+        label: 'Sun Dress',
+        price: 64.99
     },
 ]
 

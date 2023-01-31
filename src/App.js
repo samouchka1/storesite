@@ -34,7 +34,6 @@ const App = () => {
 
   const [qty, setQty] = useState(1);
 
-
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
