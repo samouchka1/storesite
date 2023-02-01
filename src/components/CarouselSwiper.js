@@ -58,7 +58,7 @@ const CarouselSwiper = () => {
                                 <Box component="img"
                                     src={process.env.PUBLIC_URL + '/images/carouselSwiper/' + photo.image} 
                                     alt={photo.label}
-                                    sx={{width: '100%', display: 'block', borderRadius: '4px', height: {md:'75vh', xs: '40vh'}}}
+                                    sx={{width: '100%', display: 'block', borderRadius: '4px', height: {md:'78vh', xs: '40vh'}}}
                                 />
                                 {/* <Paper elevation={2} sx={{textAlign: 'center'}}>
                                     <Typography variant="h6">
@@ -80,7 +80,7 @@ const CarouselSwiper = () => {
                                         md: '8rem',
                                         xs: '100%'
                                     },
-                                    height: {md:'75vh', xs: '8vh'},
+                                    height: {md:'78vh', xs: '8vh'},
                                     textAlign: 'center',
                                     display: 'flex',
                                     flexDirection: {md: 'column', xs: 'row'},
@@ -139,7 +139,8 @@ const CarouselSwiper = () => {
                                             color: 'text.secondary', 
                                             textAlign: 'left', 
                                             p: '1rem .5rem', 
-                                            display: {md: 'block', xs: 'none'}
+                                            display: {md: 'block', xs: 'none'},
+                                            overflowY: 'auto'
                                         }}
                                     >
                                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam corporis consequatur possimus distinctio aliquid.

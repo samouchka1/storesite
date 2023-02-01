@@ -30,8 +30,8 @@ const containerStyles = {
 }
 
 const columnStyles = {
-    margin: '0', 
-    width: '100%'
+    m: '0 0 1rem 0', 
+    width: '100%',
 }
 
 const accordionStyles = {
@@ -46,6 +46,7 @@ const accordionImageStyles = {
     display: 'block',
     margin: '0 auto 1rem',
     opacity: '.9',
+    boxShadow: '0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)',
     '&:hover': {
         opacity: '1',
         animationName: 'zoom',
@@ -145,7 +146,7 @@ const ThreeColumns = () => {
 
             {listings.map((list) =>(
             <Fade cascade damping={0.15} key={list}>
-                <Box marginBottom="1rem" sx={columnStyles}>
+                <Box sx={columnStyles}>
                     <Box 
                         component="img"
                         alt={list.section}
