@@ -48,7 +48,7 @@ const CarouselSwiper = () => {
                 navigation={true}
                 freeMode={true}
                 effect={"fade"}
-                autoplay={{ delay : 5000, disableOnInteraction: false }}
+                autoplay={{ delay : 4000, disableOnInteraction: false }}
                 modules={[EffectFade, FreeMode, Navigation, Autoplay]}
             >
                 {swiperImages.map((photo) => (
